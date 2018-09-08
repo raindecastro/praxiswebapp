@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/client/index.js',
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -16,31 +16,43 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        loaders: [
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+        ],
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+          'resolve-url-loader',
+          'sass-loader?sourceMap',
+        ],
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
-      }
-    ]
+        loader: 'url-loader?limit=100000',
+      },
+    ],
   },
   devServer: {
     port: 3000,
     open: true,
     proxy: {
-      '/api': 'http://localhost:8080'
-    }
+      '/api': 'http://localhost:8080',
+    },
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico'
-    })
-  ]
+      favicon: './public/favicon.ico',
+    }),
+  ],
 };
