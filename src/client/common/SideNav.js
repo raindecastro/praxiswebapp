@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/_sidenav.scss';
 
-const blackLogo = require('../../images/logo-black.png');
+// const blackLogo = require('../../images/logo-black.png');
 
 class SideNav extends React.Component {
   constructor(props) {
@@ -27,7 +27,9 @@ class SideNav extends React.Component {
             <p className={styles.links}>MEMBERS</p>
           </Link>
           <Link to="/alumni">
-            <p className={`${styles.links} ${styles.underlineMagical}`}>ALUMNI</p>
+            <p className={`${styles.links} ${styles.underlineMagical}`}>
+              ALUMNI
+            </p>
           </Link>
           <Link to="/contact">
             <p className={styles.links}>CONTACT</p>

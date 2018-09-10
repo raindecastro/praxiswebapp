@@ -1,11 +1,48 @@
 #headerContainer {
   position: fixed;
   top: 0;
-  left: 0;
-  padding-left: 50px;
-  padding-top: 25px;
-  #tadcLogo {
-    width: 100px;
-    height: auto;
+  padding-top: 30px;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .headerLogo {
+    font-weight: 400;
+    letter-spacing: 10px;
+    text-align: center;
+  }
+
+  #headerLinks {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+
+  .links::after {
+    content: '';
+    display: block;
+    width: 0;
+    margin-top: 3px;
+    height: 1px;
+    background: #000;
+    transition: width 0.3s;
+  }
+
+  .links:hover::after {
+    width: 100%;
+  }
+
+  .underlineMagical {
+    background-image: linear-gradient(120deg, #8fd3f4 0%, #fdfd96 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+    &:hover {
+      background-size: 100% 88%;
+    }
   }
 }
