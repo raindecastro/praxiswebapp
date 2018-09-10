@@ -8,7 +8,6 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('dist'));
 
   // Express serve up index.html file if it doesn't recognize route
-
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
   });
