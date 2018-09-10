@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, outputDirectory),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -17,15 +17,15 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
         loaders: [
           'style-loader?sourceMap',
-          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
-        ]
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+        ],
       },
       {
         test: /\.scss$/,
@@ -40,31 +40,31 @@ module.exports = {
               resources: [
                 path.resolve(__dirname, './src/base-styles/base/_mixin.scss'),
                 path.resolve(__dirname, './src/base-styles/_reset.scss'),
-                path.resolve(__dirname, './src/base-styles/_fonts.scss')
-              ]
-            }
-          }
-        ]
+                path.resolve(__dirname, './src/base-styles/_fonts.scss'),
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
-      }
-    ]
+        loader: 'url-loader?limit=100000',
+      },
+    ],
   },
   devServer: {
-    port: 3000,
+    port: process.env.PORT || 3000,
     open: true,
     proxy: {
-      '/api': 'http://localhost:8080'
+      '/api': 'http://localhost:8080',
     },
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon2.ico'
-    })
-  ]
+      favicon: './public/favicon2.ico',
+    }),
+  ],
 };
