@@ -1,19 +1,12 @@
 import React from 'react';
+import styles from './styles/_header.scss';
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
+const tadcLogo = require('../../images/logo-black.png');
 
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <header>
-        <h1>TADC HEADER</h1>
-      </header>
-    );
-  }
-}
+const Header = () => (
+  <header id={styles.headerContainer}>
+    <img id={styles.tadcLogo} src={tadcLogo} alt={tadcLogo} />
+  </header>
+);
 
 export default Header;

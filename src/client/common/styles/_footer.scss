@@ -1,0 +1,32 @@
+#footerContainer {
+  min-height: 30vh;
+  background-color: black;
+  color: white;
+  padding: 6vh 9vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+
+  #footerImages {
+    display: inline;
+  }
+
+  #footerText {
+    font-size: 12px;
+  }
+
+  #tadcLogo {
+    width: 90px;
+    height: auto;
+  }
+
+  #assumptionLogo {
+    width: 100px;
+    height: auto;
+    margin-left: -1.5vw;
+    margin-right: -2vw;
+  }
+}

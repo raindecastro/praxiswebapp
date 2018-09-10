@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactImage from './react.png';
 
-import styles from './_app.scss';
+import styles from './_home.scss';
 import MembersAPI from '../../server/members';
+
+const image1 = require('../../images/image2.jpg');
+const image2 = require('../../images/image3.jpg');
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,22 +15,17 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    const { username } = this.state;
     fetch('/api/getUsername')
       .then(res => res.json())
       .then(user => this.setState({ username: user.username }));
-    console.log(MembersAPI.all());
+    console.log(username);
   }
 
   render() {
-    const { username } = this.state;
     return (
-      <div>
-        {username ? (
-          <h1 id={styles.header}>{`Hello ${username}`}</h1>
-        ) : (
-          <h1>Loading.. please wait!</h1>
-        )}
-        <img src={ReactImage} alt="react" />
+      <div id={styles.homeContainer}>
+        <p id={styles.motto}>BREATHE. LIVE. DANCE.</p>
       </div>
     );
   }

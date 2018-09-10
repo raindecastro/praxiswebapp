@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Open Sans';
+  color: #444;
+}
+
+p {
+  font-family: 'Open Sans';
+  color: #444;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #444;
+}
+a:hover {
+  text-decoration: none;
+  color: #444;
+}
+a:focus {
+  text-decoration: none;
+  color: #444;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #444;
+}
+// @include for-phone-only {
+//   .desktop {
+//     display: none !important;
+//   }
+
+//   .mobile {
+//     display: block;
+//     background-color: lightcoral;
+//   }
+// }
+
+// @include for-tablet-portait-only {
+//   .desktop {
+//     display: none !important;
+//   }
+
+//   .mobile {
+//     display: block;
+//   }
+// }
+
+// @include for-tablet-landscape-only {
+//   .desktop {
+//     display: block;
+//   }
+
+//   .mobile {
+//     display: none !important;
+//   }
+// }
+
+// @include for-desktop-up {
+//   .desktop {
+//     display: block;
+//     background-color: lightcoral;
+//   }
+
+//   .mobile {
+//     display: none !important;
+//     background-color: lightcoral;
+//   }
+// }

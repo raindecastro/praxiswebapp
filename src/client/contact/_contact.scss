@@ -1,0 +1,27 @@
+#mainContainer {
+  min-height: 85vh;
+  display: flex;
+  padding: 6vh 9vw;
+  padding-bottom: 0;
+
+  #leftContainer {
+    width: 50%;
+  }
+
+  #map {
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  #rightContainer {
+    width: 50%;
+  }
+
+  #contactInfoContainer {
+    margin-left: 6vw;
+  }
+
+  #firstHeader {
+    margin-bottom: 2vh;
+  }
+}
