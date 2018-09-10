@@ -1,22 +1,40 @@
 #mainContainer {
   min-height: 100vh;
-
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+  }
   #imageContainer {
     position: absolute;
-    top: 0;
     right: 0;
-    height: 100%;
+
     min-width: 50.5%;
+    @include for-phone-only {
+      position: absolute;
+      width: 100%;
+      bottom: -65vh;
+    }
+    @include for-desktop-only {
+      top: 0;
+      height: 100%;
+    }
   }
 
   #alliePhoto {
     width: 100%;
+    display: block;
   }
 
   #aboutContainer {
     position: sticky;
     top: 220px;
     margin-left: 80px;
+    @include for-phone-only {
+      font-size: 12px;
+      margin-left: 0;
+      margin-top: 120px;
+      position: initial;
+    }
   }
 
   .contentParagraphs {
@@ -24,6 +42,10 @@
     margin-top: 4vh;
     font-size: 14px;
     font-weight: 100;
+    @include for-phone-only {
+      width: 100%;
+      margin-top: 2vh;
+    }
   }
 
   .contentHeader {

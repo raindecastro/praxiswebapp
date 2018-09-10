@@ -1,0 +1,114 @@
+$allieTheme: #6ca18f, #b7dbdb, #ffea59, #b5b867;
+
+#homeContainer {
+  background-color: whtie;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+  .images {
+    max-width: 100%;
+    transition: all 0.5s ease;
+  }
+
+  .imagesRight {
+    max-width: 100%;
+    transition: all 0.5s ease;
+  }
+
+  .letterContainer {
+    background-color: white;
+    position: relative;
+    height: 350px;
+    width: 350px;
+    margin-top: 20vh;
+
+    @include for-phone-only {
+      height: 300px;
+      width: 300px;
+    }
+  }
+
+  #firstImage {
+    max-width: 100%;
+    transition: all 0.5s ease;
+  }
+
+  #firstLetter {
+    margin-top: 0;
+  }
+
+  .messageContainer {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    margin: 40px;
+    margin-top: 0 !important;
+    transition: all 0.5s ease;
+    height: 100%;
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .letterContainer:hover {
+    z-index: 9999;
+  }
+
+  .letterContainerColor1 {
+    background-color: #b7dbdb;
+  }
+
+  .letterContainerColor2 {
+    background-color: #6ca18f;
+  }
+
+  .letterContainerColor3 {
+    background-color: #ffea59;
+  }
+
+  .letterContainerColor4 {
+    background-color: #e5c39e;
+  }
+  .letterContainer:hover > #firstImage {
+    opacity: 0;
+  }
+
+  .letterContainer:hover > .images {
+    opacity: 0;
+  }
+
+  .letterContainer:hover > .imagesRight {
+    opacity: 0;
+  }
+
+  .letterContainer:hover > .messageContainer {
+    opacity: 1;
+  }
+
+  .leftColumn {
+    margin-right: 2vw;
+  }
+
+  .rightColumn {
+    margin-top: 10vh;
+    margin-left: 2vw;
+  }
+
+  .links {
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .links:hover {
+    opacity: 0.6;
+  }
+
+  .letterParagraph {
+    margin-top: 2vh;
+  }
+}
