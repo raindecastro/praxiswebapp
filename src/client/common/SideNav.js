@@ -11,11 +11,6 @@ class SideNav extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    console.log('JAMES IS DA ONE LICA, TRUST ME');
-    console.log('RAIN IS DA ONE PAM, TRUST ME');
-  }
-
   render() {
     return (
       <div id={styles.headerContainer}>
