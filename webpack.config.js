@@ -52,6 +52,9 @@ module.exports = {
       },
     ],
   },
+  stats: {
+    children: false,
+  },
   devServer: {
     port: process.env.PORT || 3000,
     open: true,
