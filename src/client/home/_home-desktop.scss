@@ -1,4 +1,19 @@
 $allieTheme: #6ca18f, #b7dbdb, #ffea59, #b5b867;
+#mainContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#allLetters {
+  width: 500px;
+  height: auto;
+  @include for-phone-only {
+    width: 350px;
+    height: auto;
+  }
+}
 
 #homeContainer {
   background-color: whtie;
@@ -6,7 +21,6 @@ $allieTheme: #6ca18f, #b7dbdb, #ffea59, #b5b867;
   display: flex;
   margin: 0 15vw;
   margin-top: 120px;
-
   .images {
     max-width: 100%;
     transition: all 0.5s ease;

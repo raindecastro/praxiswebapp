@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 import styles from './styles/_header.scss';
 
-const Header = () => (
+const Header = props => (
   <header id={styles.headerContainer}>
     <Fade>
-      <h1 className={`${styles.headerLogo} ${styles.underlineMagical}`}>
-        ALLIE
-      </h1>
+      <Link to="/">
+        <h1
+          onClick={() => {
+            props.showAllLetters();
+          }}
+          className={`${styles.headerLogo} ${styles.underlineMagical}`}
+        >
+          ALLIE
+        </h1>
+      </Link>
       <div id={styles.headerLinks}>
         <Link to="/">
           <p className={styles.links}>HOME</p>
