@@ -7,6 +7,7 @@ import Home from './home/Home';
 import About from './about/About';
 import Contact from './contact/Contact';
 import Letters from './letters/Letters';
+import Portfolio from './portfolio/Portfolio';
 
 export default class App extends Component {
   constructor(props) {
@@ -41,6 +42,13 @@ export default class App extends Component {
               path="/letters/:letter"
               render={props => {
                 return <Letters {...props} />;
+              }}
+            />
+            <Route
+              exact
+              path="/portfolio"
+              render={props => {
+                return <Portfolio {...props} />;
               }}
             />
             <Route path="/about" component={About} />

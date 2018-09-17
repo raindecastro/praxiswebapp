@@ -36,6 +36,15 @@
     transition: width 0.3s;
   }
 
+  .currentLink {
+    display: block;
+    margin-bottom: 3px;
+    height: 1px;
+    background: #000;
+    transition: width 0.3s;
+    width: 100%;
+  }
+
   .links:hover::after {
     width: 100%;
   }

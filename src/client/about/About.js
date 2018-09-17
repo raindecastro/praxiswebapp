@@ -7,6 +7,7 @@ const alliePhoto = require('../../images/allie1.jpg');
 class About extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+    console.log(this.props);
   }
 
   render() {

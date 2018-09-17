@@ -43,6 +43,13 @@ class Letters extends React.Component {
                   @anastasiabway
                 </span>
               </p>
+              <br />
+              <small
+                className={styles.links}
+                onClick={() => this.props.history.push('/')}
+              >
+                Back
+              </small>
             </Fade>
           </div>
           <Fade delay={600}>
@@ -66,6 +73,13 @@ class Letters extends React.Component {
                 throughout (and has been on permanent loop since the Tonys). On
                 most days, I feel like telephone guy.
               </p>
+              <br />
+              <small
+                className={styles.links}
+                onClick={() => this.props.history.push('/')}
+              >
+                Back
+              </small>
             </Fade>
           </div>
           <Fade delay={600}>
@@ -88,6 +102,13 @@ class Letters extends React.Component {
                 insight and clarity, the cast recording keeps me hopeful. Will
                 forever be grateful that this story exists.
               </p>
+              <br />
+              <small
+                className={styles.links}
+                onClick={() => this.props.history.push('/')}
+              >
+                Back
+              </small>
             </Fade>
           </div>
           <Fade delay={600}>
@@ -110,6 +131,13 @@ class Letters extends React.Component {
                 Dear Evan Hansen. Hits me right in the gut, but makes me feel
                 warm everywhere else.
               </p>
+              <br />
+              <small
+                className={styles.links}
+                onClick={() => this.props.history.push('/')}
+              >
+                Back
+              </small>
             </Fade>
           </div>
           <Fade delay={600}>

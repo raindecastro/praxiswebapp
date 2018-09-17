@@ -47,7 +47,7 @@ class HomeDesktop extends React.Component {
       .then(res => res.json())
       .then(user => this.setState({ username: user.username }));
     console.log(username);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     console.log(lettersInfoLeft);
     console.log(this.props);
   }
