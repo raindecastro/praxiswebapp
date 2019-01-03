@@ -1,32 +1,46 @@
-#footerContainer {
-  min-height: 30vh;
-  background-color: black;
-  color: white;
-  padding: 6vh 9vw;
-
+.footerContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  text-align: right;
-
-  #footerImages {
-    display: inline;
+  justify-content: space-between;
+  padding: 5vw;
+  background-color: #515050;
+  @include for-phone-only {
+    flex-direction: column;
+    padding: 5vh;
+  }
+  @include for-tablet-portait-only {
+    flex-direction: column;
+    padding: 5vh;
   }
 
-  #footerText {
+  .praxisSmallParagraph {
     font-size: 12px;
+    color: white;
   }
 
-  #tadcLogo {
-    width: 90px;
-    height: auto;
+  .leftLinks {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    @include for-phone-only {
+      flex-direction: column;
+      width: 100%;
+    }
+    @include for-tablet-portait-only {
+      flex-direction: column;
+      width: 100%;
+    }
   }
 
-  #assumptionLogo {
-    width: 100px;
-    height: auto;
-    margin-left: -1.5vw;
-    margin-right: -2vw;
+  .rightLinks {
+    width: 50%;
+    text-align: right;
+    @include for-phone-only {
+      text-align: left;
+      margin-top: 6vh;
+    }
+    @include for-tablet-portait-only {
+      text-align: left;
+      margin-top: 6vh;
+    }
   }
 }

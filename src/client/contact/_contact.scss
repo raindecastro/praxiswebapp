@@ -1,27 +1,118 @@
-#mainContainer {
-  min-height: 60vh;
-  display: flex;
-  padding: 6vh 9vw;
-  padding-bottom: 0;
+.contactContainer {
   margin-top: 10vh;
-  #leftContainer {
+  padding: 5vw;
+
+  @include for-phone-only {
+    margin-top: 15vh;
+    padding: 5vh;
+  }
+  @include for-tablet-portait-only {
+    margin-top: 15vh;
+    padding: 5vh;
+  }
+  .contactContainer__headerContainer {
+    text-align: center;
+  }
+
+  .contactContainer__formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .formContainer__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 2vh;
     width: 50%;
+    @include for-phone-only {
+      width: 100%;
+    }
+    @include for-tablet-portait-only {
+      width: 100%;
+    }
   }
 
-  #map {
-    max-width: 100%;
-    max-height: auto;
+  .praxisHeader {
+    font-size: 36px;
+    @include for-phone-only {
+      font-size: 28px;
+    }
+    @include for-tablet-portait-only {
+      font-size: 28px;
+    }
   }
 
-  #rightContainer {
-    width: 50%;
+  .praxisParagraph {
+    font-size: 16px;
   }
 
-  #contactInfoContainer {
-    margin-left: 6vw;
+  .praxisSmallHeader {
+    font-size: 24px;
   }
 
-  #firstHeader {
+  .praxisSmallerHeader {
+    font-size: 18px;
+    @include for-phone-only {
+      font-size: 14px;
+    }
+    @include for-tablet-portait-only {
+      font-size: 14px;
+    }
+  }
+
+  .praxisSmallParagraph {
+    font-size: 14px;
+  }
+
+  .praxisInput {
+    height: 50px;
+    border-color: #e0e1e3;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+
+  .praxisInput:focus {
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ed1c23;
+  }
+
+  .praxisTextArea {
+    border-color: #e0e1e3;
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .praxisTextArea:focus {
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ed1c23;
+  }
+
+  .skylightButton {
+    align-self: center;
+  }
+
+  .skylightParagraph {
+    font-size: 16px;
     margin-bottom: 2vh;
   }
 }

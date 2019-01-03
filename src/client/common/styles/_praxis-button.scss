@@ -1,0 +1,144 @@
+.button {
+  border-radius: 5px;
+  border: none;
+  padding: 18px 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  box-shadow: 0 8px 16px 0 rgba(237, 28, 35, 0.3);
+  @include for-phone-only {
+    font-size: 12px;
+  }
+  @include for-tablet-portait-only {
+    font-size: 12px;
+  }
+  @include for-tablet-landscape-only {
+    font-size: 14px;
+  }
+  @include for-desktop-only {
+    font-size: 14px;
+  }
+  @include for-big-desktop-up {
+    font-size: 16px;
+  }
+}
+
+.praxisRedButton {
+  background-color: #ed1c23;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 14px;
+  transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-in;
+}
+
+.praxisRedButton:hover {
+  transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-in;
+  background-color: darken($color: #ed1c23, $amount: 10);
+}
+
+.button.square-button {
+  border-radius: 5px;
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.button.square-button {
+  border-radius: 5px;
+}
+
+.none {
+  background-color: white;
+  color: black;
+}
+
+.light.fill {
+  background-color: #00adee;
+}
+
+.dark.fill {
+  background-color: #1c75bc;
+}
+
+.dark.borderless {
+  color: #1c75bc;
+  border-width: 0;
+}
+
+.light.stroke {
+  color: #00adee;
+  border-color: #00adee;
+  border-width: 1px;
+  border-style: solid;
+  background-color: white;
+}
+
+.light.stroke.invert {
+  color: white;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #0aadee;
+}
+
+.dark.stroke {
+  color: #1c75bc;
+  border-color: #1c75bc;
+  border-width: 1px;
+  border-style: solid;
+  background-color: white;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button .icon {
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .button .icon {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.button.button-big {
+  padding: 15px 65px;
+}
+
+.button.button-big span {
+  font-weight: 400;
+  font-size: 16px;
+}
+.button.button-long {
+  padding: 12px 50px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.category-button {
+  min-width: 100px;
+  background-color: #224b6d;
+  opacity: 0.3;
+}
+
+.category-button.selected {
+  opacity: 1;
+}

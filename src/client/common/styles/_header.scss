@@ -1,24 +1,87 @@
+.whiteHeader {
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  // transition: background-color 0.2s ease;
+}
+
+.praxisParagraph {
+  font-size: 14px;
+}
+
+.transparentHeader {
+  background-color: transparent;
+  transition: background-color 0.2s ease-out;
+}
+
+.headerContainerNoLogo {
+  @include for-phone-only {
+    justify-content: space-between;
+  }
+  @include for-tablet-portait-only {
+    justify-content: space-between;
+  }
+  @include for-tablet-landscape-only {
+    justify-content: flex-end !important;
+  }
+  @include for-desktop-only {
+    justify-content: flex-end !important;
+  }
+}
+
 #headerContainer {
   position: fixed;
   top: 0;
-  padding-top: 30px;
+  right: 0;
   width: 100%;
   z-index: 99;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 50px;
+
+  @include for-phone-only {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+  }
+  @include for-tablet-portait-only {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+  }
+
+  .headerLink {
+    margin-right: 30px;
+    font-size: 14px;
+    cursor: pointer;
+  }
 
   .headerLogo {
     font-weight: 400;
     letter-spacing: 10px;
-    text-align: center;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .logo {
+    width: 120px;
+    margin-left: 5vw;
+    @include for-phone-only {
+      margin-left: 5vh;
+    }
+    @include for-tablet-portait-only {
+      margin-left: 5vh;
+    }
   }
 
   #headerLinks {
-    margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
     @include for-phone-only {
       width: 80%;
       margin-left: 50px;
@@ -36,15 +99,6 @@
     transition: width 0.3s;
   }
 
-  .currentLink {
-    display: block;
-    margin-bottom: 3px;
-    height: 1px;
-    background: #000;
-    transition: width 0.3s;
-    width: 100%;
-  }
-
   .links:hover::after {
     width: 100%;
   }
@@ -59,4 +113,93 @@
       background-size: 100% 88%;
     }
   }
+}
+
+.headerMenu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.1s ease-out;
+  transition: max-height 0.1s ease-in;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: white;
+  text-align: center;
+  position: initial;
+
+  -webkit-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 21px 55px -22px rgba(0, 0, 0, 0.75);
+  p {
+    display: block;
+    padding-bottom: 2vh;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.menuIcon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 7vh;
+  padding-right: 4vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  user-select: none;
+}
+
+.menuButton {
+  display: none;
+}
+
+.navicon {
+  background: black;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 20px;
+}
+
+.navicon:after,
+.navicon:before {
+  background: black;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.navicon:before {
+  top: 5px;
+}
+
+.navicon:after {
+  top: -5px;
+}
+
+.menuButton:checked ~ .headerMenu {
+  max-height: 240px;
+}
+
+.menuButton:checked ~ .menuIcon .navicon {
+  background: transparent;
+}
+
+.menuButton:checked ~ .menuIcon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menuButton:checked ~ .menuIcon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menuButton:checked ~ .menuIcon:not(.steps) .navicon:before,
+.menuButton:checked ~ .menuIcon:not(.steps) .navicon:after {
+  top: 0;
 }

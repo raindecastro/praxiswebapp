@@ -1,55 +1,118 @@
-#mainContainer {
-  min-height: 100vh;
-  @include for-phone-only {
+.aboutContainer {
+  .praxisHeader {
+    font-size: 36px;
+    margin-bottom: 4vh;
+    @include for-phone-only {
+      font-size: 28px;
+    }
+    @include for-tablet-portait-only {
+      font-size: 28px;
+    }
+  }
+
+  .praxisParagraph {
+    font-size: 16px;
+  }
+
+  .praxisSmallHeader {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .praxisSmallerHeader {
+    font-size: 18px;
+    @include for-phone-only {
+      font-size: 14px;
+    }
+    @include for-tablet-portait-only {
+      font-size: 14px;
+    }
+  }
+
+  .firstSection {
+    text-align: center;
+    margin-right: 15vw;
+    margin-left: 15vw;
+    margin-top: 10vh;
+    padding: 5vw;
+    @include for-phone-only {
+      margin: 0;
+      margin-top: 20vh;
+      margin-bottom: 4vh;
+    }
+    @include for-tablet-portait-only {
+      margin: 0;
+      margin-top: 20vh;
+      margin-bottom: 4vh;
+    }
+  }
+
+  .secondSection {
+    padding: 6vh 25vw;
+    min-height: 60vh;
+    background-color: lighten($color: lightgray, $amount: 10);
+    @include for-phone-only {
+      padding: 6vh 10vw;
+    }
+    @include for-tablet-portait-only {
+      padding: 6vh 10vw;
+    }
+  }
+
+  .teamLinks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vh;
+    margin-bottom: 6vh;
+  }
+
+  .teamMembers__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    background-color: lightgray;
+  }
+
+  .teamMembers__content {
     display: flex;
     flex-direction: column;
-  }
-  #imageContainer {
-    position: absolute;
-    right: 0;
-
-    min-width: 50.5%;
+    justify-content: center;
+    align-items: center;
     @include for-phone-only {
-      position: absolute;
-      width: 100%;
-      bottom: -65vh;
+      margin-bottom: 4vh;
+      margin-top: 4vh;
     }
-    @include for-desktop-only {
-      top: 0;
-      height: 100%;
+    @include for-tablet-portait-only {
+      margin-bottom: 4vh;
+      margin-top: 4vh;
     }
   }
 
-  #alliePhoto {
-    width: 100%;
-    display: block;
-  }
-
-  #aboutContainer {
-    position: sticky;
-    top: 220px;
-    margin-left: 80px;
+  .teamMembers__three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10vh;
     @include for-phone-only {
-      font-size: 12px;
-      margin-left: 0;
-      margin-top: 120px;
-      position: initial;
+      display: block;
+      margin-top: 0;
+    }
+    @include for-tablet-portait-only {
+      display: block;
+      margin-top: 0;
     }
   }
 
-  .contentParagraphs {
-    width: 35%;
-    margin-top: 4vh;
-    font-size: 14px;
-    font-weight: 100;
+  .teamMembers__two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 6vh 8vw;
     @include for-phone-only {
-      width: 100%;
-      margin-top: 2vh;
+      display: block;
+      margin: 0;
     }
-  }
-
-  .contentHeader {
-    font-weight: 400;
-    letter-spacing: 12px;
+    @include for-tablet-portait-only {
+      display: block;
+      margin: 0;
+    }
   }
 }

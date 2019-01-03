@@ -3,58 +3,43 @@ import { Switch, Route } from 'react-router-dom';
 import styles from './_app.scss';
 // Containers
 import Header from './common/Header';
-import Home from './home/Home';
-import About from './about/About';
+import Footer from './common/Footer';
+import LandingPage from './home/LandingPage';
+import News from './news/News';
 import Contact from './contact/Contact';
-import Letters from './letters/Letters';
-import Portfolio from './portfolio/Portfolio';
+import FullPost from './news/FullPost';
+import About from './about/About';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showAllLetters: false,
-    };
+    this.state = {};
   }
 
-  showAllLetters = () => {
-    this.setState(prevState => {
-      return { showAllLetters: !prevState.showAllLetters };
-    });
-  };
-
   render() {
-    const { showAllLetters } = this.state;
     return (
       <main id={styles.mainContainer}>
-        <Header showAllLetters={this.showAllLetters} />
+        <Header />
         <div id={styles.contentContainer}>
           <Switch>
             <Route
               exact
               path="/"
-              render={props => {
-                return <Home showAllLetters={showAllLetters} {...props} />;
-              }}
+              render={props => <LandingPage {...props} />}
             />
-            <Route
-              exact
-              path="/letters/:letter"
-              render={props => {
-                return <Letters {...props} />;
-              }}
-            />
+            <Route exact path="/news" render={props => <News {...props} />} />
             <Route
               exact
               path="/portfolio"
-              render={props => {
-                return <Portfolio {...props} />;
-              }}
+              render={props => <LandingPage {...props} />}
             />
-            <Route path="/about" component={About} />
+            <Route path="/about" render={props => <About {...props} />} />
             <Route path="/contact" component={Contact} />
+            <Route path="/news/:id" render={props => <FullPost {...props} />} />
           </Switch>
+          ,
         </div>
+        <Footer />
       </main>
     );
   }

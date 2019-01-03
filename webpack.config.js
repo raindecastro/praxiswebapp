@@ -67,7 +67,7 @@ module.exports = {
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon2.ico',
+      favicon: './public/favicon.ico',
     }),
   ],
 };
