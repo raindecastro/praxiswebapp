@@ -4,11 +4,11 @@
   "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
   "main": "server.js",
   "scripts": {
+    "start": "webpack --config webpack.prod.js",
     "build": "webpack --config webpack.prod.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "postinstall": "npm run start"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Rain de Castro",
   "license": "ISC",
