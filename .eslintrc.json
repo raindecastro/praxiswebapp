@@ -7,7 +7,14 @@
   },
   "rules": {
     "no-console": "off",
+    "no-else-return": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": "off",
+    "implicit-arrow-linebreak": "off",
+    "react/no-unescaped-entities": "off",
+    "arrow-parens": "off"
   }
 }
