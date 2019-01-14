@@ -6,6 +6,8 @@ import firebase from '../../../Firestore';
 import CSSModules from 'react-css-modules';
 import { Dropdown } from 'reactjs-dropdown-component';
 import Fade from 'react-reveal/Fade';
+import makeCarousel from 'react-reveal/makeCarousel';
+import Slide from 'react-reveal/Slide';
 
 import styles from './_landing-page.scss';
 import './dropdown.css';
@@ -50,6 +52,126 @@ class LandingPage extends React.Component {
 
     this.setState({ headerColor: 'transparentHeader', showLogo: false });
   }
+
+  renderCarousel = () => {
+    const CarouselUI = ({ position, total, children, handleClick }) => (
+      <div id={styles.carouselContainer}>
+        <div id={styles.carouselChildren}>
+          {children}
+          <div
+            className={styles.carouselArrow}
+            onClick={handleClick}
+            data-position={position - 1}
+          >
+            {'<'}
+          </div>
+          <div
+            className={styles.carouselArrowRight}
+            onClick={handleClick}
+            data-position={position + 1}
+          >
+            {'>'}
+          </div>
+        </div>
+        <div id={styles.dots}>
+          {Array(...Array(total)).map((val, index) => (
+            <div
+              id={styles.dot}
+              key={index}
+              onClick={handleClick}
+              data-position={index}
+            >
+              {index === position ? '● ' : '○ '}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+    const Carousel = makeCarousel(CarouselUI);
+
+    return (
+      <Carousel defaultWait={7000} /*wait for 1000 milliseconds*/>
+        <Slide right>
+          <div className={styles.sixthSection__content}>
+            <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div>
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                “At AIA Thailand and in conjunction with our training academy
+                for Bangkok Bank, we have been really impressed with the level
+                of engagement that Praxis has brought to our foundational
+                courses and events. Attendees seem to really enjoy
+                participating, and the networking, educational and engagement
+                benefits of Praxis gamification and its flexible platform have
+                helped us deliver great value to our bank partner. It was also a
+                great, fun way to drive individual engagement with measurable
+                results…the  attendees really got inspired and enthusiastic
+                about competing with each other… it has been a real value add to
+                our academy.” 
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>Darren Thomson</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Chief Strategic Bancassurance Alliance Officer, AIA Thailand
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div className={styles.sixthSection__content}>
+            <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div>
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                "Praxis is a great gameplay where folks of all ages can
+                experience the reality of different financial situations thru
+                its simple to understand gamification design. Over the last 2
+                years, we have engaged our financial advisors, clients and
+                financial advisor candidates with Praxis. The participants who
+                play the game have found it to be most fun and effective to
+                discover the importance of financial literacy. The gameplay has
+                simplified money mastery and offer practical insights to one’s
+                own financial and money management mindset. At the end of the
+                each session, Praxis offers good money habits as key takeaways
+                for our participants. We would recommend anyone who wishes to
+                master their financial destiny to experience Praxis!"
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>Great Eastern Life Assurance Co Ltd, Singapore</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph} />
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div className={styles.sixthSection__content}>
+            <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div>
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                "We are proud to endorse the game Praxis. It offers a hands-on
+                approach to grasping abstract concepts and we welcome the game
+                as a powerful pedagogical tool for teaching and training."
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>Dr. Koh Noi Keng</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Lecturer, National Institute of Education, Singapore
+              </p>
+            </div>
+          </div>
+        </Slide>
+      </Carousel>
+    );
+  };
 
   clearForm = () => {
     this.setState({
@@ -101,6 +223,97 @@ class LandingPage extends React.Component {
     this.setState({
       [key]: temp,
     });
+  };
+
+  renderTabParagraph = () => {
+    const { activeTab } = this.state;
+
+    if (activeTab === 1) {
+      return (
+        <ul>
+          <li>
+            • Praxis used as an alternative learning tool in schools, whether in
+            primary, secondary, or college level
+          </li>
+          <li>
+            • May be made to relate to specific subjects or courses in school
+          </li>
+          <li>
+            • Or to educate the youth to be financially free/ money-wise and
+            prepare them for the future
+          </li>
+          <li>
+            • Praxis Junior variant ideal for ages 8 to 11 (include narrative
+            from AVP)
+          </li>
+          <li>• To promote financial literacy among the youth</li>
+          <li>• Praxis variants used for education: Junior and Classic</li>
+        </ul>
+      );
+    } else if (activeTab === 2) {
+      return (
+        <ul>
+          <li>
+            • For any company / business for their employee financial wellness
+          </li>
+          <li>• Refer to employee wellness material</li>
+          <li>• Praxis variants used for wellness: Classic, Plus</li>
+        </ul>
+      );
+    } else if (activeTab === 3) {
+      return (
+        <ul>
+          <li>• For financial services companies</li>
+          <li>
+            • Praxis may be used during recruitment programs for financial
+            advisers
+          </li>
+          <li>
+            • To promote the value of financial products and the value of being
+            financial advisers
+          </li>
+          <li>
+            • Praxis variants used for recruitment: Classic, Plus, Unit-Linked
+          </li>
+        </ul>
+      );
+    } else if (activeTab === 4) {
+      return (
+        <ul>
+          <li>• For financial services companies</li>
+          <li>
+            • Praxis may be used in the training programs of financial advisers
+          </li>
+          <li>
+            • Specific products may be incorporated in the Praxis gameplay to
+            educate financial advisers about product features and benefits
+          </li>
+          <li>
+            • Praxis helps financial advisers realize and learn how to
+            effectively approach their sales prospects with their financial
+            needs
+          </li>
+          <li>
+            • Praxis variants used for training: Classic, Plus, Unit-Linked
+          </li>
+        </ul>
+      );
+    } else if (activeTab === 5) {
+      return (
+        <ul>
+          <li>
+            • Financial advisers may further benefit from using Praxis as a tool
+            to present the value of specific financial products to potential
+            clients hence getting more leads for their sales activities
+          </li>
+          <li>
+            • Praxis will help in making people realize their financial needs
+            and will in turn help advisers in proposing appropriate financial
+            products to them
+          </li>
+        </ul>
+      );
+    }
   };
 
   render() {
@@ -166,16 +379,15 @@ class LandingPage extends React.Component {
                 Now everyone can master money
               </h1>
               <p className={styles.praxisParagraph} id={styles.firstParagraph}>
-                In just 90 minutes, players are exposed to a unique gameplay
-                experience that takes you through comprossed financial
-                realities. Interested? Schedule a game play now!
+                Learn to be money-wise while having fun! Experience Praxis for
+                yourself and discover your money potential now!
               </p>
             </Fade>
             <Fade delay={400}>
               <PraxisButton
                 id={styles.firstButton}
                 color="praxisRedButton"
-                text="PLAY THE GAME"
+                text="PLAY PRAXIS"
               />
             </Fade>
           </div>
@@ -196,11 +408,11 @@ class LandingPage extends React.Component {
                 What is Praxis?
               </h1>
               <p id={styles.secondParagprah} className={styles.praxisParagraph}>
-                Praxis is a 90-minute to 2-hour game play that offers a fun,
-                engaging, and effecive learning experience to anyone who wishes
-                to master money. Through the realistic life simulation, this
-                game allows users to easily draw practical financial insights
-                and form good money habits. Learn more about it in this video.
+                Praxis is a unique learning tool that simulates your financial
+                life through an exciting and engaging gameplay. Fun, flexible,
+                and interactive, Praxis delivers unmatched practical and
+                financial insights, enabling users to effectively learn good
+                personal money habits.
               </p>
             </div>
           </Fade>
@@ -208,13 +420,13 @@ class LandingPage extends React.Component {
         <section id={styles.thirdSection}>
           <div id={styles.thirdSection__first}>
             <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
-              Designed for Effectivity
+              Designed for Everyone
             </h1>
             <p className={styles.praxisParagraph}>
-              Unline traditional board games, game play experiences are tailor
-              fit to a player's objective. Are you teaching children basic money
-              matters? Are you reacruiting agents to understand more benefits of
-              the products you're selling? learn more about each below!
+              Every Praxis gameplay is different and customized to its specific
+              audience, whether for students as part of their class or course,
+              for companies’ employee wellness programs, or for financial
+              institutions’ sales and customer engagement.
             </p>
           </div>
           <MediaQuery query="(min-device-width: 900px)">
@@ -364,11 +576,7 @@ class LandingPage extends React.Component {
                     </h1>
                     <br />
                     <p className={styles.praxisSmallParagraph}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Mauris vestibulum sem felis, vel bibendum lorem placerat
-                      id. In egestas urna at ante venenatis dictum. Mauris
-                      vestibulum sem felis, vel bibendum lorem placerat id. In
-                      egestas urna at ante venenatis dictum.
+                      {this.renderTabParagraph()}
                     </p>
                   </div>
 
@@ -770,7 +978,7 @@ class LandingPage extends React.Component {
           </div>
         </section>
         <section id={styles.sixthSection}>
-          <div className={styles.sixthSection__content}>
+          {/* <div className={styles.sixthSection__content}>
             <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
             </div>
@@ -788,7 +996,8 @@ class LandingPage extends React.Component {
               </p>
               <p className={styles.praxisSmallParagraph}>CEO, Company XYZ</p>
             </div>
-          </div>
+          </div> */}
+          {this.renderCarousel()}
         </section>
         <section id={styles.seventhSection}>
           <div className={styles.seventhSection__mapContainer}>

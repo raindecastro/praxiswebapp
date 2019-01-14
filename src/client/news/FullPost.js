@@ -20,7 +20,7 @@ class FullPost extends React.Component {
     // GET BLOG POSTS
     axios
       .get(
-        'http://public-api.wordpress.com/rest/v1/sites/praxisnews805556360.wordpress.com/posts/' +
+        'http://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/' +
           this.props.match.params.id
       )
       .then(res => {
