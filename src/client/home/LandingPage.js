@@ -28,6 +28,9 @@ const tab4 = require('../../images/elements/Training.svg');
 const tab5 = require('../../images/elements/Leadgen.svg');
 const tabImage = require('../../images/elements/3rd-img.png');
 const videoContainerImage = require('../../images/elements/video-img.png');
+const fourtSectionImage1 = require('../../images/elements/fourth1.png');
+const fourtSectionImage2 = require('../../images/elements/fourth2.png');
+const chair = require('../../images/elements/chair.png');
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -230,88 +233,102 @@ class LandingPage extends React.Component {
 
     if (activeTab === 1) {
       return (
-        <ul>
-          <li>
-            • Praxis used as an alternative learning tool in schools, whether in
-            primary, secondary, or college level
-          </li>
-          <li>
-            • May be made to relate to specific subjects or courses in school
-          </li>
-          <li>
-            • Or to educate the youth to be financially free/ money-wise and
-            prepare them for the future
-          </li>
-          <li>
-            • Praxis Junior variant ideal for ages 8 to 11 (include narrative
-            from AVP)
-          </li>
-          <li>• To promote financial literacy among the youth</li>
-          <li>• Praxis variants used for education: Junior and Classic</li>
-        </ul>
+        <div>
+          <ul>
+            <li>
+              - Ideal for schools, whether in primary, secondary, or college
+              level.
+            </li>
+            <li>
+              - May be used as an alternative learning tool related to specific
+              subjects/courses
+            </li>
+            <li>- Promotes financial literacy among the youth</li>
+          </ul>
+          <br />
+          <p>
+            Praxis variants used for education: Praxis Junior (ideal for ages 8
+            to 11) and Praxis Classic
+          </p>
+        </div>
       );
     } else if (activeTab === 2) {
       return (
-        <ul>
-          <li>
-            • For any company / business for their employee financial wellness
-          </li>
-          <li>• Refer to employee wellness material</li>
-          <li>• Praxis variants used for wellness: Classic, Plus</li>
-        </ul>
+        <div>
+          <ul>
+            <li>- Ideal for companies/businesses</li>
+            <li>- Promotes financial wellness among employees</li>
+            <li>- Promotes financial literacy among the youth.</li>
+          </ul>
+          <br />
+          <p>Praxis variants used for wellness: Praxis Classic, Praxis Plus</p>
+        </div>
       );
     } else if (activeTab === 3) {
       return (
-        <ul>
-          <li>• For financial services companies</li>
-          <li>
-            • Praxis may be used during recruitment programs for financial
-            advisers
-          </li>
-          <li>
-            • To promote the value of financial products and the value of being
-            financial advisers
-          </li>
-          <li>
-            • Praxis variants used for recruitment: Classic, Plus, Unit-Linked
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <li>- Ideal for financial services companies</li>
+            <li>- Maybe used in recruitment programs for financial advisers</li>
+            <li>
+              - Promotes the features and benefits of specific financial
+              products and emphasizes the value of financial advisers
+            </li>
+          </ul>
+          <br />
+          <p>
+            Praxis variants used for recruitment: Praxis Classic, Praxis Plus,
+            Praxis Unit- Linked
+          </p>
+        </div>
       );
     } else if (activeTab === 4) {
       return (
-        <ul>
-          <li>• For financial services companies</li>
-          <li>
-            • Praxis may be used in the training programs of financial advisers
-          </li>
-          <li>
-            • Specific products may be incorporated in the Praxis gameplay to
-            educate financial advisers about product features and benefits
-          </li>
-          <li>
-            • Praxis helps financial advisers realize and learn how to
-            effectively approach their sales prospects with their financial
-            needs
-          </li>
-          <li>
-            • Praxis variants used for training: Classic, Plus, Unit-Linked
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <li>- Ideal for financial services companies</li>
+            <li>
+              - Maybe used in the training programs of financial advisers,
+              specifically to educate them about product features and benefits
+            </li>
+            <li>
+              - Empowers financial advisers to effectively approach their sales
+              prospects and cater to their needs
+            </li>
+          </ul>
+          <br />
+          <p>
+            Praxis variants used for training: Praxis Classic, Praxis Plus,
+            Praxis Unit-Linked
+          </p>
+        </div>
       );
     } else if (activeTab === 5) {
       return (
-        <ul>
-          <li>
-            • Financial advisers may further benefit from using Praxis as a tool
-            to present the value of specific financial products to potential
-            clients hence getting more leads for their sales activities
-          </li>
-          <li>
-            • Praxis will help in making people realize their financial needs
-            and will in turn help advisers in proposing appropriate financial
-            products to them
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <li>- Ideal for financial advisers</li>
+            <li>
+              - May be used as a tool to demonstrate the value of specific
+              financial products to potential clients
+            </li>
+            <li>
+              - Helps financial advisers recognize their potential clients’
+              needs, and helps potential clients understand the products being
+              presented to them better
+            </li>
+            <li>
+              - Praxis will help in making people realize their financial needs
+              and will in turn help advisers in proposing appropriate financial
+              products to them
+            </li>
+          </ul>
+          <br />
+          <p>
+            Praxis variants used for training: Praxis Classic, Praxis Plus,
+            Praxis Unit-Linked
+          </p>
+        </div>
       );
     }
   };
@@ -563,7 +580,7 @@ class LandingPage extends React.Component {
                   <div className={styles.tabContainer__tabInformation__title}>
                     <h1 className={styles.praxisHeader}>
                       {activeTab === 1
-                        ? 'Start them young'
+                        ? 'Education'
                         : activeTab === 2
                         ? 'Wellness'
                         : activeTab === 3
@@ -664,106 +681,57 @@ class LandingPage extends React.Component {
         <MediaQuery query="(min-device-width: 1224px)">
           <section id={styles.fourthSection}>
             <h1 id={styles.fourthParagraph} className={styles.praxisHeader}>
-              How do you play?
+              Experience Praxis Now
             </h1>
-            <div className={styles.fourthSection__row}>
-              <div className={styles.circleImage__left}>
-                <img src={step1} alt={step1} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 1</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Goal Setting
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
+            <div className={styles.fourthSection__newRow}>
+              <div className={styles.fourthSection__newParagraph}>
+                <p>
+                  We can customize Praxis gameplays exclusively for you
+                  students, employees, or staff.
                 </p>
+              </div>
+              <div className={styles.fourthSection__newImageContainer}>
+                <img
+                  className={styles.fourthSection__newImage}
+                  src={fourtSectionImage1}
+                  alt="fourth1"
+                />
               </div>
             </div>
-            <div className={styles.fourthSection__rowSecond}>
-              <div className={styles.circleImage__left}>
-                <img src={step2} alt={step2} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContentSecond}>
-                <p className={styles.praxisSmallParagraph}>STEP 2</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Gameplay Design
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
+            <div className={styles.fourthSection__newSecondRow}>
+              <div className={styles.fourthSection__newSecondParagraph}>
+                <p>
+                  Partner with Praxis to bring financial literacy to your people
+                  and organization.
                 </p>
+              </div>
+              <div className={styles.fourthSection__newImageContainer}>
+                <img
+                  className={styles.fourthSection__newImage}
+                  src={fourtSectionImage2}
+                  alt="fourth1"
+                />
               </div>
             </div>
-            <div className={styles.fourthSection__row}>
-              <div className={styles.circleImage__left}>
-                <img src={step3} alt={step3} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 3</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Game Master Needs
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
+            <div className={styles.fourthSection__bottom}>
+              <div className={styles.fourthSection__bottomContent}>
+                <p>
+                  {' '}
+                  Get in touch with us to schedule a FREE Praxis demo for your
+                  company / school
                 </p>
+                <div>
+                  <PraxisButton
+                    id={styles.fourthSection__button}
+                    color="praxisRedButton"
+                    text="PLAY THE GAME"
+                  />
+                </div>
               </div>
-            </div>
-            <div className={styles.fourthSection__rowSecond}>
-              <div className={styles.circleImage__left}>
-                <img src={step4} alt={step4} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContentSecond}>
-                <p className={styles.praxisSmallParagraph}>STEP 4</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Commence Game
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
-                </p>
-              </div>
-            </div>
-            <div className={styles.fourthSection__row}>
-              <div className={styles.circleImage__left}>
-                <img src={step5} alt={step5} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 5</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Determine The Winner
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
-                </p>
-              </div>
-              <PraxisButton
-                id={styles.fourthSection__button}
-                color="praxisRedButton"
-                text="PLAY THE GAME"
+              <img
+                className={styles.fourthSection__chair}
+                src={chair}
+                alt="chair"
               />
             </div>
           </section>
@@ -883,14 +851,8 @@ class LandingPage extends React.Component {
         <section id={styles.fifthSection}>
           <div id={styles.fifthSection__first}>
             <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
-              Pricing
+              Praxis Partnerships
             </h1>
-            <p className={styles.praxisParagraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              vestibulum sem felis, vel bibendum lorem placerat id. In egestas
-              urna at ante venenatis dictum. Aliquam sollicitudin eget velit non
-              consequat.
-            </p>
             <br />
           </div>
           <div id={styles.fifthSection__second} ref="scrollableRow">
