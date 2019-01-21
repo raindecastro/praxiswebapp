@@ -12,6 +12,7 @@ import Slide from 'react-reveal/Slide';
 import styles from './_landing-page.scss';
 import './dropdown.css';
 import PraxisButton from '../common/PraxisButton';
+import Select from 'react-select';
 
 const praxisLogo = require('../../images/elements/logo-big.svg');
 const step1 = require('../../images/elements/Step1.svg');
@@ -32,6 +33,75 @@ const fourtSectionImage1 = require('../../images/elements/fourth1.png');
 const fourtSectionImage2 = require('../../images/elements/fourth2.png');
 const chair = require('../../images/elements/chair.png');
 
+const selectStyles = {
+  control: (base, state) => ({
+    ...base,
+    minHeight: 64,
+    fontFamily: 'Montserrat',
+    fontSize: '14px',
+    boxShadow: 'none',
+    backgroundColor: '#F8F9FD',
+    color: '#263a4f',
+    borderRadius: 0,
+    borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
+    padding: '1em',
+    '&:hover': {
+      borderColor: '#263a4f',
+    },
+  }),
+  dropdownIndicator: base => ({
+    ...base,
+    paddingTop: 0,
+    paddingBottom: 0,
+    color: '##263a4f',
+    border: 'none',
+  }),
+  clearIndicator: base => ({
+    ...base,
+    paddingTop: 0,
+    paddingBottom: 0,
+    display: 'none',
+  }),
+  indicatorSeparator: base => ({
+    ...base,
+    display: 'none',
+  }),
+  placeholder: base => ({
+    ...base,
+    color: '#263a4f',
+    fontSize: '14px',
+  }),
+  menu: (base, state) => ({
+    ...base,
+    borderRadius: 'none',
+    marginTop: '-1em',
+  }),
+  menuList: (base, state) => ({
+    ...base,
+    paddingTop: '0',
+  }),
+  option: (base, state) => ({
+    ...base,
+    padding: '1em 2em',
+    fontSize: '14px',
+    fontFamily: 'Montserrat',
+    ':hover': {
+      backgroundColor: '#263a4f',
+      color: '#FAFAFA',
+    },
+    backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
+    color: state.isSelected ? '#fafafa' : '#263a4f',
+  }),
+};
+
+const options = [
+  { value: 1, label: 'Education' },
+  { value: 2, label: 'Wellness' },
+  { value: 3, label: 'Recruitment' },
+  { value: 4, label: 'Training' },
+  { value: 5, label: 'Lead Generation' },
+];
+
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
@@ -44,6 +114,7 @@ class LandingPage extends React.Component {
       mobileNumber: '',
       email: '',
       message: '',
+      mobileTab: 1,
     };
   }
 
@@ -343,6 +414,7 @@ class LandingPage extends React.Component {
       mobileNumber,
       email,
       message,
+      mobileTab,
     } = this.state;
 
     const dialogStyles = {
@@ -623,7 +695,9 @@ class LandingPage extends React.Component {
           </MediaQuery>
           <MediaQuery query="(max-device-width: 899px)">
             <br /> <br />
-            <div
+            <br />
+            <br />
+            {/* <div
               onClick={() => {
                 this.setState({
                   activeSelectTab: !activeSelectTab,
@@ -633,18 +707,39 @@ class LandingPage extends React.Component {
             >
               <h1>EDUCATION</h1>
               <div className={styles.tabContainer__arrow} />
+            </div> */}
+            <div>
+              <Select
+                styles={selectStyles}
+                className="praxis-select"
+                classNamePrefix="select"
+                options={options}
+                defaultValue={options[0]}
+                isSearchable={false}
+                isClearable={false}
+                onChange={e => {
+                  this.setState({ activeTab: e.value });
+                }}
+              />
             </div>
             <div className={styles.tabContainer__mobileContent}>
-              <h1 className={styles.praxisHeader}>Start them young</h1>
+              <h1 className={styles.praxisHeader}>
+                {activeTab === 1
+                  ? 'Start them young'
+                  : activeTab === 2
+                  ? 'Wellness'
+                  : activeTab === 3
+                  ? 'Recruitment'
+                  : activeTab === 4
+                  ? 'Training'
+                  : activeTab === 5
+                  ? 'Lead Generation'
+                  : 'Start them young'}
+              </h1>
               <br />
               <br />
-
               <p className={styles.praxisSmallParagraph}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                vestibulum sem felis, vel bibendum lorem placerat id. In egestas
-                urna at ante venenatis dictum. Mauris vestibulum sem felis, vel
-                bibendum lorem placerat id. In egestas urna at ante venenatis
-                dictum.
+                {this.renderTabParagraph()}
               </p>
               <br />
               <br />
