@@ -832,114 +832,60 @@ class LandingPage extends React.Component {
           </section>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
-          <section className={styles.fourthSectionMobile}>
+        <section id={styles.fourthSection}>
             <h1 id={styles.fourthParagraph} className={styles.praxisHeader}>
-              How do you play?
+              Experience Praxis Now
             </h1>
-            <br />
-            <br />
-            <div className={styles.fourthSectionMobile__row}>
-              <div className={styles.circleImageMobile__left}>
-                <h1 className={styles.fourthSectionMobile__header}>1</h1>
-                <img src={step1} alt={step1} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 1</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Goal Setting
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
+            <div className={styles.fourthSection__newRow}>
+              <div className={styles.fourthSection__newParagraph}>
+                <p>
+                  We can customize Praxis gameplays exclusively for you
+                  students, employees, or staff.
                 </p>
               </div>
-            </div>
-            <div className={styles.fourthSectionMobile__row}>
-              <div className={styles.circleImageMobile__left}>
-                <h1 className={styles.fourthSectionMobile__header}>1</h1>
-                <img src={step1} alt={step1} className={styles.stepImages} />
+              <div className={styles.fourthSection__newImageContainer}>
+                <img
+                  className={styles.fourthSection__newImage}
+                  src={fourtSectionImage1}
+                  alt="fourth1"
+                />
               </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 1</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Goal Setting
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
+            </div>
+            <div className={styles.fourthSection__newSecondRow}>
+              <div className={styles.fourthSection__newSecondParagraph}>
+                <p>
+                  Partner with Praxis to bring financial literacy to your people
+                  and organization.
                 </p>
               </div>
-            </div>
-            <div className={styles.fourthSectionMobile__row}>
-              <div className={styles.circleImageMobile__left}>
-                <h1 className={styles.fourthSectionMobile__header}>1</h1>
-                <img src={step1} alt={step1} className={styles.stepImages} />
+              <div className={styles.fourthSection__newImageContainer}>
+                <img
+                  className={styles.fourthSection__newImage}
+                  src={fourtSectionImage2}
+                  alt="fourth1"
+                />
               </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 1</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Goal Setting
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
+            </div>
+            <div className={styles.fourthSection__bottom}>
+              <div className={styles.fourthSection__bottomContent}>
+                <p>
+                  {' '}
+                  Get in touch with us to schedule a FREE Praxis demo for your
+                  company / school
                 </p>
+                <div>
+                  <PraxisButton
+                    id={styles.fourthSection__button}
+                    color="praxisRedButton"
+                    text="PLAY THE GAME"
+                  />
+                </div>
               </div>
-            </div>
-            <div className={styles.fourthSectionMobile__row}>
-              <div className={styles.circleImageMobile__left}>
-                <h1 className={styles.fourthSectionMobile__header}>1</h1>
-                <img src={step1} alt={step1} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 1</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Goal Setting
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
-                </p>
-              </div>
-            </div>
-            <div className={styles.fourthSectionMobile__row}>
-              <div className={styles.circleImageMobile__left}>
-                <h1 className={styles.fourthSectionMobile__header}>1</h1>
-                <img src={step1} alt={step1} className={styles.stepImages} />
-              </div>
-              <div className={styles.boxContent}>
-                <p className={styles.praxisSmallParagraph}>STEP 1</p>
-                <h1
-                  id={styles.fourthContent__header}
-                  className={styles.praxisSmallHeader}
-                >
-                  Goal Setting
-                </h1>
-                <p className={styles.praxisSmallParagraph}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris vestibulum sem felis, vel bibendum lorem placerat id.
-                  In egestas urna at ante venenatis dictum.
-                </p>
-              </div>
-            </div>
-            <div className={styles.fourthSectionMobile__button}>
-              <PraxisButton color="praxisRedButton" text="PLAY THE GAME" />
+              <img
+                className={styles.fourthSection__chair}
+                src={chair}
+                alt="chair"
+              />
             </div>
           </section>
         </MediaQuery>
