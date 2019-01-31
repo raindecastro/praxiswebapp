@@ -22,16 +22,20 @@ const step4 = require('../../images/elements/Step4.svg');
 const step5 = require('../../images/elements/Step5.svg');
 const ceo = require('../../images/elements/testimony.png');
 const map = require('../../images/elements/map.png');
-const tab1 = require('../../images/elements/Education.svg');
-const tab2 = require('../../images/elements/Wellness.svg');
-const tab3 = require('../../images/elements/Recruitment.svg');
-const tab4 = require('../../images/elements/Training.svg');
-const tab5 = require('../../images/elements/Leadgen.svg');
+const tab1 = require('../../images/assets/Category Icons/Group 9.svg');
+const tab2 = require('../../images/assets/Category Icons/Group 10.svg');
+const tab3 = require('../../images/assets/Category Icons/Group 11.svg');
+const tab4 = require('../../images/assets/Category Icons/Group 12.svg');
+const tab5 = require('../../images/assets/Category Icons/Group 13.svg');
 const tabImage = require('../../images/elements/3rd-img.png');
 const videoContainerImage = require('../../images/elements/video-img.png');
 const fourtSectionImage1 = require('../../images/elements/fourth1.png');
 const fourtSectionImage2 = require('../../images/elements/fourth2.png');
 const chair = require('../../images/elements/chair.png');
+const logo1 = require('../../images/assets/Category Praxis Logos/logo1.png');
+const logo2 = require('../../images/assets/Category Praxis Logos/logo2.png');
+const logo3 = require('../../images/assets/Category Praxis Logos/logo3.png');
+const logo4 = require('../../images/assets/Category Praxis Logos/logo4.png');
 
 const selectStyles = {
   control: (base, state) => ({
@@ -305,100 +309,128 @@ class LandingPage extends React.Component {
     if (activeTab === 1) {
       return (
         <div>
-          <ul>
-            <li>
-              - Ideal for schools, whether in primary, secondary, or college
-              level.
-            </li>
-            <li>
-              - May be used as an alternative learning tool related to specific
-              subjects/courses
-            </li>
-            <li>- Promotes financial literacy among the youth</li>
-          </ul>
-          <br />
           <p>
-            Praxis variants used for education: Praxis Junior (ideal for ages 8
-            to 11) and Praxis Classic
+            Praxis gameplay can be customized to its specific audience, whether
+            for students as part of their class or course, for companies’
+            employee wellness programs, or for financial institutions’ sales and
+            customer engagement. The applications of our gameplay are endless!
+            Click below to find out how Praxis is perfect for your every need.
           </p>
+          <img className={styles.praxisLogos} src={logo1} alt="praxis-junior" />
         </div>
       );
     } else if (activeTab === 2) {
       return (
         <div>
-          <ul>
-            <li>- Ideal for companies/businesses</li>
-            <li>- Promotes financial wellness among employees</li>
-            <li>- Promotes financial literacy among the youth.</li>
-          </ul>
+          <p>
+            To increase the work efficiency of your company/business, it is
+            important that all stakeholders understand the value of financial
+            wellness. With its simple gameplay design, Praxis gets the job done
+            easily.
+          </p>
           <br />
-          <p>Praxis variants used for wellness: Praxis Classic, Praxis Plus</p>
+          <br />
+          <div className={styles.praxisLogosContainer}>
+            <img
+              className={styles.praxisLogos}
+              src={logo3}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo2}
+              alt="praxis-junior"
+            />
+          </div>
         </div>
       );
     } else if (activeTab === 3) {
       return (
         <div>
-          <ul>
-            <li>- Ideal for financial services companies</li>
-            <li>- Maybe used in recruitment programs for financial advisers</li>
-            <li>
-              - Promotes the features and benefits of specific financial
-              products and emphasizes the value of financial advisers
-            </li>
-          </ul>
-          <br />
           <p>
-            Praxis variants used for recruitment: Praxis Classic, Praxis Plus,
-            Praxis Unit- Linked
+            Praxis is greatly beneficial to financial service companies. It can
+            be utilized in recruitment programs for financial advisers, or in
+            promoting features and benefits of specific financial products.
           </p>
+          <br />
+          <br />
+          <div className={styles.praxisLogosContainer}>
+            <img
+              className={styles.praxisLogos}
+              src={logo3}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo2}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo4}
+              alt="praxis-junior"
+            />
+          </div>
         </div>
       );
     } else if (activeTab === 4) {
       return (
         <div>
-          <ul>
-            <li>- Ideal for financial services companies</li>
-            <li>
-              - Maybe used in the training programs of financial advisers,
-              specifically to educate them about product features and benefits
-            </li>
-            <li>
-              - Empowers financial advisers to effectively approach their sales
-              prospects and cater to their needs
-            </li>
-          </ul>
-          <br />
           <p>
-            Praxis variants used for training: Praxis Classic, Praxis Plus,
-            Praxis Unit-Linked
+            Financial services companies can use Praxis as a valuable tool in
+            training and educating financial advisers about product features and
+            benefits. It can also empower financial advisers to effectively
+            approach their sales prospects and cater to their needs.
           </p>
+          <br />
+          <br />
+          <div className={styles.praxisLogosContainer}>
+            <img
+              className={styles.praxisLogos}
+              src={logo3}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo2}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo4}
+              alt="praxis-junior"
+            />
+          </div>
         </div>
       );
     } else if (activeTab === 5) {
       return (
         <div>
-          <ul>
-            <li>- Ideal for financial advisers</li>
-            <li>
-              - May be used as a tool to demonstrate the value of specific
-              financial products to potential clients
-            </li>
-            <li>
-              - Helps financial advisers recognize their potential clients’
-              needs, and helps potential clients understand the products being
-              presented to them better
-            </li>
-            <li>
-              - Praxis will help in making people realize their financial needs
-              and will in turn help advisers in proposing appropriate financial
-              products to them
-            </li>
-          </ul>
-          <br />
           <p>
-            Praxis variants used for training: Praxis Classic, Praxis Plus,
-            Praxis Unit-Linked
+            Praxis can be helpful in demonstrating the value of specific
+            financial products to potential clients. The simple gameplay helps
+            clients better understand the value of financial products presented
+            to them. As clients recognize their financial needs through the
+            gameplay, financial advisers can effectively propose appropriate
+            financial products to them.
           </p>
+          <div className={styles.praxisLogosContainer}>
+            <img
+              className={styles.praxisLogos}
+              src={logo3}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo2}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo4}
+              alt="praxis-junior"
+            />
+          </div>
         </div>
       );
     }
@@ -468,8 +500,8 @@ class LandingPage extends React.Component {
                 Now everyone can master money
               </h1>
               <p className={styles.praxisParagraph} id={styles.firstParagraph}>
-                Learn to be money-wise while having fun! Experience Praxis for
-                yourself and discover your money potential now!
+                Become money-wise while having fun! Discover your money
+                potential by playing Praxis.
               </p>
             </Fade>
             <Fade delay={400}>
@@ -499,9 +531,8 @@ class LandingPage extends React.Component {
               <p id={styles.secondParagprah} className={styles.praxisParagraph}>
                 Praxis is a unique learning tool that simulates your financial
                 life through an exciting and engaging gameplay. Fun, flexible,
-                and interactive, Praxis delivers unmatched practical and
-                financial insights, enabling users to effectively learn good
-                personal money habits.
+                and interactive, Praxis delivers practical financial insights
+                that enable users to learn good money habits.
               </p>
             </div>
           </Fade>
@@ -512,10 +543,12 @@ class LandingPage extends React.Component {
               Designed for Everyone
             </h1>
             <p className={styles.praxisParagraph}>
-              Every Praxis gameplay is different and customized to its specific
-              audience, whether for students as part of their class or course,
-              for companies’ employee wellness programs, or for financial
-              institutions’ sales and customer engagement.
+              Praxis gameplay can be customized to its specific audience,
+              whether for students as part of their class or course, for
+              companies’ employee wellness programs, or for financial
+              institutions’ sales and customer engagement. The applications of
+              our gameplay are endless! Click below to find out how Praxis is
+              perfect for your every need.
             </p>
           </div>
           <MediaQuery query="(min-device-width: 900px)">
@@ -832,7 +865,7 @@ class LandingPage extends React.Component {
           </section>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
-        <section id={styles.fourthSection}>
+          <section id={styles.fourthSection}>
             <h1 id={styles.fourthParagraph} className={styles.praxisHeader}>
               Experience Praxis Now
             </h1>

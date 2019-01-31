@@ -165,10 +165,9 @@
     background-image: url('../../images/elements/header-img.jpg');
     background-size: cover;
     @include for-phone-only {
+      background-image: url('../../images/assets/Mobile\ Header\ Image.png');
       padding-right: 5vh;
       padding-left: 5vh;
-      background-position-x: -455px;
-      background-position-y: 160px;
     }
     @include for-tablet-portait-only {
       padding-right: 5vh;
@@ -208,7 +207,7 @@
   }
 
   #firstParagraph {
-    width: 50%;
+    width: 40%;
     margin-bottom: 6vh;
     @include for-phone-only {
       width: 100%;
@@ -224,8 +223,9 @@
   #secondSection {
     min-height: 80vh;
     padding: 50px;
-    background-color: white;
-
+    background-color: #f7fafc;
+    padding-bottom: 0px;
+    padding-top: 10em;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -261,10 +261,11 @@
     flex-direction: column;
     justify-content: center;
     background-color: #f7fafc;
-    position: absolute;
+    max-height: 60vh;
+    // position: absolute;
     right: 5vw;
     top: 19vh;
-    padding: 15vh 5vw;
+    padding: 0 5em;
 
     @include for-phone-only {
       position: initial;
@@ -1004,4 +1005,13 @@
 
 .select__indicator-separator {
   display: none !important;
+}
+
+.praxisLogosContainer {
+  display: flex;
+}
+
+.praxisLogos {
+  width: 140px;
+  align-self: center;
 }

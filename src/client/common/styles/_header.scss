@@ -82,6 +82,7 @@
   #headerLinks {
     display: flex;
     justify-content: space-evenly;
+    margin-right: 4em;
     @include for-phone-only {
       width: 80%;
       margin-left: 50px;
@@ -101,6 +102,10 @@
 
   .links:hover::after {
     width: 100%;
+  }
+
+  .currentLink {
+    border-bottom: 1px solid black;
   }
 
   .underlineMagical {

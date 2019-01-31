@@ -80,14 +80,25 @@ class Header extends React.Component {
           )}
           <div id={styles.headerLinks}>
             <p
-              onClick={() => (window.location.href = '/')}
+              onClick={() => {
+                window.location.href = '/about';
+              }}
               className={
-                currentPath === '/'
+                currentPath === '/about'
                   ? `${styles.headerLink} ${styles.currentLink}`
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              How To Play
+              ABOUT US
+            </p>
+            <p
+              className={
+                currentPath === '/pricing'
+                  ? `${styles.headerLink} ${styles.currentLink}`
+                  : `${styles.headerLink} ${styles.links}`
+              }
+            >
+              PRICING
             </p>
             <p
               onClick={() => {
@@ -99,30 +110,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              News
-            </p>
-            <Link to="/faq">
-              <p
-                className={
-                  currentPath === '/faq'
-                    ? `${styles.headerLink} ${styles.currentLink}`
-                    : `${styles.headerLink} ${styles.links}`
-                }
-              >
-                FAQ
-              </p>
-            </Link>
-            <p
-              onClick={() => {
-                window.location.href = '/about';
-              }}
-              className={
-                currentPath === '/about'
-                  ? `${styles.headerLink} ${styles.currentLink}`
-                  : `${styles.headerLink} ${styles.links}`
-              }
-            >
-              About Us
+              NEWS
             </p>
             <p
               onClick={() => (window.location.href = '/contact')}
@@ -132,7 +120,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              Contact Us
+              CONTACT US
             </p>
           </div>
         </MediaQuery>
@@ -173,32 +161,39 @@ class Header extends React.Component {
             <ul className={styles.headerMenu}>
               <li>
                 <p
-                  onClick={() => (window.location.href = '/')}
+                  onClick={() => (window.location.href = '/about')}
                   className={styles.praxisParagraph}
                 >
-                  How to Play
+                  <span
+                    style={{ margin: '0' }}
+                    className={
+                      currentPath === '/about'
+                        ? `${styles.headerLink} ${styles.currentLink}`
+                        : `${styles.headerLink} ${styles.links}`
+                    }
+                  >
+                    ABOUT US
+                  </span>
                 </p>
               </li>
               <li>
-                <p className={styles.praxisParagraph}>Pricing</p>
+                <p className={styles.praxisParagraph}>PRICING</p>
               </li>
               <li>
                 <p
                   onClick={() => (window.location.href = '/news')}
                   className={styles.praxisParagraph}
                 >
-                  News
-                </p>
-              </li>
-              <li>
-                <p className={styles.praxisParagraph}>FAQ</p>
-              </li>
-              <li>
-                <p
-                  onClick={() => (window.location.href = '/about')}
-                  className={styles.praxisParagraph}
-                >
-                  About Us
+                  <span
+                    style={{ margin: '0' }}
+                    className={
+                      currentPath === '/about'
+                        ? `${styles.headerLink} ${styles.currentLink}`
+                        : `${styles.headerLink} ${styles.links}`
+                    }
+                  >
+                    NEWS
+                  </span>
                 </p>
               </li>
               <li>
@@ -206,7 +201,17 @@ class Header extends React.Component {
                   onClick={() => (window.location.href = '/contact')}
                   className={styles.praxisParagraph}
                 >
-                  Contact Us
+                  <span
+                    style={{ margin: '0' }}
+                    className={
+                      currentPath === '/about'
+                        ? `${styles.headerLink} ${styles.currentLink}`
+                        : `${styles.headerLink} ${styles.links}`
+                    }
+                  >
+                    {' '}
+                    CONTACT US
+                  </span>
                 </p>
               </li>
             </ul>
