@@ -27,7 +27,11 @@ const tab2 = require('../../images/assets/Category Icons/Group 10.svg');
 const tab3 = require('../../images/assets/Category Icons/Group 11.svg');
 const tab4 = require('../../images/assets/Category Icons/Group 12.svg');
 const tab5 = require('../../images/assets/Category Icons/Group 13.svg');
-const tabImage = require('../../images/elements/3rd-img.png');
+const tabImage1 = require('../../images/assets/Category Images/Education.png');
+const tabImage2 = require('../../images/assets/Category Images/Wellness.png');
+const tabImage3 = require('../../images/assets/Category Images/Recruitment.png');
+const tabImage4 = require('../../images/assets/Category Images/Training.png');
+const tabImage5 = require('../../images/assets/Category Images/LeadGen.png');
 const videoContainerImage = require('../../images/elements/video-img.png');
 const fourtSectionImage1 = require('../../images/elements/fourth1.png');
 const fourtSectionImage2 = require('../../images/elements/fourth2.png');
@@ -310,11 +314,7 @@ class LandingPage extends React.Component {
       return (
         <div className={styles.tabContentDiv}>
           <p>
-            Praxis gameplay can be customized to its specific audience, whether
-            for students as part of their class or course, for companies’
-            employee wellness programs, or for financial institutions’ sales and
-            customer engagement. The applications of our gameplay are endless!
-            Click below to find out how Praxis is perfect for your every need.
+          Whether it be primary, secondary, or college level, Praxis is ideal for schools. Depending on the subject/course, it could make a great alternative learning tool that will instill fundamentals of financial literacy among the youth.
           </p>
           <img className={styles.praxisLogos} src={logo1} alt="praxis-junior" />
         </div>
@@ -503,6 +503,9 @@ class LandingPage extends React.Component {
                 id={styles.firstButton}
                 color="praxisRedButton"
                 text="PLAY PRAXIS"
+                onClick={() => {
+                  window.location.href = '/contact';
+                }}
               />
             </Fade>
           </div>
@@ -704,8 +707,20 @@ class LandingPage extends React.Component {
                 </div>
                 <div className={styles.tabContainer__tabInformation__right}>
                   <img
-                    src={tabImage}
-                    alt={tabImage}
+                    src={
+                      activeTab === 1
+                        ? tabImage1
+                        : activeTab === 2
+                        ? tabImage2
+                        : activeTab === 3
+                        ? tabImage3
+                        : activeTab === 4
+                        ? tabImage4
+                        : activeTab === 5
+                        ? tabImage5
+                        : null
+                    }
+                    alt={'tabimage'}
                     className={styles.tabContainer__image}
                   />
                 </div>
