@@ -308,7 +308,7 @@ class LandingPage extends React.Component {
 
     if (activeTab === 1) {
       return (
-        <div>
+        <div className={styles.tabContentDiv}>
           <p>
             Praxis gameplay can be customized to its specific audience, whether
             for students as part of their class or course, for companies’
@@ -321,15 +321,13 @@ class LandingPage extends React.Component {
       );
     } else if (activeTab === 2) {
       return (
-        <div>
+        <div className={styles.tabContentDiv}>
           <p>
             To increase the work efficiency of your company/business, it is
             important that all stakeholders understand the value of financial
             wellness. With its simple gameplay design, Praxis gets the job done
             easily.
           </p>
-          <br />
-          <br />
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -346,14 +344,12 @@ class LandingPage extends React.Component {
       );
     } else if (activeTab === 3) {
       return (
-        <div>
+        <div className={styles.tabContentDiv}>
           <p>
             Praxis is greatly beneficial to financial service companies. It can
             be utilized in recruitment programs for financial advisers, or in
             promoting features and benefits of specific financial products.
           </p>
-          <br />
-          <br />
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -375,15 +371,13 @@ class LandingPage extends React.Component {
       );
     } else if (activeTab === 4) {
       return (
-        <div>
+        <div className={styles.tabContentDiv}>
           <p>
             Financial services companies can use Praxis as a valuable tool in
             training and educating financial advisers about product features and
             benefits. It can also empower financial advisers to effectively
             approach their sales prospects and cater to their needs.
           </p>
-          <br />
-          <br />
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -405,7 +399,7 @@ class LandingPage extends React.Component {
       );
     } else if (activeTab === 5) {
       return (
-        <div>
+        <div className={styles.tabContentDiv}>
           <p>
             Praxis can be helpful in demonstrating the value of specific
             financial products to potential clients. The simple gameplay helps
@@ -716,14 +710,14 @@ class LandingPage extends React.Component {
                   />
                 </div>
               </div>
-              <div className={styles.tabContainer__footer}>
+              {/* <div className={styles.tabContainer__footer}>
                 <p
                   id={styles.tabContainer__footer__paragraph}
                   className={styles.praxisParagraph}
                 >
                   OUR PARTNERS:
                 </p>
-              </div>
+              </div> */}
             </div>
           </MediaQuery>
           <MediaQuery query="(max-device-width: 899px)">
@@ -806,7 +800,7 @@ class LandingPage extends React.Component {
             </div> */}
           </MediaQuery>
         </section>
-        <MediaQuery query="(min-device-width: 1224px)">
+        {/* <MediaQuery query="(min-device-width: 1224px)">
           <section id={styles.fourthSection}>
             <h1 id={styles.fourthParagraph} className={styles.praxisHeader}>
               Experience Praxis Now
@@ -921,7 +915,7 @@ class LandingPage extends React.Component {
               />
             </div>
           </section>
-        </MediaQuery>
+        </MediaQuery> */}
         <section id={styles.fifthSection}>
           <div id={styles.fifthSection__first}>
             <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
