@@ -41,73 +41,16 @@ const logo2 = require('../../images/assets/Category Praxis Logos/logo2.png');
 const logo3 = require('../../images/assets/Category Praxis Logos/logo3.png');
 const logo4 = require('../../images/assets/Category Praxis Logos/logo4.png');
 
-const selectStyles = {
-  control: (base, state) => ({
-    ...base,
-    minHeight: 64,
-    fontFamily: 'Montserrat',
-    fontSize: '14px',
-    boxShadow: 'none',
-    backgroundColor: '#F8F9FD',
-    color: '#263a4f',
-    borderRadius: 0,
-    borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
-    padding: '1em',
-    '&:hover': {
-      borderColor: '#263a4f',
-    },
-  }),
-  dropdownIndicator: base => ({
-    ...base,
-    paddingTop: 0,
-    paddingBottom: 0,
-    color: '##263a4f',
-    border: 'none',
-  }),
-  clearIndicator: base => ({
-    ...base,
-    paddingTop: 0,
-    paddingBottom: 0,
-    display: 'none',
-  }),
-  indicatorSeparator: base => ({
-    ...base,
-    display: 'none',
-  }),
-  placeholder: base => ({
-    ...base,
-    color: '#263a4f',
-    fontSize: '14px',
-  }),
-  menu: (base, state) => ({
-    ...base,
-    borderRadius: 'none',
-    marginTop: '-1em',
-  }),
-  menuList: (base, state) => ({
-    ...base,
-    paddingTop: '0',
-  }),
-  option: (base, state) => ({
-    ...base,
-    padding: '1em 2em',
-    fontSize: '14px',
-    fontFamily: 'Montserrat',
-    ':hover': {
-      backgroundColor: '#263a4f',
-      color: '#FAFAFA',
-    },
-    backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
-    color: state.isSelected ? '#fafafa' : '#263a4f',
-  }),
-};
-
+const testimonial1 =
+  'At AIA Thailand and in conjunction with our training academy for Bangkok Bank, we have been really impressed with the level of engagement that Praxis has brought to our foundational courses and events. Attendees seem to really enjoy participating, and the networking, educational and engagement benefits of Praxis gamification and its flexible platform have helped us deliver great value to our bank partner. It was also a great, fun way to drive individual engagement with measurable results…the  attendees really got inspired and enthusiastic about competing with each other… it has been a real value add to our academy.';
+const testimonial2 =
+  '"Praxis is a great gameplay where folks of all ages can experience the reality of different financial situations thru its simple to understand gamification design. Over the last 2 years, we have engaged our financial advisors, clients and financial advisor candidates with Praxis. The participants who play the game have found it to be most fun and effective to discover the importance of financial literacy. The gameplay has simplified money mastery and offer practical insights to one’s own financial and money management mindset. At the end of the each session, Praxis offers good money habits as key takeaways for our participants. We would recommend anyone who wishes to master their financial destiny to experience Praxis!"';
 const options = [
-  { value: 1, label: 'Education' },
-  { value: 2, label: 'Wellness' },
-  { value: 3, label: 'Recruitment' },
-  { value: 4, label: 'Training' },
-  { value: 5, label: 'Lead Generation' },
+  { value: 1, label: 'EDUCATION' },
+  { value: 2, label: 'WELLNESS' },
+  { value: 3, label: 'RECRUITMENT' },
+  { value: 4, label: 'TRAINING' },
+  { value: 5, label: 'LEAD GENERATION' },
 ];
 
 class LandingPage extends React.Component {
@@ -170,7 +113,66 @@ class LandingPage extends React.Component {
       </div>
     );
     const Carousel = makeCarousel(CarouselUI);
-
+    const selectStyles = {
+      control: (base, state) => ({
+        ...base,
+        minHeight: 64,
+        fontFamily: 'Montserrat',
+        fontSize: '14px',
+        boxShadow: 'none',
+        backgroundColor: '#F8F9FD',
+        color: '#263a4f',
+        borderRadius: 0,
+        borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
+        padding: '1em',
+        '&:hover': {
+          borderColor: '#263a4f',
+        },
+      }),
+      dropdownIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        color: '##263a4f',
+        border: 'none',
+      }),
+      clearIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        display: 'none',
+      }),
+      indicatorSeparator: base => ({
+        ...base,
+        display: 'none',
+      }),
+      placeholder: base => ({
+        ...base,
+        color: '#263a4f',
+        fontSize: '14px',
+      }),
+      menu: (base, state) => ({
+        ...base,
+        borderRadius: 'none',
+        marginTop: '-1em',
+      }),
+      menuList: (base, state) => ({
+        ...base,
+        paddingTop: '0',
+      }),
+      option: (base, state) => ({
+        ...base,
+        padding: '1em 2em',
+        fontSize: '14px',
+        fontFamily: 'Montserrat',
+        ':hover': {
+          backgroundColor: '#263a4f',
+          color: '#FAFAFA',
+        },
+        backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
+        color: state.isSelected ? '#fafafa' : '#263a4f',
+      }),
+    };
     return (
       <Carousel defaultWait={7000} /*wait for 1000 milliseconds*/>
         <Slide right>
@@ -180,17 +182,7 @@ class LandingPage extends React.Component {
             </div>
             <div className={styles.leftContent__content}>
               <p className={styles.leftContent__paragraph}>
-                “At AIA Thailand and in conjunction with our training academy
-                for Bangkok Bank, we have been really impressed with the level
-                of engagement that Praxis has brought to our foundational
-                courses and events. Attendees seem to really enjoy
-                participating, and the networking, educational and engagement
-                benefits of Praxis gamification and its flexible platform have
-                helped us deliver great value to our bank partner. It was also a
-                great, fun way to drive individual engagement with measurable
-                results…the  attendees really got inspired and enthusiastic
-                about competing with each other… it has been a real value add to
-                our academy.” 
+                {`"${this.sliceText(testimonial1)}..."`}
               </p>
               <br />
               <p className={styles.praxisParagraph}>
@@ -209,18 +201,7 @@ class LandingPage extends React.Component {
             </div>
             <div className={styles.leftContent__content}>
               <p className={styles.leftContent__paragraph}>
-                "Praxis is a great gameplay where folks of all ages can
-                experience the reality of different financial situations thru
-                its simple to understand gamification design. Over the last 2
-                years, we have engaged our financial advisors, clients and
-                financial advisor candidates with Praxis. The participants who
-                play the game have found it to be most fun and effective to
-                discover the importance of financial literacy. The gameplay has
-                simplified money mastery and offer practical insights to one’s
-                own financial and money management mindset. At the end of the
-                each session, Praxis offers good money habits as key takeaways
-                for our participants. We would recommend anyone who wishes to
-                master their financial destiny to experience Praxis!"
+                {`"${this.sliceText(testimonial2)}..."`}
               </p>
               <br />
               <p className={styles.praxisParagraph}>
@@ -298,6 +279,8 @@ class LandingPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  sliceText = text => text.slice(0, 250);
+
   resetThenSet = (id, key) => {
     let temp = JSON.parse(JSON.stringify(this.state[key]));
     temp.forEach(item => (item.selected = false));
@@ -314,7 +297,10 @@ class LandingPage extends React.Component {
       return (
         <div className={styles.tabContentDiv}>
           <p>
-          Whether it be primary, secondary, or college level, Praxis is ideal for schools. Depending on the subject/course, it could make a great alternative learning tool that will instill fundamentals of financial literacy among the youth.
+            Whether it be primary, secondary, or college level, Praxis is ideal
+            for schools. Depending on the subject/course, it could make a great
+            alternative learning tool that will instill fundamentals of
+            financial literacy among the youth.
           </p>
           <img className={styles.praxisLogos} src={logo1} alt="praxis-junior" />
         </div>
@@ -478,6 +464,83 @@ class LandingPage extends React.Component {
       fontSize: '24px',
       fontFamily: 'Montserrat',
       marginBottom: '2vh',
+    };
+
+    const selectStyles = {
+      control: (base, state) => ({
+        ...base,
+        minHeight: 64,
+        fontFamily: 'Montserrat',
+        fontSize: '14px',
+        boxShadow: 'none',
+        backgroundColor:
+          activeTab === 1
+            ? '#EB0322'
+            : activeTab === 2
+            ? '#FCC528'
+            : activeTab === 3
+            ? '#0E9E92'
+            : activeTab === 4
+            ? '#008D1A'
+            : activeTab === 5
+            ? '#2B2F54'
+            : 'white',
+        color: 'white',
+        borderRadius: 0,
+        borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
+        padding: '1em',
+        '&:hover': {
+          borderColor: '#263a4f',
+        },
+      }),
+      dropdownIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        color: '##263a4f',
+        border: 'none',
+      }),
+      clearIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        display: 'none',
+      }),
+      indicatorSeparator: base => ({
+        ...base,
+        display: 'none',
+      }),
+      placeholder: base => ({
+        ...base,
+        color: 'white',
+        fontSize: '14px',
+      }),
+      singleValue: base => ({
+        ...base,
+        color: 'white',
+        fontSize: '14px',
+      }),
+      menu: (base, state) => ({
+        ...base,
+        borderRadius: 'none',
+        marginTop: '-1em',
+      }),
+      menuList: (base, state) => ({
+        ...base,
+        paddingTop: '0',
+      }),
+      option: (base, state) => ({
+        ...base,
+        padding: '1em 2em',
+        fontSize: '14px',
+        fontFamily: 'Montserrat',
+        ':hover': {
+          backgroundColor: 'white',
+          color: '#FAFAFA',
+        },
+        backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
+        color: state.isSelected ? '#fafafa' : '#263a4f',
+      }),
     };
 
     return (
@@ -948,17 +1011,23 @@ class LandingPage extends React.Component {
                 Event-Based
               </h1>
               <div className={styles.praxisCard__contentHolder}>
-                <p
-                  id={styles.cardParagraph}
-                  className={styles.praxisSmallParagraph}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <h1 className={styles.praxisSmallerHeader}>Benefit 1</h1>
-                <div className={styles.praxisLine} />
-                <h1 className={styles.praxisSmallerHeader}>Benefit 2</h1>
-                <div className={styles.praxisLine} />
-                <h1 className={styles.praxisSmallerHeader}>Benefit 3</h1>
+                <div>
+                  <p className={styles.praxisSmallParagraph}>
+                    Per event Praxis engagement
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    25 or more players per Praxis event
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    Customized Praxis gameplays
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    Full Praxis-event GameMaster and GameFacilitator support
+                  </p>
+                </div>
                 <PraxisButton
                   id={styles.cardButton}
                   color="praxisRedButton"
@@ -975,17 +1044,30 @@ class LandingPage extends React.Component {
                 Licensce
               </h1>
               <div className={styles.praxisCard__contentHolder}>
-                <p
-                  id={styles.cardParagraph}
-                  className={styles.praxisSmallParagraph}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className={styles.praxisSmallParagraph}>
+                  12 to 24 month Praxis engagement
                 </p>
-                <h1 className={styles.praxisSmallerHeader}>Benefit 1</h1>
                 <div className={styles.praxisLine} />
-                <h1 className={styles.praxisSmallerHeader}>Benefit 2</h1>
+                <p className={styles.praxisSmallParagraph}>
+                  Unlimited Praxis gameplays
+                </p>
                 <div className={styles.praxisLine} />
-                <h1 className={styles.praxisSmallerHeader}>Benefit 3</h1>
+                <p className={styles.praxisSmallParagraph}>
+                  GameMaster and GameFacilitator Certification Training
+                </p>
+                <div className={styles.praxisLine} />
+                <p className={styles.praxisSmallParagraph}>
+                  Option to have branded Praxis toolkits
+                </p>
+                <div className={styles.praxisLine} />
+                <p className={styles.praxisSmallParagraph}>
+                  On-site and online support from The Praxis Company
+                </p>
+                <div className={styles.praxisLine} />
+                <p className={styles.praxisSmallParagraph}>
+                  Quality Control, Gameplay assessment and monthly consultation
+                  with The Praxis Company team
+                </p>
                 <PraxisButton
                   id={styles.cardButton}
                   color="praxisRedButton"
@@ -1002,17 +1084,21 @@ class LandingPage extends React.Component {
                 Leads
               </h1>
               <div className={styles.praxisCard__contentHolder}>
-                <p
-                  id={styles.cardParagraph}
-                  className={styles.praxisSmallParagraph}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <h1 className={styles.praxisSmallerHeader}>Benefit 1</h1>
-                <div className={styles.praxisLine} />
-                <h1 className={styles.praxisSmallerHeader}>Benefit 2</h1>
-                <div className={styles.praxisLine} />
-                <h1 className={styles.praxisSmallerHeader}>Benefit 3</h1>
+                <div>
+                  <p className={styles.praxisSmallParagraph}>
+                    In partnership with financial advisers with the objective of
+                    acquiring sales
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    Customized Praxis gameplay
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    Full Praxis-event GameMaster and GameFacilitator support
+                  </p>
+                </div>
+
                 <PraxisButton
                   id={styles.cardButton}
                   color="praxisRedButton"

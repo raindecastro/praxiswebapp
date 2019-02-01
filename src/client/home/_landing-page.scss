@@ -751,6 +751,14 @@
   .praxisCard__contentHolder {
     margin-right: 2vw;
     margin-left: 2vw;
+    @include for-desktop-only {
+      margin-right: 2vw;
+      margin-left: 2vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 86%;
+    }
   }
 
   #cardButton {
