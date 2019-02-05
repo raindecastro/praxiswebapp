@@ -13,6 +13,7 @@ import styles from './_landing-page.scss';
 import './dropdown.css';
 import PraxisButton from '../common/PraxisButton';
 import Select from 'react-select';
+import { components } from 'react-select';
 
 const praxisLogo = require('../../images/elements/logo-big.svg');
 const step1 = require('../../images/elements/Step1.svg');
@@ -40,6 +41,11 @@ const logo1 = require('../../images/assets/Category Praxis Logos/logo1.png');
 const logo2 = require('../../images/assets/Category Praxis Logos/logo2.png');
 const logo3 = require('../../images/assets/Category Praxis Logos/logo3.png');
 const logo4 = require('../../images/assets/Category Praxis Logos/logo4.png');
+const iconRed = require('../../images/assets/dots/red-bg.svg');
+const iconGreen = require('../../images/assets/dots/green-bg.svg');
+const iconNavy = require('../../images/assets/dots/navy-bg.svg');
+const iconTeal = require('../../images/assets/dots/teal-bg.svg');
+const iconYellow = require('../../images/assets/dots/yellow-bg.svg');
 
 const testimonial1 =
   'At AIA Thailand and in conjunction with our training academy for Bangkok Bank, we have been really impressed with the level of engagement that Praxis has brought to our foundational courses and events. Attendees seem to really enjoy participating, and the networking, educational and engagement benefits of Praxis gamification and its flexible platform have helped us deliver great value to our bank partner. It was also a great, fun way to drive individual engagement with measurable results…the  attendees really got inspired and enthusiastic about competing with each other… it has been a real value add to our academy.';
@@ -173,6 +179,7 @@ class LandingPage extends React.Component {
         color: state.isSelected ? '#fafafa' : '#263a4f',
       }),
     };
+
     return (
       <Carousel defaultWait={7000} /*wait for 1000 milliseconds*/>
         <Slide right>
@@ -189,7 +196,9 @@ class LandingPage extends React.Component {
                 <strong>Darren Thomson</strong>
               </p>
               <p className={styles.praxisSmallParagraph}>
-                Chief Strategic Bancassurance Alliance Officer, AIA Thailand
+                Chief Strategic Bancassurance Alliance Officer,
+                <br />
+                AIA Thailand
               </p>
             </div>
           </div>
@@ -205,7 +214,11 @@ class LandingPage extends React.Component {
               </p>
               <br />
               <p className={styles.praxisParagraph}>
-                <strong>Great Eastern Life Assurance Co Ltd, Singapore</strong>
+                <strong>
+                  Great Eastern Life Assurance Co Ltd
+                  <br />
+                  Singapore
+                </strong>
               </p>
               <p className={styles.praxisSmallParagraph} />
             </div>
@@ -227,7 +240,9 @@ class LandingPage extends React.Component {
                 <strong>Dr. Koh Noi Keng</strong>
               </p>
               <p className={styles.praxisSmallParagraph}>
-                Lecturer, National Institute of Education, Singapore
+                Lecturer, National Institute of Education,
+                <br />
+                Singapore
               </p>
             </div>
           </div>
@@ -428,6 +443,34 @@ class LandingPage extends React.Component {
       message,
       mobileTab,
     } = this.state;
+
+    const ValueContainer = ({ children, ...props }) => {
+      return (
+        components.ValueContainer && (
+          <components.ValueContainer {...props}>
+            {children}
+            <span style={{ position: 'absolute', right: 0 }}>
+              <img
+                src={
+                  activeTab === 1
+                    ? iconRed
+                    : activeTab === 2
+                    ? iconYellow
+                    : activeTab === 3
+                    ? iconTeal
+                    : activeTab === 4
+                    ? iconGreen
+                    : activeTab === 5
+                    ? iconNavy
+                    : iconRed
+                }
+                alt="icon"
+              />
+            </span>
+          </components.ValueContainer>
+        )
+      );
+    };
 
     const dialogStyles = {
       minHeight: 'auto',
@@ -825,6 +868,7 @@ class LandingPage extends React.Component {
                 onChange={e => {
                   this.setState({ activeTab: e.value });
                 }}
+                components={{ ValueContainer }}
               />
             </div>
             <div className={styles.tabContainer__mobileContent}>

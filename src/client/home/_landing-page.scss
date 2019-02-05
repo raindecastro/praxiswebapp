@@ -4,6 +4,9 @@
   width: 100%;
   min-height: 100%;
   display: flex;
+  @include for-phone-only {
+    min-height: 70vh;
+  }
   @include for-tablet-landscape-only {
   }
   @include for-desktop-only {
@@ -749,8 +752,8 @@
   }
 
   .praxisCard__contentHolder {
-    margin-right: 2vw;
-    margin-left: 2vw;
+    margin-right: 2em;
+    margin-left: 2em;
     @include for-desktop-only {
       margin-right: 2vw;
       margin-left: 2vw;

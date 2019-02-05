@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="10px" viewBox="0 0 64 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>navy-bg</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Products-Section-Copy-5" transform="translate(-245.000000, -367.000000)">
+            <g id="navy-bg" transform="translate(245.000000, 367.000000)">
+                <circle id="Oval" fill="#028C01" cx="5" cy="5" r="5"></circle>
+                <circle id="Oval-Copy" fill="#009D92" cx="23" cy="5" r="5"></circle>
+                <circle id="Oval-Copy-2" fill="#FEC502" cx="41" cy="5" r="5"></circle>
+                <circle id="Oval-Copy-3" fill="#ED1C23" cx="59" cy="5" r="5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
