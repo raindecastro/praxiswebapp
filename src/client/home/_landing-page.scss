@@ -422,7 +422,7 @@
   .tabContainer__mobileContent {
     padding: 4vh;
     min-height: 40vh;
-    background-image: url('../../images/elements/3rd-img.png');
+    background-image: url('../../images/assets/Category Images/Education.png');
   }
 
   .tabContainer__arrow {
@@ -1024,6 +1024,7 @@
 
 .praxisLogosContainer {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 1em;
 }
 
