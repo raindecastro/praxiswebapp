@@ -7,8 +7,8 @@ import CSSModules from 'react-css-modules';
 import { Dropdown } from 'reactjs-dropdown-component';
 import Fade from 'react-reveal/Fade';
 import makeCarousel from 'react-reveal/makeCarousel';
-import Slide from 'react-reveal/Slide';
 
+import Slide from 'react-reveal/Slide';
 import styles from './_landing-page.scss';
 import './dropdown.css';
 import PraxisButton from '../common/PraxisButton';
@@ -46,6 +46,11 @@ import {
   iconNavy,
   iconTeal,
   iconYellow,
+  tabImageMobile1,
+  tabImageMobile2,
+  tabImageMobile3,
+  tabImageMobile4,
+  tabImageMobile5,
 } from './ImageConstants';
 
 const testimonial1 =
@@ -185,9 +190,9 @@ class LandingPage extends React.Component {
       <Carousel defaultWait={7000} /*wait for 1000 milliseconds*/>
         <Slide right>
           <div className={styles.sixthSection__content}>
-            <div className={styles.sixthSection__circleImage__left}>
+            {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
-            </div>
+            </div> */}
             <div className={styles.leftContent__content}>
               <p className={styles.leftContent__paragraph}>
                 {`"${this.sliceText(testimonial1)}..."`}
@@ -206,9 +211,9 @@ class LandingPage extends React.Component {
         </Slide>
         <Slide right>
           <div className={styles.sixthSection__content}>
-            <div className={styles.sixthSection__circleImage__left}>
+            {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
-            </div>
+            </div> */}
             <div className={styles.leftContent__content}>
               <p className={styles.leftContent__paragraph}>
                 {`"${this.sliceText(testimonial2)}..."`}
@@ -227,9 +232,9 @@ class LandingPage extends React.Component {
         </Slide>
         <Slide right>
           <div className={styles.sixthSection__content}>
-            <div className={styles.sixthSection__circleImage__left}>
+            {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
-            </div>
+            </div> */}
             <div className={styles.leftContent__content}>
               <p className={styles.leftContent__paragraph}>
                 "We are proud to endorse the game Praxis. It offers a hands-on
@@ -807,6 +812,9 @@ class LandingPage extends React.Component {
                   </div>
 
                   <PraxisButton
+                    onClick={() => {
+                      window.location.href = '/contact';
+                    }}
                     className={styles.tabContainer__button}
                     text="PLAY THE GAME"
                     color="praxisRedButton"
@@ -873,32 +881,52 @@ class LandingPage extends React.Component {
               />
             </div>
             <div className={styles.tabContainer__mobileContent}>
-              <h1 className={styles.praxisHeader}>
-                {activeTab === 1
-                  ? 'Start them young'
-                  : activeTab === 2
-                  ? 'Wellness'
-                  : activeTab === 3
-                  ? 'Recruitment'
-                  : activeTab === 4
-                  ? 'Training'
-                  : activeTab === 5
-                  ? 'Lead Generation'
-                  : 'Start them young'}
-              </h1>
-              <br />
-              <br />
-              <p className={styles.praxisSmallParagraph}>
-                {this.renderTabParagraph()}
-              </p>
-              <br />
-              <br />
-
-              <PraxisButton
-                className={styles.tabContainer__button}
-                text="PLAY THE GAME"
-                color="praxisRedButton"
-              />
+              <div className={styles.tabContainer__tabInformation__right}>
+                <img
+                  src={
+                    activeTab === 1
+                      ? tabImageMobile1
+                      : activeTab === 2
+                      ? tabImageMobile2
+                      : activeTab === 3
+                      ? tabImageMobile3
+                      : activeTab === 4
+                      ? tabImageMobile4
+                      : activeTab === 5
+                      ? tabImageMobile5
+                      : null
+                  }
+                  alt={'tabimage'}
+                  className={styles.tabContainer__image}
+                />
+              </div>
+              <div className={styles.tabContainer__mobileContentWords}>
+                <h1 className={styles.praxisHeader}>
+                  {activeTab === 1
+                    ? 'Start them young'
+                    : activeTab === 2
+                    ? 'Wellness'
+                    : activeTab === 3
+                    ? 'Recruitment'
+                    : activeTab === 4
+                    ? 'Training'
+                    : activeTab === 5
+                    ? 'Lead Generation'
+                    : 'Start them young'}
+                </h1>
+                <br />
+                <br />
+                <p className={styles.praxisSmallParagraph}>
+                  {this.renderTabParagraph()}
+                </p>
+                <br />
+                <br />
+                <PraxisButton
+                  className={styles.tabContainer__button}
+                  text="PLAY THE GAME"
+                  color="praxisRedButton"
+                />
+              </div>
             </div>
             {/* <div className={styles.tabContainer__menuContainer}>
               <ul
@@ -1077,6 +1105,9 @@ class LandingPage extends React.Component {
                   id={styles.cardButton}
                   color="praxisRedButton"
                   text="Contact Us"
+                  onClick={() => {
+                    this.props.history.push('/contact');
+                  }}
                 />
               </div>
             </div>
@@ -1117,6 +1148,9 @@ class LandingPage extends React.Component {
                   id={styles.cardButton}
                   color="praxisRedButton"
                   text="Contact Us"
+                  onClick={() => {
+                    this.props.history.push('/contact');
+                  }}
                 />
               </div>
             </div>
@@ -1148,6 +1182,9 @@ class LandingPage extends React.Component {
                   id={styles.cardButton}
                   color="praxisRedButton"
                   text="Contact Us"
+                  onClick={() => {
+                    this.props.history.push('/contact');
+                  }}
                 />
               </div>
             </div>
@@ -1187,12 +1224,16 @@ class LandingPage extends React.Component {
                 Find us at the office
               </h1>
               <br />
-              <h1 className={`${styles.whiteFont} ${styles.praxisSmallHeader}`}>
-                Philippines
-              </h1>
               <br />
               <div className={styles.eighthSection__row}>
                 <div className={styles.rowContainer}>
+                  <h1
+                    className={`${styles.whiteFont} ${
+                      styles.praxisSmallHeader
+                    }`}
+                  >
+                    Philippines
+                  </h1>
                   <p
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallParagraph
@@ -1205,39 +1246,15 @@ class LandingPage extends React.Component {
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    Unit 2B Classica 1 Condominuium
+                    Unit 2B Classica 1 Condominium
                     <br />
                     112 H.V dela Costa St.
                     <br />
                     Salcedo Village, Makati City
                     <br />
-                    (+632) 7205753
+                    1227 Philippines
                   </p>
                 </div>
-                <div className={styles.rowContainer}>
-                  <p
-                    className={`${styles.whiteFont} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    The Praxis Company, Inc.
-                  </p>
-                  <p
-                    className={`${styles.grayFont} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    Unit 2B Classica 1 Condominuium
-                    <br />
-                    112 H.V dela Costa St.
-                    <br />
-                    Salcedo Village, Makati City
-                    <br />
-                    (+632) 7205753
-                  </p>
-                </div>
-              </div>
-              <div className={styles.eighthSection__row}>
                 <div className={styles.rowContainer}>
                   <h1
                     className={`${styles.whiteFont} ${
@@ -1246,7 +1263,6 @@ class LandingPage extends React.Component {
                   >
                     Singapore
                   </h1>
-                  <br />
                   <p
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallParagraph
@@ -1259,33 +1275,11 @@ class LandingPage extends React.Component {
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    40A Orchard Road MacDonald House
+                    40A Orchard Road
                     <br />
-                    #03-01, Singapore 238838
-                  </p>
-                </div>
-                <div className={styles.rowContainer}>
-                  <h1
-                    className={`${styles.whiteFont} ${
-                      styles.praxisSmallHeader
-                    }`}
-                  >
-                    Vietnam
-                  </h1>
-                  <br />
-                  <p
-                    className={`${styles.whiteFont} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    The Praxis Company Pte Ltd
-                  </p>
-                  <p
-                    className={`${styles.grayFont} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    40A Orchard Road MacDonald House
+                    40A Orchard Road
+                    <br />
+                    MacDonald House
                     <br />
                     #03-01, Singapore 238838
                   </p>
@@ -1306,16 +1300,18 @@ class LandingPage extends React.Component {
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    The Praxis Company Pte Ltd
+                    10 th Floor, AIA Sathorn Tower
                   </p>
                   <p
                     className={`${styles.grayFont} ${
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    40A Orchard Road MacDonald House
+                    No. 11/1 South Sathorn Road
                     <br />
-                    #03-01, Singapore 238838
+                    Yannawa, Bangkok
+                    <br />
+                    10120 Thailand
                   </p>
                 </div>
               </div>

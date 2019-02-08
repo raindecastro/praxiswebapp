@@ -44,10 +44,12 @@
     @include for-phone-only {
       width: 100%;
       grid-template-columns: 1fr;
+      grid-row-gap: 1.5em;
     }
     @include for-tablet-portait-only {
       width: 100%;
       grid-template-columns: 1fr;
+      grid-row-gap: 1.5em;
     }
   }
 

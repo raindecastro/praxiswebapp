@@ -7,9 +7,8 @@ import styles from './_contact.scss';
 
 const options = [
   { value: 'ph', label: 'Philippines' },
-  { value: 'sg', label: 'Signapore' },
+  { value: 'sg', label: 'Singapore' },
   { value: 'thai', label: 'Thailand' },
-  { value: 'viet', label: 'Vietnam' },
 ];
 
 const selectStyles = {
@@ -92,6 +91,7 @@ class Contact extends React.Component {
     //   .catch(err => {
     //     console.log('Error getting documents', err);
     //   });
+    window.scrollTo(0, 0);
   }
 
   clearForm = () => {

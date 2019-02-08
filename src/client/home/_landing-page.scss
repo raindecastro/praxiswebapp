@@ -391,6 +391,10 @@
     width: 100%;
     position: absolute;
     height: 100%;
+    @include for-phone-only {
+      top: 0;
+      right: 0;
+    }
   }
 
   .tabContainer__tabInformation__title {
@@ -429,7 +433,15 @@
   .tabContainer__mobileContent {
     padding: 4vh;
     min-height: 40vh;
-    background-image: url('../../images/assets/Category Images/Education.png');
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .tabContainer__mobileContentWords {
+    position: relative;
+    z-index: 0;
+    margin-right: 6em;
   }
 
   .tabContainer__arrow {

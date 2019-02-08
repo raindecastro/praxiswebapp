@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CSSModules from 'react-css-modules';
 import Fade from 'react-reveal/Fade';
 import MediaQuery from 'react-responsive';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 import styles from './styles/_header.scss';
 import 'react-flags-select/css/react-flags-select.css';
@@ -92,6 +99,9 @@ class Header extends React.Component {
               ABOUT US
             </p>
             <p
+              onClick={() => {
+                scroll.scrollTo(2100);
+              }}
               className={
                 currentPath === '/pricing'
                   ? `${styles.headerLink} ${styles.currentLink}`
@@ -177,7 +187,14 @@ class Header extends React.Component {
                 </p>
               </li>
               <li>
-                <p className={styles.praxisParagraph}>PRICING</p>
+                <p
+                  onClick={() => {
+                    scroll.scrollTo(2000);
+                  }}
+                  className={styles.praxisParagraph}
+                >
+                  PRICING
+                </p>
               </li>
               <li>
                 <p
