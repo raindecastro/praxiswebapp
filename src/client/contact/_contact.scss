@@ -26,12 +26,28 @@
     display: grid;
     grid-template-columns: 1fr;
     margin-bottom: 2vh;
-    width: 50%;
+    width: 70%;
     @include for-phone-only {
       width: 100%;
     }
     @include for-tablet-portait-only {
       width: 100%;
+    }
+  }
+
+  .formContainer__rowTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+    margin-bottom: 2vh;
+    width: 70%;
+    @include for-phone-only {
+      width: 100%;
+      grid-template-columns: 1fr;
+    }
+    @include for-tablet-portait-only {
+      width: 100%;
+      grid-template-columns: 1fr;
     }
   }
 

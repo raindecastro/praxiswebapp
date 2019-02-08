@@ -1,8 +1,69 @@
 import React from 'react';
 import firebase from '../../../Firestore';
 import PraxisButton from '../common/PraxisButton';
+import Select from 'react-select';
 import SkyLight from 'react-skylight';
 import styles from './_contact.scss';
+
+const options = [
+  { value: 'ph', label: 'Philippines' },
+  { value: 'sg', label: 'Signapore' },
+  { value: 'thai', label: 'Thailand' },
+  { value: 'viet', label: 'Vietnam' },
+];
+
+const selectStyles = {
+  control: (base, state) => ({
+    ...base,
+    minHeight: 64,
+    fontFamily: 'Montserrat',
+    fontSize: '14px',
+    boxShadow: 'none',
+    color: '#e0e1e3',
+    borderRadius: 0,
+    borderWidth: 2,
+    borderColor: state.menuIsOpen ? '#ed1c23' : '#e0e1e3',
+    padding: '0.3em',
+    '&:hover': {
+      borderColor: '#ed1c23',
+    },
+  }),
+  indicatorSeparator: base => ({
+    ...base,
+    display: 'none',
+  }),
+  placeholder: base => ({
+    ...base,
+    color: 'grey',
+    fontSize: '14px',
+  }),
+  singleValue: base => ({
+    ...base,
+    color: 'grey',
+    fontSize: '12px',
+  }),
+  menu: (base, state) => ({
+    ...base,
+    borderRadius: 'none',
+    marginTop: '-1em',
+  }),
+  menuList: (base, state) => ({
+    ...base,
+    paddingTop: '0',
+  }),
+  option: (base, state) => ({
+    ...base,
+    padding: '1em 2em',
+    fontSize: '14px',
+    fontFamily: 'Montserrat',
+    ':hover': {
+      backgroundColor: '#ed1c23',
+      color: 'white',
+    },
+    backgroundColor: state.isSelected ? '#ed1c23' : 'white',
+    color: state.isSelected ? 'white' : 'grey',
+  }),
+};
 
 class Contact extends React.Component {
   constructor(props) {
@@ -14,6 +75,7 @@ class Contact extends React.Component {
       mobileNumber: '',
       email: '',
       message: '',
+      country: null,
     };
   }
 
@@ -122,19 +184,17 @@ class Contact extends React.Component {
     return (
       <section className={styles.contactContainer}>
         <div className={styles.contactContainer__headerContainer}>
-          <h1 className={styles.praxisHeader}>Designed for Effectivity</h1>
+          <h1 className={styles.praxisHeader}>Get to know Praxis better</h1>
           <br />
           <p className={styles.praxisParagraph}>
-            Unline traditional board games, game play experiences are tailor fit
-            to a player's objective. Are you teaching children basic money
-            matters? Are you reacruiting agents to understand more benefits of
-            the products you're selling? learn more about each below!
+            Inquire or schedule a gameplay with us. Help us easily get back to
+            you by filling the contact information.
           </p>
         </div>
         <br />
         <br />
         <div className={styles.contactContainer__formContainer}>
-          <div className={styles.formContainer__row}>
+          <div className={styles.formContainer__rowTwo}>
             <input
               type="text"
               name="firstName"
@@ -145,8 +205,6 @@ class Contact extends React.Component {
                 this.setState({ firstName: e.target.value });
               }}
             />
-          </div>
-          <div className={styles.formContainer__row}>
             <input
               type="text"
               name="lastName"
@@ -207,7 +265,17 @@ class Contact extends React.Component {
               }}
             />
           </div>
-          <div className={styles.eighthSection__formContainer__buttonRow}>
+          <div className={styles.formContainer__rowTwo}>
+            <Select
+              styles={selectStyles}
+              options={options}
+              defaultValue={options[0]}
+              isSearchable={false}
+              isClearable={false}
+              onChange={e => {
+                this.setState({ country: e.value });
+              }}
+            />
             <PraxisButton
               onClick={() => {
                 this.sendData();
@@ -235,6 +303,7 @@ class Contact extends React.Component {
             Thank you for getting in touch with us, we will get back to you
             soon!
           </p>
+
           <PraxisButton
             id={styles.skylightButton}
             onClick={() => {

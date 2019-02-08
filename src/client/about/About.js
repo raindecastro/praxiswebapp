@@ -20,23 +20,21 @@ class About extends React.Component {
         <div className={styles.firstSection}>
           <h1 className={styles.praxisHeader}>About Us</h1>
           <p className={styles.praxisParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel
-            nisi id massa efficitur eleifend. Nunc euismod gravida purus, at
-            sodales leo ultrices ut. Praesent vulputate sodales erat, ac maximus
-            dui scelerisque ac.{' '}
+            Financial education shouldn’t be boring; that’s why a passionate
+            team of financial services professionals and gameplay design experts
+            from Singapore came together and formed Praxis 20 years ago.
           </p>
           <br />
           <p className={styles.praxisParagraph}>
-            Praesent laoreet, dolor a porta molestie, diam enim fermentum
-            turpis, at pretium metus leo id odio. Donec venenatis aliquam lectus
-            eu pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque pellentesque consequat metus, non tincidunt erat
-            porttitor id. Integer auctor pharetra nunc, sed feugiat velit
-            venenatis a. Aliquam erat volutpat. Sed scelerisque viverra ante,
-            eget laoreet odio consectetur ac.
+            Because Praxis mirrors life so accurately in a powerful and equally
+            fun gameplay, this unique and effective alternative learning tool is
+            now being utilized in educational institutions, government
+            organizations, and leading companies across Thailand, Vietnam,
+            Philippines, Malaysia, Singapore, Indonesia, South Africa, and
+            United Kingdom.
           </p>
         </div>
-        <div className={styles.secondSection}>
+        {/* <div className={styles.secondSection}>
           <h1 className={styles.praxisSmallHeader}>The Team</h1>
           <div>
             <ul className={styles.teamLinks}>
@@ -93,7 +91,7 @@ class About extends React.Component {
               <p className={styles.praxisParagraph}>CEO</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
