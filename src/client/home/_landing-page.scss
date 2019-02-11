@@ -929,6 +929,9 @@
       grid-template-columns: 1fr;
       grid-row-gap: 2vh;
     }
+    .rowContainer {
+      cursor: pointer;
+    }
   }
 
   #eighthSection__cardRight {

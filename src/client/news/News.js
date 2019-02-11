@@ -4,6 +4,7 @@ import PraxisButton from '../common/PraxisButton';
 import axios from 'axios';
 import Post from './Post';
 import styles from './styles/_news.scss';
+import ReactHtmlParser from 'react-html-parser';
 
 class News extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class News extends React.Component {
 
     this.state = {
       posts: [],
+      featuredPost: [],
     };
   }
 
@@ -26,6 +28,16 @@ class News extends React.Component {
       .then(res => {
         this.setState({ posts: res.data.posts });
         console.log(this.state.posts);
+      })
+      .catch(error => console.log(error));
+
+    axios
+      .get(
+        'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=featured'
+      )
+      .then(res => {
+        this.setState({ featuredPost: res.data.posts[0] });
+        console.log(this.state.featuredPost);
       })
       .catch(error => console.log(error));
   }
@@ -44,20 +56,27 @@ class News extends React.Component {
   };
 
   render() {
-    const { posts } = this.state;
+    const { posts, featuredPost } = this.state;
 
     return (
       <div className={styles.newsContainer}>
-        <section className={styles.newsContainer__firstSection}>
-          <h1 className={styles.praxisHeader}>News headline here</h1>
-          <br />
-          <p className={styles.praxisParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            vestibulum sem felis, vel bibendum lorem placerat id. In egestas
-            urna at ante venenatis dictum. Aliquam sollicitudin eget velit non
-            consequat.
-          </p>
-        </section>
+        <Link to={`/news/${featuredPost.ID}`}>
+          <section
+            style={{
+              backgroundImage: `url(${!!featuredPost &&
+                featuredPost.featured_image})`,
+            }}
+            className={styles.newsContainer__firstSection}
+          >
+            <h1 className={styles.praxisHeader}>
+              {!!featuredPost && featuredPost.title}
+            </h1>
+            <br />
+            <p className={styles.praxisParagraph}>
+              {!!featuredPost && ReactHtmlParser(featuredPost.excerpt)}
+            </p>
+          </section>
+        </Link>
         <section className={styles.newsContainer__secondSection}>
           {posts.length === 0 ? (
             <div className={styles.loaderContainer}>
@@ -68,17 +87,21 @@ class News extends React.Component {
           )}
         </section>
         <section className={styles.newsContainer__thirdSection}>
-          <h1 className={styles.praxisHeader}>News headline here</h1>
+          <h1 className={styles.praxisHeader}>Now everyone can master money</h1>
           <br />
           <p className={styles.praxisParagraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            vestibulum sem felis, vel bibendum lorem placerat id. In egestas
-            urna at ante venenatis dictum. Aliquam sollicitudin eget velit non
-            consequat.
+            Become money-wise while having fun! Discover your money potential by
+            playing Praxis.
           </p>
           <br />
           <br />
-          <PraxisButton color="praxisRedButton" text="Play the game" />
+          <PraxisButton
+            onClick={() => {
+              this.props.history.push('/contact');
+            }}
+            color="none"
+            text="PLAY THE GAME"
+          />
         </section>
       </div>
     );

@@ -47,16 +47,25 @@
   }
 
   .newsContainer__firstSection {
-    background-color: lighten($color: lightgray, $amount: 10);
+    background-color: #383838;
+    background-blend-mode: overlay;
     min-height: 80vh;
     padding-right: 5vw;
     padding-left: 5vw;
-    background-image: url('../../images/elements/header-img.jpg');
+    // background-image: url('../../images/elements/header-img.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 10vh;
+
+    h1,
+    p {
+      color: white;
+      @include for-desktop-only {
+        margin-right: 12em;
+      }
+    }
 
     @include for-phone-only {
       padding-right: 5vh;
@@ -106,7 +115,11 @@
 
   .newsContainer__thirdSection {
     padding: 5vw;
-    background-color: lighten($color: lightgray, $amount: 10);
+    background-color: #ed1c23;
+    h1,
+    p {
+      color: white;
+    }
   }
 
   .postContainer {

@@ -54,12 +54,12 @@ import {
 } from './ImageConstants';
 
 const testimonial1 =
-  '“With Praxis, attendees at our foundational courses and events have never been more engaged. They enjoy participating even while networking and learning. By gamifying finance, Praxis makes them enthusiastic about competing with each other. It has been a real value added to our academy.” ';
+  'With Praxis, attendees at our foundational courses and events have never been more engaged. They enjoy participating even while networking and learning. By gamifying finance, Praxis makes them enthusiastic about competing with each other. It has been a real value added to our academy.';
 const testimonial2 =
-  '“Praxis’ easy-to-understand gamification design makes it easy for anyone to experience the reality of their financial sitaution. The gameplay simplifies money mastery for our clients and financial advisers. By the end of every session, each one of them leaves with new financial insights and healthier money habits. If you wish to master your financial destiny, we highly recommend that you experience Praxis!”';
-('"Praxis is a great gameplay where folks of all ages can experience the reality of different financial situations thru its simple to understand gamification design. Over the last 2 years, we have engaged our financial advisors, clients and financial advisor candidates with Praxis. The participants who play the game have found it to be most fun and effective to discover the importance of financial literacy. The gameplay has simplified money mastery and offer practical insights to one’s own financial and money management mindset. At the end of the each session, Praxis offers good money habits as key takeaways for our participants. We would recommend anyone who wishes to master their financial destiny to experience Praxis!"');
+  'Praxis’ easy-to-understand gamification design makes it easy for anyone to experience the reality of their financial sitaution. The gameplay simplifies money mastery for our clients and financial advisers. By the end of every session, each one of them leaves with new financial insights and healthier money habits. If you wish to master your financial destiny, we highly recommend that you experience Praxis!';
+('"Praxis is a great gameplay where folks of all ages can experience the reality of different financial situations thru its simple to understand gamification design. Over the last 2 years, we have engaged our financial advisors, clients and financial advisor candidates with Praxis. The participants who play the game have found it to be most fun and effective to discover the importance of financial literacy. The gameplay has simplified money mastery and offer practical insights to one’s own financial and money management mindset. At the end of the each session, Praxis offers good money habits as key takeaways for our participants. We would recommend anyone who wishes to master their financial destiny to experience Praxis!');
 const testimonial3 =
-  '’We are proud to endorse Praxis. It offers a hands-on approach to grasping abstract  financial concepts, and we welcome the game as a powerful tool for teaching and training.’’';
+  'We are proud to endorse Praxis. It offers a hands-on approach to grasping abstract  financial concepts, and we welcome the game as a powerful tool for teaching and training.';
 const testimonial4 =
   "I've attended Praxis gameplay sessions across multiple Asian countries with employees, agents, senior management and customers from all walks of life and the results have been the same: excitement, laughter and high energy with a great outcome; deep engagement and real learning of all aspects of personal finances through the decisions they made while experiencing Praxis.  A fantastic tool for teaching financial independence and creating action.";
 const options = [
@@ -69,6 +69,12 @@ const options = [
   { value: 4, label: 'TRAINING' },
   { value: 5, label: 'LEAD GENERATION' },
 ];
+
+const mapPhilippines =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8220.659337344037!2d121.02416976440777!3d14.55638558182863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90f0015ff6f%3A0xd2bcc8518b60469f!2sThe+Praxis+Company!5e0!3m2!1sen!2sph!4v1549848498004';
+const mapSingapore =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7926986873963!2d103.84383031431608!3d1.2991639620991617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1991a4d1e27f%3A0xfe98f91084669b12!2sThe+Praxis+Company+Pte+Ltd!5e0!3m2!1sen!2sph!4v1549853234168';
+const mapThailand = '';
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -83,6 +89,7 @@ class LandingPage extends React.Component {
       email: '',
       message: '',
       mobileTab: 1,
+      mapState: 'philippines',
     };
   }
 
@@ -1242,7 +1249,16 @@ class LandingPage extends React.Component {
         <section id={styles.seventhSection}>
           <div className={styles.seventhSection__mapContainer}>
             {/* <img src={map} alt={map} id={styles.seventhSection__map} /> */}
-            <iframe id={styles.seventhSection__map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8220.659337344037!2d121.02416976440777!3d14.55638558182863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90f0015ff6f%3A0xd2bcc8518b60469f!2sThe+Praxis+Company!5e0!3m2!1sen!2sph!4v1549848498004"></iframe>
+            <iframe
+              id={styles.seventhSection__map}
+              src={
+                this.state.mapState === 'philippines'
+                  ? mapPhilippines
+                  : this.state.mapState === 'singapore'
+                  ? mapSingapore
+                  : 'philippines'
+              }
+            />
           </div>
         </section>
         <section id={styles.eighthSection}>
@@ -1254,7 +1270,12 @@ class LandingPage extends React.Component {
               <br />
               <br />
               <div className={styles.eighthSection__row}>
-                <div className={styles.rowContainer}>
+                <div
+                  onClick={() => {
+                    this.setState({ mapState: 'philippines' });
+                  }}
+                  className={styles.rowContainer}
+                >
                   <h1
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallHeader
@@ -1283,7 +1304,12 @@ class LandingPage extends React.Component {
                     1227 Philippines
                   </p>
                 </div>
-                <div className={styles.rowContainer}>
+                <div
+                  onClick={() => {
+                    this.setState({ mapState: 'singapore' });
+                  }}
+                  className={styles.rowContainer}
+                >
                   <h1
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallHeader
@@ -1314,7 +1340,12 @@ class LandingPage extends React.Component {
                 </div>
               </div>
               <div className={styles.eighthSection__row}>
-                <div className={styles.rowContainer}>
+                <div
+                  onClick={() => {
+                    this.setState({ mapState: 'thailand' });
+                  }}
+                  className={styles.rowContainer}
+                >
                   <h1
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallHeader
