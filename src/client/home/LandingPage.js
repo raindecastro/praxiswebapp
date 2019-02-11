@@ -54,9 +54,14 @@ import {
 } from './ImageConstants';
 
 const testimonial1 =
-  'At AIA Thailand and in conjunction with our training academy for Bangkok Bank, we have been really impressed with the level of engagement that Praxis has brought to our foundational courses and events. Attendees seem to really enjoy participating, and the networking, educational and engagement benefits of Praxis gamification and its flexible platform have helped us deliver great value to our bank partner. It was also a great, fun way to drive individual engagement with measurable results…the  attendees really got inspired and enthusiastic about competing with each other… it has been a real value add to our academy.';
+  '“With Praxis, attendees at our foundational courses and events have never been more engaged. They enjoy participating even while networking and learning. By gamifying finance, Praxis makes them enthusiastic about competing with each other. It has been a real value added to our academy.” ';
 const testimonial2 =
-  '"Praxis is a great gameplay where folks of all ages can experience the reality of different financial situations thru its simple to understand gamification design. Over the last 2 years, we have engaged our financial advisors, clients and financial advisor candidates with Praxis. The participants who play the game have found it to be most fun and effective to discover the importance of financial literacy. The gameplay has simplified money mastery and offer practical insights to one’s own financial and money management mindset. At the end of the each session, Praxis offers good money habits as key takeaways for our participants. We would recommend anyone who wishes to master their financial destiny to experience Praxis!"';
+  '“Praxis’ easy-to-understand gamification design makes it easy for anyone to experience the reality of their financial sitaution. The gameplay simplifies money mastery for our clients and financial advisers. By the end of every session, each one of them leaves with new financial insights and healthier money habits. If you wish to master your financial destiny, we highly recommend that you experience Praxis!”';
+('"Praxis is a great gameplay where folks of all ages can experience the reality of different financial situations thru its simple to understand gamification design. Over the last 2 years, we have engaged our financial advisors, clients and financial advisor candidates with Praxis. The participants who play the game have found it to be most fun and effective to discover the importance of financial literacy. The gameplay has simplified money mastery and offer practical insights to one’s own financial and money management mindset. At the end of the each session, Praxis offers good money habits as key takeaways for our participants. We would recommend anyone who wishes to master their financial destiny to experience Praxis!"');
+const testimonial3 =
+  '’We are proud to endorse Praxis. It offers a hands-on approach to grasping abstract  financial concepts, and we welcome the game as a powerful tool for teaching and training.’’';
+const testimonial4 =
+  "I've attended Praxis gameplay sessions across multiple Asian countries with employees, agents, senior management and customers from all walks of life and the results have been the same: excitement, laughter and high energy with a great outcome; deep engagement and real learning of all aspects of personal finances through the decisions they made while experiencing Praxis.  A fantastic tool for teaching financial independence and creating action.";
 const options = [
   { value: 1, label: 'EDUCATION' },
   { value: 2, label: 'WELLNESS' },
@@ -237,9 +242,7 @@ class LandingPage extends React.Component {
             </div> */}
             <div className={styles.leftContent__content}>
               <p className={styles.leftContent__paragraph}>
-                "We are proud to endorse the game Praxis. It offers a hands-on
-                approach to grasping abstract concepts and we welcome the game
-                as a powerful pedagogical tool for teaching and training."
+                {`"${this.sliceText(testimonial3)}..."`}
               </p>
               <br />
               <p className={styles.praxisParagraph}>
@@ -249,6 +252,27 @@ class LandingPage extends React.Component {
                 Lecturer, National Institute of Education,
                 <br />
                 Singapore
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div className={styles.sixthSection__content}>
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial4)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>James DeLong</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Regional Director, Distribution Asia,
+                <br />
+                Ageas
               </p>
             </div>
           </div>
@@ -922,6 +946,9 @@ class LandingPage extends React.Component {
                 <br />
                 <br />
                 <PraxisButton
+                  onClick={() => {
+                    window.location.href = '/contact';
+                  }}
                   className={styles.tabContainer__button}
                   text="PLAY THE GAME"
                   color="praxisRedButton"
@@ -1067,7 +1094,7 @@ class LandingPage extends React.Component {
             </div>
           </section>
         </MediaQuery> */}
-        <section id={styles.fifthSection}>
+        <section id="pricing" className={styles.fifthSection}>
           <div id={styles.fifthSection__first}>
             <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
               Praxis Partnerships
@@ -1214,7 +1241,8 @@ class LandingPage extends React.Component {
         </section>
         <section id={styles.seventhSection}>
           <div className={styles.seventhSection__mapContainer}>
-            <img src={map} alt={map} id={styles.seventhSection__map} />
+            {/* <img src={map} alt={map} id={styles.seventhSection__map} /> */}
+            <iframe id={styles.seventhSection__map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8220.659337344037!2d121.02416976440777!3d14.55638558182863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90f0015ff6f%3A0xd2bcc8518b60469f!2sThe+Praxis+Company!5e0!3m2!1sen!2sph!4v1549848498004"></iframe>
           </div>
         </section>
         <section id={styles.eighthSection}>

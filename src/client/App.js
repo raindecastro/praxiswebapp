@@ -37,7 +37,6 @@ export default class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/news/:id" render={props => <FullPost {...props} />} />
           </Switch>
-          ,
         </div>
         <Footer />
       </main>

@@ -31,14 +31,14 @@
 
   .firstSection {
     text-align: center;
-    margin-right: 15vw;
-    margin-left: 15vw;
-    margin-top: 20vh !important;
+    margin-right: 12em;
+    margin-left: 12em;
+    margin-top: 10vh !important;
     padding: 5vw;
-    min-height: 50vh;
+
     @include for-phone-only {
       margin: 0;
-      margin-top: 20vh;
+      margin-top: 20vh !important;
       margin-bottom: 4vh;
     }
     @include for-tablet-portait-only {
@@ -49,9 +49,9 @@
   }
 
   .secondSection {
-    padding: 6vh 25vw;
+    padding: 6em 16em;
     min-height: 60vh;
-    background-color: lighten($color: lightgray, $amount: 10);
+    background-color: #f7fafc;
     @include for-phone-only {
       padding: 6vh 10vw;
     }
@@ -60,60 +60,83 @@
     }
   }
 
-  .teamLinks {
+  .secondSection__row {
     display: flex;
-    justify-content: space-between;
-    margin-top: 4vh;
-    margin-bottom: 6vh;
-  }
-
-  .teamMembers__photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 120px;
-    background-color: lightgray;
-  }
-
-  .teamMembers__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 6em;
     @include for-phone-only {
-      margin-bottom: 4vh;
-      margin-top: 4vh;
+      flex-direction: column !important;
+      align-items: center;
+      justify-content: center;
     }
-    @include for-tablet-portait-only {
-      margin-bottom: 4vh;
-      margin-top: 4vh;
+    .secondSection__columnOne {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 3em;
+      h3 {
+        margin: 0.3em 0;
+      }
+      span {
+        font-size: 14px;
+        letter-spacing: 1.4px;
+      }
+      @include for-phone-only {
+        margin: 0 !important;
+        text-align: center;
+      }
+    }
+
+    .secondSection__columnTwo {
+      p {
+        font-size: 16px;
+        color: #242635;
+      }
+      @include for-phone-only {
+        margin: 1.5em 0;
+        text-align: center;
+      }
     }
   }
 
-  .teamMembers__three {
+  .secondSection__rowTwo {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 10vh;
+    grid-column-gap: 3em;
     @include for-phone-only {
-      display: block;
-      margin-top: 0;
-    }
-    @include for-tablet-portait-only {
-      display: block;
-      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
 
-  .teamMembers__two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 6vh 8vw;
+  .secondSection__columnThree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     @include for-phone-only {
-      display: block;
-      margin: 0;
+      margin-bottom: 6em;
     }
-    @include for-tablet-portait-only {
-      display: block;
-      margin: 0;
+    h3 {
+      margin: 0.3em 0;
+    }
+    span {
+      font-size: 14px;
+      letter-spacing: 1.4px;
+    }
+    p {
+      margin: 1.5em 0;
+      font-size: 16px;
+      text-align: center;
+      color: #242635;
+    }
+
+    .secondSection__link {
+      padding-bottom: 1em;
+      border-bottom: 5px solid #ec2027;
+      cursor: pointer;
     }
   }
 }

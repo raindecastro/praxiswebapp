@@ -10,7 +10,7 @@ import {
   scrollSpy,
   scroller,
 } from 'react-scroll';
-
+import { HashLink } from 'react-router-hash-link';
 import styles from './styles/_header.scss';
 import 'react-flags-select/css/react-flags-select.css';
 
@@ -98,6 +98,7 @@ class Header extends React.Component {
             >
               ABOUT US
             </p>
+
             <p
               onClick={() => {
                 scroll.scrollTo(2100);
@@ -108,8 +109,9 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              PRICING
+              <HashLink to="/#pricing">PRICING</HashLink>
             </p>
+
             <p
               onClick={() => {
                 window.location.href = '/news';
@@ -193,7 +195,17 @@ class Header extends React.Component {
                   }}
                   className={styles.praxisParagraph}
                 >
-                  PRICING
+                  <span
+                    style={{ margin: '0' }}
+                    className={
+                      currentPath === '/#pricing'
+                        ? `${styles.headerLink} ${styles.currentLink}`
+                        : `${styles.headerLink} ${styles.links}`
+                    }
+                  >
+                    {' '}
+                    <HashLink to="/#pricing">PRICING</HashLink>
+                  </span>
                 </p>
               </li>
               <li>
@@ -204,7 +216,7 @@ class Header extends React.Component {
                   <span
                     style={{ margin: '0' }}
                     className={
-                      currentPath === '/about'
+                      currentPath === '/news'
                         ? `${styles.headerLink} ${styles.currentLink}`
                         : `${styles.headerLink} ${styles.links}`
                     }
@@ -221,7 +233,7 @@ class Header extends React.Component {
                   <span
                     style={{ margin: '0' }}
                     className={
-                      currentPath === '/about'
+                      currentPath === '/contact'
                         ? `${styles.headerLink} ${styles.currentLink}`
                         : `${styles.headerLink} ${styles.links}`
                     }
