@@ -1279,7 +1279,8 @@ class LandingPage extends React.Component {
                   <h1
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallHeader
-                    }`}
+                    } ${this.state.mapState === 'philippines' &&
+                      styles.whiteFont__isActive}`}
                   >
                     Philippines
                   </h1>
@@ -1313,7 +1314,8 @@ class LandingPage extends React.Component {
                   <h1
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallHeader
-                    }`}
+                    } ${this.state.mapState === 'singapore' &&
+                      styles.whiteFont__isActive}`}
                   >
                     Singapore
                   </h1>
@@ -1349,7 +1351,8 @@ class LandingPage extends React.Component {
                   <h1
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallHeader
-                    }`}
+                    } ${this.state.mapState === 'thailand' &&
+                      styles.whiteFont__isActive}`}
                   >
                     Thailand
                   </h1>
