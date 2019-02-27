@@ -7,7 +7,15 @@ import CSSModules from 'react-css-modules';
 import { Dropdown } from 'reactjs-dropdown-component';
 import Fade from 'react-reveal/Fade';
 import makeCarousel from 'react-reveal/makeCarousel';
-
+import {
+  Link,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 import Slide from 'react-reveal/Slide';
 import styles from './_landing-page.scss';
 import './dropdown.css';
@@ -67,7 +75,7 @@ const options = [
   { value: 2, label: 'WELLNESS' },
   { value: 3, label: 'RECRUITMENT' },
   { value: 4, label: 'TRAINING' },
-  { value: 5, label: 'LEAD GENERATION' },
+  { value: 5, label: 'PROSPECTING' },
 ];
 
 const mapPhilippines =
@@ -348,23 +356,44 @@ class LandingPage extends React.Component {
     if (activeTab === 1) {
       return (
         <div className={styles.tabContentDiv}>
-          <p>
-            Whether it be primary, secondary, or college level, Praxis is ideal
-            for schools. Depending on the subject/course, it could make a great
-            alternative learning tool that will instill fundamentals of
-            financial literacy among the youth.
+          <p style={{ marginBottom: '1em' }}>
+            As the youth face overwhelming financial choices, it is best to
+            instill in them the fundamentals of financial literacy to help them
+            make the right decisions. It is an exciting and experiential
+            learning tool ideal for any educational institution.
           </p>
-          <img className={styles.praxisLogos} src={logo1} alt="praxis-junior" />
+          <p>
+            Tens of thousands of students have experienced and benefited from
+            Praxis across Southeast Asia. Help the youth become masters of money
+            today by bringing Praxis to your schools and universities.
+          </p>
+          <div className={styles.praxisLogosContainer}>
+            <img
+              className={styles.praxisLogos}
+              src={logo3}
+              alt="praxis-junior"
+            />
+            <img
+              className={styles.praxisLogos}
+              src={logo1}
+              alt="praxis-junior"
+            />
+          </div>
         </div>
       );
     } else if (activeTab === 2) {
       return (
         <div className={styles.tabContentDiv}>
-          <p>
-            To increase the work efficiency of your company/business, it is
-            important that all stakeholders understand the value of financial
-            wellness. With its simple gameplay design, Praxis gets the job done
-            easily.
+          <p style={{ marginBottom: '1em' }}>
+            72% of adults who suffer from money-related stress experience a
+            decrease in morale and productivity*. Caring for your stakeholders’
+            financial wellness means caring for your business. With its simple
+            Gameplay design, teaching them good money habits comes easy with
+            Praxis. Avoid a distracted workforce and increase their work
+            efficiency by bringing Praxis to your company.
+          </p>
+          <p style={{ fontStyle: 'italic', fontSize: '10px' }}>
+            *information from American Psychological Association Report, 2015
           </p>
           <div className={styles.praxisLogosContainer}>
             <img
@@ -384,9 +413,12 @@ class LandingPage extends React.Component {
       return (
         <div className={styles.tabContentDiv}>
           <p>
-            Praxis is greatly beneficial to financial service companies. It can
-            be utilized in recruitment programs for financial advisers, or in
-            promoting features and benefits of specific financial products.
+            The engaging Praxis Gameplay allows agents, advisers, or
+            relationship managers to experience for themselves the importance of
+            financial literacy, and how financial products can help others. This
+            helps sales people realize the real value of their profession and
+            want to take it on. When our clients use Praxis for recruitment,
+            they get an over 20% sign-on rate.
           </p>
           <div className={styles.praxisLogosContainer}>
             <img
@@ -410,11 +442,21 @@ class LandingPage extends React.Component {
     } else if (activeTab === 4) {
       return (
         <div className={styles.tabContentDiv}>
+          <p style={{ marginBottom: '1em' }}>
+            Because Praxis Gameplays can be customized to incorporate specific
+            product features, as well as financial literacy, it is an ideal and
+            effective training tool for financial agents and advisers. It
+            complements current training sessions to make learning more
+            entertaining and powerful. It also ensures more confidence when
+            facing current and future clients.
+          </p>
+          <p style={{ marginBottom: '1em' }}>
+            Several financial services companies across Southeast Asia have
+            brought about knowledgeable, empowered, and productive sales teams
+            with the help of Praxis.
+          </p>
           <p>
-            Financial services companies can use Praxis as a valuable tool in
-            training and educating financial advisers about product features and
-            benefits. It can also empower financial advisers to effectively
-            approach their sales prospects and cater to their needs.
+            Start integrating Praxis in your agents’ training modules today.
           </p>
           <div className={styles.praxisLogosContainer}>
             <img
@@ -439,12 +481,12 @@ class LandingPage extends React.Component {
       return (
         <div className={styles.tabContentDiv}>
           <p>
-            Praxis can be helpful in demonstrating the value of specific
-            financial products to potential clients. The simple gameplay helps
-            clients better understand the value of financial products presented
-            to them. As clients recognize their financial needs through the
-            gameplay, financial advisers can effectively propose appropriate
-            financial products to them.
+            Praxis is a leader in demonstrating the value of specific financial
+            products to potential clients. Because of the experiential Gameplay,
+            clients become aware of the importance of a specific financial
+            product and are inspired to take action. Because of this powerful
+            experience, agents and advisers obtain significantly greater than
+            market norms for conversion rates, often above 30%.
           </p>
           <div className={styles.praxisLogosContainer}>
             <img
@@ -637,23 +679,23 @@ class LandingPage extends React.Component {
                 Now everyone can master money
               </h1>
               <p className={styles.praxisParagraph} id={styles.firstParagraph}>
-                Become money-wise while having fun! Discover your money
-                potential by playing Praxis.
+                Praxis is the proven experiential learning solution for
+                individuals, families, students, employees, and clients. We can
+                turn financial literacy into understanding, and understanding to
+                action. Experience the power of Praxis today!
               </p>
             </Fade>
             <Fade delay={400}>
               <PraxisButton
                 id={styles.firstButton}
                 color="praxisRedButton"
-                text="PLAY PRAXIS"
-                onClick={() => {
-                  window.location.href = '/contact';
-                }}
+                text="WHAT IS PRAXIS"
+                onClick={() => scroll.scrollTo(600)}
               />
             </Fade>
           </div>
         </section>
-        <section id={styles.secondSection}>
+        <section id="whatIsPraxis" className={styles.secondSection}>
           <Fade delay={200}>
             <div id={styles.videoContainer}>
               <img
@@ -669,10 +711,28 @@ class LandingPage extends React.Component {
                 What is Praxis?
               </h1>
               <p id={styles.secondParagprah} className={styles.praxisParagraph}>
-                Praxis is a unique learning tool that simulates your financial
-                life through an exciting and engaging gameplay. Fun, flexible,
-                and interactive, Praxis delivers practical financial insights
-                that enable users to learn good money habits.
+                Personal money management is an essential life skill, but
+                financial concepts are difficult to teach and understand. That’s
+                why only 1/3 of adults worldwide understand basic financial
+                concepts and only 38% of financial services account owners are
+                financially literate*.
+              </p>
+              <br />
+              <p id={styles.secondParagprah} className={styles.praxisParagraph}>
+                Praxis can change that, being a proven and powerful experiential
+                learning tool that simulates financial life through exciting
+                Gameplays. Praxis offers a fun, flexible, and engaging learning
+                experience that inspires people to take action as well.
+              </p>
+              <br />
+
+              <p
+                style={{ fontStyle: 'italic', fontSize: '12px' }}
+                id={styles.secondParagprah}
+                className={styles.praxisParagraph}
+              >
+                *information from Global Financial Literacy Survey by Standard &
+                Poor’s, 2015
               </p>
             </div>
           </Fade>
@@ -680,15 +740,14 @@ class LandingPage extends React.Component {
         <section id={styles.thirdSection}>
           <div id={styles.thirdSection__first}>
             <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
-              Designed for Everyone
+              Tailored for Your Needs
             </h1>
             <p className={styles.praxisParagraph}>
-              Praxis gameplay can be customized to its specific audience,
-              whether for students as part of their class or course, for
-              companies’ employee wellness programs, or for financial
-              institutions’ sales and customer engagement. The applications of
-              our gameplay are endless! Click below to find out how Praxis is
-              perfect for your every need.
+              Every Praxis Gameplay can be customized to its specific audience,
+              whether for students as part of their class, for companies’
+              employee wellness programs, or for financial institutions’
+              recruitment and training sessions, as well as for their sales and
+              customer engagement.
             </p>
           </div>
           <MediaQuery query="(min-device-width: 900px)">
@@ -816,7 +875,7 @@ class LandingPage extends React.Component {
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    LEAD GENERATION
+                    PROSPECTING
                   </p>
                 </div>
               </div>
@@ -833,7 +892,7 @@ class LandingPage extends React.Component {
                         : activeTab === 4
                         ? 'Training'
                         : activeTab === 5
-                        ? 'Lead Generation'
+                        ? 'Prospecting'
                         : 'Start them young'}
                     </h1>
                     <br />
@@ -847,7 +906,7 @@ class LandingPage extends React.Component {
                       window.location.href = '/contact';
                     }}
                     className={styles.tabContainer__button}
-                    text="PLAY THE GAME"
+                    text="LEARN MORE ABOUT PRAXIS"
                     color="praxisRedButton"
                   />
                 </div>
@@ -942,7 +1001,7 @@ class LandingPage extends React.Component {
                     : activeTab === 4
                     ? 'Training'
                     : activeTab === 5
-                    ? 'Lead Generation'
+                    ? 'Prospecting'
                     : 'Start them young'}
                 </h1>
                 <br />
@@ -1106,6 +1165,10 @@ class LandingPage extends React.Component {
             <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
               Praxis Partnerships
             </h1>
+            <p className={styles.praxisParagraph}>
+              There are a number of ways we partner with our client. Get in
+              touch with us today to find out more.
+            </p>
             <br />
           </div>
           <div id={styles.fifthSection__second} ref="scrollableRow">
@@ -1225,6 +1288,9 @@ class LandingPage extends React.Component {
           </div>
         </section>
         <section id={styles.sixthSection}>
+          <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
+            They’ve Experienced Praxis. Here’s Why You Should, Too
+          </h1>
           {/* <div className={styles.sixthSection__content}>
             <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
@@ -1265,7 +1331,7 @@ class LandingPage extends React.Component {
           <div id={styles.eighthSection__card}>
             <div id={styles.eighthSection__cardLeft}>
               <h1 className={`${styles.whiteFont} ${styles.praxisHeader}`}>
-                Find us at the office
+                Explore the World of Praxis With Us
               </h1>
               <br />
               <br />

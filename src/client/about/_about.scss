@@ -1,3 +1,11 @@
+.skylight-dialog {
+  height: 100%;
+  overflow: auto;
+}
+.skylight-overlay {
+  z-index: 10000 !important;
+}
+
 .aboutContainer {
   .praxisHeader {
     font-size: 36px;
@@ -50,6 +58,7 @@
 
   .secondSection {
     padding: 6em 16em;
+    padding-right: 0;
     min-height: 60vh;
     background-color: #f7fafc;
     @include for-phone-only {
@@ -58,15 +67,32 @@
     @include for-tablet-portait-only {
       padding: 6vh 10vw;
     }
+
+    .secondSection__header {
+      margin-left: -8em;
+      @include for-phone-only {
+        margin-left: 0;
+      }
+      @include for-tablet-portait-only {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .secondSection__imageDiv {
+    height: 240px;
+    width: 240px;
+    background-size: cover;
+    border-radius: 240px;
   }
 
   .secondSection__row {
     display: flex;
-    margin-bottom: 6em;
     @include for-phone-only {
       flex-direction: column !important;
       align-items: center;
       justify-content: center;
+      overflow-y: scroll !important;
     }
     .secondSection__columnOne {
       display: flex;
@@ -74,6 +100,7 @@
       align-items: center;
       justify-content: center;
       margin-right: 3em;
+
       h3 {
         margin: 0.3em 0;
       }
@@ -89,8 +116,10 @@
 
     .secondSection__columnTwo {
       p {
+        text-align: left;
         font-size: 16px;
         color: #242635;
+        margin-bottom: 3em;
       }
       @include for-phone-only {
         margin: 1.5em 0;
@@ -100,22 +129,27 @@
   }
 
   .secondSection__rowTwo {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 3em;
+    padding-bottom: 250px;
+    margin-bottom: -250px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    margin-left: -8em;
     @include for-phone-only {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      margin-left: 0;
     }
   }
 
   .secondSection__columnThree {
+    background-color: white;
+    padding: 2em 5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 2em;
     @include for-phone-only {
       margin-bottom: 6em;
     }

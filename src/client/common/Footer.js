@@ -23,7 +23,7 @@ const Footer = props => (
       </p>
       <HashLink to="/#pricing">
         {' '}
-        <p className={styles.praxisSmallParagraph}>PRICING</p>
+        <p className={styles.praxisSmallParagraph}>PRAXIS PARTNERSHIPS</p>
       </HashLink>
 
       <p
@@ -32,7 +32,7 @@ const Footer = props => (
         }}
         className={styles.praxisSmallParagraph}
       >
-        NEWS
+        NEWS AND EVENTS
       </p>
       <p
         onClick={() => {

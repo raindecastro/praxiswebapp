@@ -109,7 +109,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              <HashLink to="/#pricing">PRICING</HashLink>
+              <HashLink to="/#pricing">PRAXIS PARTNERSHIPS</HashLink>
             </p>
 
             <p
@@ -122,7 +122,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              NEWS
+              NEWS AND EVENTS
             </p>
             <p
               onClick={() => (window.location.href = '/contact')}
@@ -204,7 +204,7 @@ class Header extends React.Component {
                     }
                   >
                     {' '}
-                    <HashLink to="/#pricing">PRICING</HashLink>
+                    <HashLink to="/#pricing">PRAXIS PARTNERSHIPS</HashLink>
                   </span>
                 </p>
               </li>
@@ -221,7 +221,7 @@ class Header extends React.Component {
                         : `${styles.headerLink} ${styles.links}`
                     }
                   >
-                    NEWS
+                    NEWS AND EVENTS
                   </span>
                 </p>
               </li>

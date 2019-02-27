@@ -1,11 +1,11 @@
 #carouselContainer {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
   min-height: 100%;
   display: flex;
   @include for-phone-only {
-    min-height: 70vh;
+    min-height: 55vh;
   }
   @include for-tablet-landscape-only {
   }
@@ -215,7 +215,7 @@
   }
 
   #firstParagraph {
-    width: 40%;
+    width: 50%;
     margin-bottom: 6vh;
     @include for-phone-only {
       width: 100%;
@@ -228,7 +228,7 @@
 
   //   SECOND SECTION HERE
 
-  #secondSection {
+  .secondSection {
     min-height: 80vh;
     padding: 50px;
     background-color: #f7fafc;
@@ -374,7 +374,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 64vh;
+    min-height: 75vh;
     width: 100%;
     height: 100%;
     position: relative;
@@ -801,7 +801,14 @@
     min-height: 55vh;
     background-color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    #sixthHeader {
+      margin-top: 1em;
+      margin-right: 1em;
+      margin-left: 1em;
+      text-align: center;
+    }
   }
 
   .sixthSection__content {
