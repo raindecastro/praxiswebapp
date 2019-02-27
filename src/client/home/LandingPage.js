@@ -70,6 +70,8 @@ const testimonial3 =
   'We are proud to endorse Praxis. It offers a hands-on approach to grasping abstract  financial concepts, and we welcome the game as a powerful tool for teaching and training.';
 const testimonial4 =
   "I've attended Praxis gameplay sessions across multiple Asian countries with employees, agents, senior management and customers from all walks of life and the results have been the same: excitement, laughter and high energy with a great outcome; deep engagement and real learning of all aspects of personal finances through the decisions they made while experiencing Praxis.  A fantastic tool for teaching financial independence and creating action.";
+const testimonial5 =
+  'Praxis is more than just a fun, board game. Going through it for an hour or so has naturally allowed each player participant to discover her/his spending pattern, financial saving habits and readiness to take risk in investing for a long-term personal financial growth. And the greater impact is the afterthought - self realisation that "I" should start managing my personal finances NOW. Collezione C2 Head Office and Retail management and staff we\'ll definitely go through this life changing Praxis.';
 const options = [
   { value: 1, label: 'EDUCATION' },
   { value: 2, label: 'WELLNESS' },
@@ -292,6 +294,27 @@ class LandingPage extends React.Component {
             </div>
           </div>
         </Slide>
+        <Slide right>
+          <div className={styles.sixthSection__content}>
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial5)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>Agnes Lamberte</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                President,
+                <br />
+                Collezione
+              </p>
+            </div>
+          </div>
+        </Slide>
       </Carousel>
     );
   };
@@ -339,7 +362,7 @@ class LandingPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  sliceText = text => text.slice(0, 250);
+  sliceText = text => text.slice(0, 500);
 
   resetThenSet = (id, key) => {
     let temp = JSON.parse(JSON.stringify(this.state[key]));
