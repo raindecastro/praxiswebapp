@@ -184,11 +184,11 @@ class Contact extends React.Component {
     return (
       <section className={styles.contactContainer}>
         <div className={styles.contactContainer__headerContainer}>
-          <h1 className={styles.praxisHeader}>Get to know Praxis better</h1>
+          <h1 className={styles.praxisHeader}>Get To Know Praxis Better</h1>
           <br />
           <p className={styles.praxisParagraph}>
-            Inquire or schedule a gameplay with us. Help us easily get back to
-            you by filling the contact information.
+            Schedule a Gameplay with us. Help us easily get back to you by
+            filling the contact information
           </p>
         </div>
         <br />

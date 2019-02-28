@@ -10,6 +10,8 @@ import Contact from './contact/Contact';
 import FullPost from './news/FullPost';
 import About from './about/About';
 
+import './skylight.css';
+
 export default class App extends Component {
   constructor(props) {
     super(props);

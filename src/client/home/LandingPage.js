@@ -7,6 +7,7 @@ import CSSModules from 'react-css-modules';
 import { Dropdown } from 'reactjs-dropdown-component';
 import Fade from 'react-reveal/Fade';
 import makeCarousel from 'react-reveal/makeCarousel';
+import { MdPlayArrow } from 'react-icons/md';
 import {
   Link,
   DirectLink,
@@ -72,6 +73,15 @@ const testimonial4 =
   "I've attended Praxis gameplay sessions across multiple Asian countries with employees, agents, senior management and customers from all walks of life and the results have been the same: excitement, laughter and high energy with a great outcome; deep engagement and real learning of all aspects of personal finances through the decisions they made while experiencing Praxis.  A fantastic tool for teaching financial independence and creating action.";
 const testimonial5 =
   'Praxis is more than just a fun, board game. Going through it for an hour or so has naturally allowed each player participant to discover her/his spending pattern, financial saving habits and readiness to take risk in investing for a long-term personal financial growth. And the greater impact is the afterthought - self realisation that "I" should start managing my personal finances NOW. Collezione C2 Head Office and Retail management and staff we\'ll definitely go through this life changing Praxis.';
+const testimonial1Name =
+  'Darren Thomson, Chief Strategic Bancassurance Alliance Officer, AIA Thailand';
+const testimonial2Name = 'Great Eastern Life Assurance Co Ltd, Singapore';
+const testimonial3Name =
+  'Dr. Koh Noi Keng, Lecturer, National Institute of Education, Singapore';
+const testimonial4Name =
+  'James DeLong, Regional Director, Distribution Asia, Ageas';
+const testimonial5Name = 'Agnes Lamberte, President, Collezione';
+
 const options = [
   { value: 1, label: 'EDUCATION' },
   { value: 2, label: 'WELLNESS' },
@@ -99,7 +109,8 @@ class LandingPage extends React.Component {
       email: '',
       message: '',
       mobileTab: 1,
-      mapState: 'philippines',
+      mapState: 'singapore',
+      openedTestimonial: null,
     };
   }
 
@@ -211,7 +222,13 @@ class LandingPage extends React.Component {
     return (
       <Carousel defaultWait={7000} /*wait for 1000 milliseconds*/>
         <Slide right>
-          <div className={styles.sixthSection__content}>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 1 });
+            }}
+            className={styles.sixthSection__content}
+          >
             {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
             </div> */}
@@ -232,7 +249,13 @@ class LandingPage extends React.Component {
           </div>
         </Slide>
         <Slide right>
-          <div className={styles.sixthSection__content}>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 2 });
+            }}
+            className={styles.sixthSection__content}
+          >
             {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
             </div> */}
@@ -253,7 +276,13 @@ class LandingPage extends React.Component {
           </div>
         </Slide>
         <Slide right>
-          <div className={styles.sixthSection__content}>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 3 });
+            }}
+            className={styles.sixthSection__content}
+          >
             {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
             </div> */}
@@ -274,7 +303,13 @@ class LandingPage extends React.Component {
           </div>
         </Slide>
         <Slide right>
-          <div className={styles.sixthSection__content}>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 4 });
+            }}
+            className={styles.sixthSection__content}
+          >
             {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
             </div> */}
@@ -295,7 +330,13 @@ class LandingPage extends React.Component {
           </div>
         </Slide>
         <Slide right>
-          <div className={styles.sixthSection__content}>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 5 });
+            }}
+            className={styles.sixthSection__content}
+          >
             {/* <div className={styles.sixthSection__circleImage__left}>
               <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
             </div> */}
@@ -362,7 +403,7 @@ class LandingPage extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  sliceText = text => text.slice(0, 500);
+  sliceText = text => text.slice(0, 300);
 
   resetThenSet = (id, key) => {
     let temp = JSON.parse(JSON.stringify(this.state[key]));
@@ -588,6 +629,22 @@ class LandingPage extends React.Component {
       textAlign: 'center',
     };
 
+    const dialogStylesVideo = {
+      width: '60%',
+      height: '80%',
+      top: '5vh',
+      left: '44%',
+      zIndex: '9999',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '30px',
+      marginLeft: '-27%',
+      marginTop: '0',
+      textAlign: 'center',
+    };
+
     const mobileDialogStyles = {
       textAlign: 'center',
       width: 'auto',
@@ -603,6 +660,25 @@ class LandingPage extends React.Component {
       padding: '30px',
       marginTop: '0',
       top: '35vh',
+    };
+
+    const mobileDialogStylesTestimonial = {
+      textAlign: 'center',
+      width: 'auto',
+      left: '0',
+      marginRight: '0',
+      height: '100%',
+      marginLeft: '0',
+      minHeight: 'auto',
+      minWidth: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '30px',
+      marginTop: '0',
+      top: '0',
+      zIndex: '9999',
     };
 
     const titleStyles = {
@@ -702,10 +778,10 @@ class LandingPage extends React.Component {
                 Now everyone can master money
               </h1>
               <p className={styles.praxisParagraph} id={styles.firstParagraph}>
-                Praxis is the proven experiential learning solution for
-                individuals, families, students, employees, and clients. We can
-                turn financial literacy into understanding, and understanding to
-                action. Experience the power of Praxis today!
+                Praxis is the proven experiential solution for individuals,
+                families, students, employees and clients. We can turn financial
+                literacy into understanding and understanding to action.
+                Experience the power of Praxis today!
               </p>
             </Fade>
             <Fade delay={400}>
@@ -720,7 +796,26 @@ class LandingPage extends React.Component {
         </section>
         <section id="whatIsPraxis" className={styles.secondSection}>
           <Fade delay={200}>
-            <div id={styles.videoContainer}>
+            <div
+              onClick={() => {
+                if (
+                  navigator.userAgent.match(/Android/i) ||
+                  navigator.userAgent.match(/iPhone/i) ||
+                  navigator.userAgent.match(/webOS/i)
+                ) {
+                  window.open(
+                    'https://www.youtube.com/watch?v=rLl8S6tV9R0',
+                    '_blank' // <- This is what makes it open in a new window.
+                  );
+                } else {
+                  this.videoModal.show();
+                }
+              }}
+              id={styles.videoContainer}
+            >
+              <div className={styles.playButton}>
+                <MdPlayArrow size="64" />
+              </div>
               <img
                 src={videoContainerImage}
                 alt={videoContainerImage}
@@ -1206,25 +1301,25 @@ class LandingPage extends React.Component {
               <div className={styles.praxisCard__contentHolder}>
                 <div>
                   <p className={styles.praxisSmallParagraph}>
-                    Per event Praxis engagement
+                    Per Event Praxis Engagement
                   </p>
                   <div className={styles.praxisLine} />
                   <p className={styles.praxisSmallParagraph}>
-                    25 or more players per Praxis event
+                    25 or More Players Per Praxis Event
                   </p>
                   <div className={styles.praxisLine} />
                   <p className={styles.praxisSmallParagraph}>
-                    Customized Praxis gameplays
+                    Customized Gameplay
                   </p>
                   <div className={styles.praxisLine} />
                   <p className={styles.praxisSmallParagraph}>
-                    Full Praxis-event GameMaster and GameFacilitator support
+                    Full Praxis-Event GameMaster and GameFacilitator Support
                   </p>
                 </div>
                 <PraxisButton
                   id={styles.cardButton}
                   color="praxisRedButton"
-                  text="Contact Us"
+                  text="CONTACT US"
                   onClick={() => {
                     this.props.history.push('/contact');
                   }}
@@ -1241,33 +1336,31 @@ class LandingPage extends React.Component {
               </h1>
               <div className={styles.praxisCard__contentHolder}>
                 <p className={styles.praxisSmallParagraph}>
-                  12 to 24 month Praxis engagement
+                  12 To 24 Month Praxis Engagement
                 </p>
                 <div className={styles.praxisLine} />
-                <p className={styles.praxisSmallParagraph}>
-                  Unlimited Praxis gameplays
-                </p>
+                <p className={styles.praxisSmallParagraph}>Unlimited Use</p>
                 <div className={styles.praxisLine} />
                 <p className={styles.praxisSmallParagraph}>
                   GameMaster and GameFacilitator Certification Training
                 </p>
                 <div className={styles.praxisLine} />
                 <p className={styles.praxisSmallParagraph}>
-                  Option to have branded Praxis toolkits
+                  Option To Have Co-Branded Praxis Toolkits
                 </p>
                 <div className={styles.praxisLine} />
                 <p className={styles.praxisSmallParagraph}>
-                  On-site and online support from The Praxis Company
+                  On-Site and Online Support From The Praxis Company
                 </p>
                 <div className={styles.praxisLine} />
                 <p className={styles.praxisSmallParagraph}>
-                  Quality Control, Gameplay assessment and monthly consultation
+                  Quality Control, Gameplay Assessment and Monthly Consultation
                   with The Praxis Company team
                 </p>
                 <PraxisButton
                   id={styles.cardButton}
                   color="praxisRedButton"
-                  text="Contact Us"
+                  text="CONTACT US"
                   onClick={() => {
                     this.props.history.push('/contact');
                   }}
@@ -1280,28 +1373,30 @@ class LandingPage extends React.Component {
                   styles.praxisSmallerHeader
                 }`}
               >
-                Leads
+                Prospecting
               </h1>
               <div className={styles.praxisCard__contentHolder}>
                 <div>
                   <p className={styles.praxisSmallParagraph}>
-                    In partnership with financial advisers with the objective of
-                    acquiring sales
+                    Working on a performance basis with financial services
+                    companies, Praxis adds Gameplay expertise and a turnkey
+                    model to sales distribution’s prospecting, driving them to
+                    become more productive and enhancing top and bottom lines.
                   </p>
                   <div className={styles.praxisLine} />
                   <p className={styles.praxisSmallParagraph}>
-                    Customized Praxis gameplay
+                    Customized Gameplay
                   </p>
                   <div className={styles.praxisLine} />
                   <p className={styles.praxisSmallParagraph}>
-                    Full Praxis-event GameMaster and GameFacilitator support
+                    GameMaster and GameFacilitator Certification Training
                   </p>
                 </div>
 
                 <PraxisButton
                   id={styles.cardButton}
                   color="praxisRedButton"
-                  text="Contact Us"
+                  text="CONTACT US"
                   onClick={() => {
                     this.props.history.push('/contact');
                   }}
@@ -1361,41 +1456,6 @@ class LandingPage extends React.Component {
               <div className={styles.eighthSection__row}>
                 <div
                   onClick={() => {
-                    this.setState({ mapState: 'philippines' });
-                  }}
-                  className={styles.rowContainer}
-                >
-                  <h1
-                    className={`${styles.whiteFont} ${
-                      styles.praxisSmallHeader
-                    } ${this.state.mapState === 'philippines' &&
-                      styles.whiteFont__isActive}`}
-                  >
-                    Philippines
-                  </h1>
-                  <p
-                    className={`${styles.whiteFont} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    The Praxis Company, Inc.
-                  </p>
-                  <p
-                    className={`${styles.grayFont} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    Unit 2B Classica 1 Condominium
-                    <br />
-                    112 H.V dela Costa St.
-                    <br />
-                    Salcedo Village, Makati City
-                    <br />
-                    1227 Philippines
-                  </p>
-                </div>
-                <div
-                  onClick={() => {
                     this.setState({ mapState: 'singapore' });
                   }}
                   className={styles.rowContainer}
@@ -1427,6 +1487,41 @@ class LandingPage extends React.Component {
                     MacDonald House
                     <br />
                     #03-01, Singapore 238838
+                  </p>
+                </div>
+                <div
+                  onClick={() => {
+                    this.setState({ mapState: 'philippines' });
+                  }}
+                  className={styles.rowContainer}
+                >
+                  <h1
+                    className={`${styles.whiteFont} ${
+                      styles.praxisSmallHeader
+                    } ${this.state.mapState === 'philippines' &&
+                      styles.whiteFont__isActive}`}
+                  >
+                    Philippines
+                  </h1>
+                  <p
+                    className={`${styles.whiteFont} ${
+                      styles.praxisSmallParagraph
+                    }`}
+                  >
+                    The Praxis Company, Inc.
+                  </p>
+                  <p
+                    className={`${styles.grayFont} ${
+                      styles.praxisSmallParagraph
+                    }`}
+                  >
+                    Unit 2B Classica 1 Condominium
+                    <br />
+                    112 H.V dela Costa St.
+                    <br />
+                    Salcedo Village, Makati City
+                    <br />
+                    1227 Philippines
                   </p>
                 </div>
               </div>
@@ -1564,6 +1659,88 @@ class LandingPage extends React.Component {
             }}
             color="praxisRedButton"
             text="Ok"
+          />
+        </SkyLight>
+        <SkyLight
+          hideOnOverlayClicked
+          ref={ref => (this.testimonialModal = ref)}
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStylesTestimonial
+              : dialogStyles
+          }
+          titleStyle={titleStyles}
+        >
+          <h1 className={styles.praxisSmallHeader}>
+            {this.state.openedTestimonial === 1
+              ? testimonial1Name
+              : this.state.openedTestimonial === 2
+              ? testimonial2Name
+              : this.state.openedTestimonial === 3
+              ? testimonial3Name
+              : this.state.openedTestimonial === 4
+              ? testimonial4Name
+              : this.state.openedTestimonial === 5
+              ? testimonial5Name
+              : ''}
+          </h1>
+          <br />
+          <p className={styles.praxisParagraph}>
+            {this.state.openedTestimonial === 1
+              ? testimonial1
+              : this.state.openedTestimonial === 2
+              ? testimonial2
+              : this.state.openedTestimonial === 3
+              ? testimonial3
+              : this.state.openedTestimonial === 4
+              ? testimonial4
+              : this.state.openedTestimonial === 5
+              ? testimonial5
+              : ''}
+          </p>
+          <br />
+          <PraxisButton
+            id={styles.skylightButton}
+            onClick={() => {
+              this.testimonialModal.hide();
+            }}
+            color="praxisRedButton"
+            text="BACK"
+          />
+        </SkyLight>
+        <SkyLight
+          hideOnOverlayClicked
+          ref={ref => (this.videoModal = ref)}
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStylesTestimonial
+              : dialogStylesVideo
+          }
+          titleStyle={titleStyles}
+        >
+          <div className={styles.containerVideo}>
+            <iframe
+              className={styles.containerIframe}
+              width="100%"
+              height="100%"
+              frameborder="0"
+              src="https://www.youtube.com/embed/rLl8S6tV9R0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </div>
+          <br />
+          <PraxisButton
+            id={styles.skylightButton}
+            onClick={() => {
+              this.videoModal.hide();
+            }}
+            color="praxisRedButton"
+            text="BACK"
           />
         </SkyLight>
       </div>

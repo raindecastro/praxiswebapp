@@ -8,6 +8,8 @@ import {
   scrollSpy,
   scroller,
 } from 'react-scroll';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+
 import { HashLink } from 'react-router-hash-link';
 
 const Footer = props => (
@@ -23,7 +25,7 @@ const Footer = props => (
       </p>
       <HashLink to="/#pricing">
         {' '}
-        <p className={styles.praxisSmallParagraph}>PRAXIS PARTNERSHIPS</p>
+        <p className={styles.praxisSmallParagraph}>PARTNERSHIPS</p>
       </HashLink>
 
       <p
@@ -44,7 +46,16 @@ const Footer = props => (
       </p>
     </div>
     <div className={styles.rightLinks}>
-      {/* <p className={styles.praxisSmallParagraph}>FOLLOW US:</p> */}
+      <p className={styles.praxisSmallParagraph}>
+        FOLLOW US:{' '}
+        <FaFacebookF
+          onClick={() => {
+            window.open('');
+          }}
+          size="24"
+        />{' '}
+        <FaLinkedinIn size="24" />{' '}
+      </p>
     </div>
   </div>
 );

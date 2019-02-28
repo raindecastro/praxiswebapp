@@ -109,7 +109,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              <HashLink to="/#pricing">PRAXIS PARTNERSHIPS</HashLink>
+              <HashLink to="/#pricing">PARTNERSHIPS</HashLink>
             </p>
 
             <p
@@ -204,7 +204,7 @@ class Header extends React.Component {
                     }
                   >
                     {' '}
-                    <HashLink to="/#pricing">PRAXIS PARTNERSHIPS</HashLink>
+                    <HashLink to="/#pricing">PARTNERSHIPS</HashLink>
                   </span>
                 </p>
               </li>

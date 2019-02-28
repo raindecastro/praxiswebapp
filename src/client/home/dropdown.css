@@ -6,3 +6,7 @@
 .dd-header {
   color: red !important;
 }
+
+.skylight-overlay {
+  z-index: 9999 !important;
+}
