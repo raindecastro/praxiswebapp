@@ -8,6 +8,7 @@ import hemant from '../../images/assets/employees/hemant.jpg';
 import wee from '../../images/assets/employees/wee.jpg';
 import naro from '../../images/assets/employees/palm.jpg';
 import whilma from '../../images/assets/employees/wilma.jpg';
+import miro from '../../images/assets/employees/miro.jpg';
 
 class BoardComponent extends React.Component {
   constructor(props) {
@@ -177,6 +178,28 @@ class BoardComponent extends React.Component {
                 </p>
                 <span
                   onClick={() => this.wilmaSanchez.show()}
+                  className={styles.secondSection__link}
+                >
+                  READ MORE
+                </span>
+              </div>
+              <div className={styles.secondSection__columnThree}>
+                <div
+                  style={{
+                    backgroundImage: `url(${miro})`,
+                    backgroundPosition: 'center',
+                  }}
+                  className={styles.secondSection__imageDiv}
+                />
+                <h3>Miro Farrugia</h3>
+                <span>CHIEF FINANCIAL OFFICER</span>
+                <p>
+                  {this.sliceText(
+                    'Miro Farrugia is our Chief Financial Officer and has held senior executive positions with global insurance companies. He has been in Asia for 20 years and has hands on experience of all aspects of finance and risk management.'
+                  )}
+                </p>
+                <span
+                  onClick={() => this.miroFarrugia.show()}
                   className={styles.secondSection__link}
                 >
                   READ MORE
@@ -419,6 +442,39 @@ class BoardComponent extends React.Component {
                 Corp. She also served as the Marketing Services Head at Sun Life
                 Grepa Financial after holding the positions of Marketing
                 Communications and Training Officer at Manulife Financial Plans.
+              </p>
+            </div>
+          </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStyles
+              : dialogStyles
+          }
+          hideOnOverlayClicked
+          ref={ref => (this.miroFarrugia = ref)}
+        >
+          <div className={styles.secondSection__row}>
+            <div className={styles.secondSection__columnOne}>
+              <div
+                style={{
+                  backgroundImage: `url(${miro})`,
+                  backgroundPosition: 'center',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Miro Farrugia</h3>
+              <span>CHIEF FINANCIAL OFFICER</span>
+            </div>
+            <div className={styles.secondSection__columnTwo}>
+              <p>
+                Miro Farrugia is our Chief Financial Officer and has held senior
+                executive positions with global insurance companies. He has been
+                in Asia for 20 years and has hands on experience of all aspects
+                of finance and risk management.
               </p>
             </div>
           </div>
