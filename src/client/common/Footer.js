@@ -49,12 +49,19 @@ const Footer = props => (
       <p className={styles.praxisSmallParagraph}>
         FOLLOW US:{' '}
         <FaFacebookF
+          style={{ cursor: 'pointer' }}
           onClick={() => {
-            window.open('');
+            window.open('https://www.facebook.com/ThePraxisCompany/');
           }}
           size="24"
         />{' '}
-        <FaLinkedinIn size="24" />{' '}
+        <FaLinkedinIn
+          style={{ cursor: 'pointer' }}
+          onClick={() => {
+            window.open('https://www.linkedin.com/company/the-praxis-company/');
+          }}
+          size="24"
+        />{' '}
       </p>
     </div>
   </div>

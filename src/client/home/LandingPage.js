@@ -1332,7 +1332,7 @@ class LandingPage extends React.Component {
                   styles.praxisSmallerHeader
                 }`}
               >
-                Licensce
+                License
               </h1>
               <div className={styles.praxisCard__contentHolder}>
                 <p className={styles.praxisSmallParagraph}>
@@ -1480,8 +1480,6 @@ class LandingPage extends React.Component {
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    40A Orchard Road
-                    <br />
                     40A Orchard Road
                     <br />
                     MacDonald House
