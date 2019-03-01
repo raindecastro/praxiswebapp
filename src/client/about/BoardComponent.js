@@ -168,7 +168,7 @@ class BoardComponent extends React.Component {
                   style={{ backgroundImage: `url(${whilma})` }}
                   className={styles.secondSection__imageDiv}
                 />
-                <h3>Whilma Sanchez</h3>
+                <h3>Wilma Sanchez</h3>
                 <span>HEAD OF MARKETING</span>
                 <span>AND COMMUNICATIONS</span>
                 <p>
