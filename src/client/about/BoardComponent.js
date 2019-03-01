@@ -73,7 +73,7 @@ class BoardComponent extends React.Component {
                 <span>EXECUTIVE OFFICER</span>
                 <p>
                   {this.sliceText(
-                    'As the Group CEO of The Praxis Company, Greg Martin spearheads Praxis.  He brings strategic, marketing, distribution and operations experience from over 20 years of executive and management consulting roles in various countries.'
+                    'Greg Martin brings strategic, marketing, distribution and operations experience from over 20 years of executive and management consulting roles in various countries. '
                   )}
                 </p>
                 <span
@@ -89,11 +89,11 @@ class BoardComponent extends React.Component {
                   className={styles.secondSection__imageDiv}
                 />
                 <h3>Hemant Doshi</h3>
-                <span>CO-CREATOR, GROUP</span>
+                <span>SINGAPORE & MALAYSIA</span>
                 <span>CHIEF EXECUTIVE OFFICER</span>
                 <p>
                   {this.sliceText(
-                    'One of the exceptional co-creators of Praxis in 2002, the present CEO of The Praxis Company in Singapore and Malaysia Hemant Doshi is still actively involved in the continual innovation of Praxis. He successfully developed bespoke Praxis gameplays that cater to various needs of different audiences, whether educational or organizational. '
+                    'One of the co-creators of Praxis in 2002, Hemant Doshi leads the Praxis businesses in Singapore and Malaysia.  He also develops bespoke Praxis Gameplays that cater to various needs of different audiences, whether educational, for financial servcies or organizational. '
                   )}
                 </p>
                 <span
@@ -109,11 +109,10 @@ class BoardComponent extends React.Component {
                   className={styles.secondSection__imageDiv}
                 />
                 <h3>Wee Chi Yu</h3>
-                <span>CO-CREATOR</span>
                 <span>CHIEF INNOVATION OFFICER</span>
                 <p>
                   {this.sliceText(
-                    'The Praxis Company’s Chief Innovation Officer Wee Chi Yu works collaboratively with clients and schools in developing bespoke gameplays, metrics, and training, all in order to ensure successful implementation of Praxis solutions. He is also one of the co-creators of Praxis.'
+                    'Wee Chi Yu leads all R&D and works collaboratively with clients and schools in developing bespoke Gameplays, metrics, and training, all in order to ensure successful implementation of Praxis solutions. He is one of the co-creators of Praxis.'
                   )}
                 </p>
                 <span
@@ -133,7 +132,7 @@ class BoardComponent extends React.Component {
                 <span>CHIEF EXECUTIVE OFFICER</span>
                 <p>
                   {this.sliceText(
-                    'She is The Praxis Company CEO in the Philippines, where Praxis has been experienced by the top life insurers in the country, schools, and corporations, as well as people from diverse backgrounds – from farmers, overseas contract workers, to students, families, and professionals.'
+                    'Mari-an Albert leads the Philippines business where Praxis has been experienced by the top life insurers in the country, schools, and corporations, as well as people from diverse backgrounds – from farmers, overseas contract workers, to students, families, and professionals.'
                   )}
                 </p>
                 <span
@@ -153,7 +152,7 @@ class BoardComponent extends React.Component {
                 <span>CHIEF EXECUTIVE OFFICER</span>
                 <p>
                   {this.sliceText(
-                    'Being the CEO of The Praxis Company in Thailand, Narongrith (Palm) Komsat leads the operations and manages the marketing and implementation of Praxis in various sectors, including banking, insurance, and education.'
+                    'Narongrith (Palm) Komsat leads the operations and manages the marketing and implementation of Praxis in various sectors, including banking, insurance, and education. '
                   )}
                 </p>
                 <span
@@ -173,7 +172,7 @@ class BoardComponent extends React.Component {
                 <span>AND COMMUNICATIONS</span>
                 <p>
                   {this.sliceText(
-                    'As the company’s Head of Marketing and Communications, Wilma is skilled at planning, developing, and implementing marketing communications and public relations strategies for The Praxis Company'
+                    'Wilma leads planning, developing, and implementing marketing communications and public relations strategies for The Praxis Company'
                   )}
                 </p>
                 <span
@@ -230,8 +229,7 @@ class BoardComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                As the Group CEO of The Praxis Company, Greg Martin spearheads
-                Praxis.  He brings strategic, marketing, distribution and
+                Greg Martin brings strategic, marketing, distribution and
                 operations experience from over 20 years of executive and
                 management consulting roles in various countries.
                 <br />
@@ -267,20 +265,19 @@ class BoardComponent extends React.Component {
                 className={styles.secondSection__imageDiv}
               />
               <h3>Hemant Doshi</h3>
-              <span>CO-CREATOR</span>
-              <span>GROUP CHIEF EXECUTIVE OFFICER</span>
+              <span>SINGAPORE & MALAYSIA</span>
+              <span>CHIEF EXECUTIVE OFFICER</span>
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                One of the exceptional co-creators of Praxis in 2002, the
-                present CEO of The Praxis Company in Singapore and Malaysia
-                Hemant Doshi is still actively involved in the continual
-                innovation of Praxis. He successfully developed bespoke Praxis
-                gameplays that cater to various needs of different audiences,
-                whether educational or organizational.
+                One of the co-creators of Praxis in 2002, Hemant Doshi leads the
+                Praxis businesses in Singapore and Malaysia. He also develops
+                bespoke Praxis Gameplays that cater to various needs of
+                different audiences, whether educational, for financial servcies
+                or organizational.
                 <br />
                 <br />
-                Back in 1994, he co-founded Frankel and Kovan Tutors Pte Ltd,
+                Back in 1994, he co-founded Frankel and Kovan Tutors Pte. Ltd.,
                 establishing and managing education centers in Singapore. He
                 also worked as a Forward Currency Money Broker and a Consultant
                 in Financial Management Systems at PlaNET Technology Solutions.
@@ -306,24 +303,22 @@ class BoardComponent extends React.Component {
                 className={styles.secondSection__imageDiv}
               />
               <h3>Wee Chi Yu</h3>
-              <span>CO-CREATOR</span>
-              <span>CHIEF EXECUTIVE OFFICER</span>
+              <span>CHIEF INNOVATION OFFICER</span>
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                The Praxis Company’s Chief Innovation Officer Wee Chi Yu works
-                collaboratively with clients and schools in developing bespoke
-                gameplays, metrics, and training, all in order to ensure
-                successful implementation of Praxis solutions. He is also one of
-                the co-creators of Praxis.
+                Wee Chi Yu leads all R&D and works collaboratively with clients
+                and schools in developing bespoke Gameplays, metrics, and
+                training, all in order to ensure successful implementation of
+                Praxis solutions. He is one of the co-creators of Praxis.
                 <br />
                 <br />
-                Wee’s professional experience includes gameplay design, product
-                development and training in the Education and Finance
+                Wee’s professional experience includes Gameplay design, product
+                development and training in the education and finance
                 industries, having worked as a Consultant in Singapore
                 educational institutions and schools from 1995 to 2003. He also
-                founded Eduwealth in 2004 which allowed the launch of Praxis to
-                a wider market.
+                founded Eduwealth in 2004 which commenced the launch of Praxis
+                to a wider market.
               </p>
             </div>
           </div>
@@ -351,8 +346,8 @@ class BoardComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                She is The Praxis Company CEO in the Philippines, where Praxis
-                has been experienced by the top life insurers in the country,
+                Mari-an Albert leads the Philippines business where Praxis has
+                been experienced by the top life insurers in the country,
                 schools, and corporations, as well as people from diverse
                 backgrounds – from farmers, overseas contract workers, to
                 students, families, and professionals.
@@ -392,16 +387,15 @@ class BoardComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                Being the CEO of The Praxis Company in Thailand, Narongrith
-                (Palm) Komsat leads the operations and manages the marketing and
-                implementation of Praxis in various sectors, including banking,
-                insurance, and education.
+                Narongrith (Palm) Komsat leads the operations and manages the
+                marketing and implementation of Praxis in various sectors,
+                including banking, insurance, and education.
                 <br />
                 <br />
-                Palm is well-versed in Business Development and Transformation,
-                Channel Strategies, Distribution and Partnership Development,
-                Sales Team Building, and Project Management in Financial
-                Services, Retail, and Education industries. He previously held
+                Palm is well-versed in business development and transformation,
+                channel strategies, distribution and partnership development,
+                sales team building, and project management in financial
+                services, retail, and education industries. He previously held
                 management positions in AIA, Thai Cardif Life Assurance,
                 Assurance, Prudential Life Assurance, CIGNA, Liberty Mutual
                 Group Insurance, ACE Insurance, and Asia Insurance Company.
@@ -432,8 +426,7 @@ class BoardComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                As the company’s Head of Marketing and Communications, Wilma is
-                skilled at planning, developing, and implementing marketing
+                Wilma leads planning, developing, and implementing marketing
                 communications and public relations strategies for The Praxis
                 Company,
                 <br />

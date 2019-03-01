@@ -71,7 +71,7 @@ class ManagementComponent extends React.Component {
               <span>CHAIRMAN</span>
               <p>
                 {this.sliceText(
-                  'The current chairman David Steel has 15 years of vast experience in financial services strategy, having closed over $20 billion of financial services deals. He is a skilled specialist investor in emerging market financial services, and a leader in the nascent field of impact investing.'
+                  'David Steel has 15 years of vast experience in financial services strategy, having closed over $20 billion of financial services deals. He is a skilled specialist investor in emerging market financial services, and a leader in the nascent field of impact investing.'
                 )}
               </p>
               <span
@@ -91,55 +91,11 @@ class ManagementComponent extends React.Component {
               <span>EXECUTIVE OFFICER</span>
               <p>
                 {this.sliceText(
-                  'As the Group CEO of The Praxis Company, Greg Martin spearheads Praxis.  He brings strategic, marketing, distribution and operations experience from over 20 years of executive and management consulting roles in various countries.'
+                  'Greg Martin brings strategic, marketing, distribution and operations experience from over 20 years of executive and management consulting roles in various countries. '
                 )}
               </p>
               <span
                 onClick={() => this.gregMartin.show()}
-                className={styles.secondSection__link}
-              >
-                READ MORE
-              </span>
-            </div>
-            <div className={styles.secondSection__columnThree}>
-              <div
-                style={{
-                  backgroundImage: `url(${alex})`,
-                  backgroundPosition: 'center',
-                }}
-                className={styles.secondSection__imageDiv}
-              />
-              <h3>Alexander Krefft</h3>
-              <span>DIRECTOR</span>
-              <p>
-                {this.sliceText(
-                  'One of the current directors Dr. Alexander Krefft is an investment professional with over 13 years of investing and transactional experience.'
-                )}
-              </p>
-              <span
-                onClick={() => this.alexKrefft.show()}
-                className={styles.secondSection__link}
-              >
-                READ MORE
-              </span>
-            </div>
-            <div className={styles.secondSection__columnThree}>
-              <div
-                style={{
-                  backgroundImage: `url(${allan})`,
-                  backgroundPosition: 'center',
-                }}
-                className={styles.secondSection__imageDiv}
-              />
-              <h3>Allan Pedersen</h3>
-              <span>DIRECTOR</span>
-              <p>
-                {this.sliceText(
-                  'The Praxis Company Director Mr. Allan Pedersen is a skilled insurance operator, entrepreneur, and investor with over 18 years of insurance experience, with 15 years of them being in Asia. '
-                )}
-              </p>
-              <span
-                onClick={() => this.allanPedersen.show()}
                 className={styles.secondSection__link}
               >
                 READ MORE
@@ -166,6 +122,92 @@ class ManagementComponent extends React.Component {
                 READ MORE
               </span>
             </div>
+            <div className={styles.secondSection__columnThree}>
+              <div
+                style={{
+                  backgroundImage: `url(${alex})`,
+                  backgroundPosition: 'center',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Alexander Krefft</h3>
+              <span>DIRECTOR</span>
+              <p>
+                {this.sliceText(
+                  'Dr. Alexander Krefft is an investment professional with over 13 years of investing and transactional experience.'
+                )}
+              </p>
+              <span
+                onClick={() => this.alexKrefft.show()}
+                className={styles.secondSection__link}
+              >
+                READ MORE
+              </span>
+            </div>
+            <div className={styles.secondSection__columnThree}>
+              <div
+                style={{
+                  backgroundImage: `url(${allan})`,
+                  backgroundPosition: 'center',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Allan Pedersen</h3>
+              <span>DIRECTOR</span>
+              <p>
+                {this.sliceText(
+                  'Allan Pedersen is a skilled insurance operator, entrepreneur, and investor with over 18 years of insurance experience, with 15 years of them being in Asia. '
+                )}
+              </p>
+              <span
+                onClick={() => this.allanPedersen.show()}
+                className={styles.secondSection__link}
+              >
+                READ MORE
+              </span>
+            </div>
+            <div className={styles.secondSection__columnThree}>
+              <div
+                style={{
+                  backgroundColor: '#F3F3F3',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Dr. Noi Keong Koh</h3>
+              <span>SENIOR ADVISER</span>
+              <p>
+                {this.sliceText(
+                  'Dr. Lillian Koh, the Senior Adviser of The Praxis Company, is also the CEO of Fintech Academy, a Director at the Center for Research and Innovation, and a Mentor at Temasek LaunchPad, all in Singapore. She is strongly driven in making innovations on financial education in Singapore, spearheading financial literacy programs across the country. '
+                )}
+              </p>
+              <span
+                onClick={() => this.noiKeong.show()}
+                className={styles.secondSection__link}
+              >
+                READ MORE
+              </span>
+            </div>
+            <div className={styles.secondSection__columnThree}>
+              <div
+                style={{
+                  backgroundColor: '#F3F3F3',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Alan Wood</h3>
+              <span>SENIOR ADVISER</span>
+              <p>
+                {this.sliceText(
+                  'Alan Wood has over 35 years of experience in the Australian and Asian financial industries. He has executive experience in sales and marketing, superannuation, and investment, especially on distribution development and management in the Australian and Asian markets.'
+                )}
+              </p>
+              <span
+                onClick={() => this.alanWood.show()}
+                className={styles.secondSection__link}
+              >
+                READ MORE
+              </span>
+            </div>
           </div>
         </div>
         <SkyLight
@@ -186,14 +228,13 @@ class ManagementComponent extends React.Component {
                 className={styles.secondSection__imageDiv}
               />
               <h3>Greg Martin</h3>
-              <span>GROUP CHIEF EXECUTIVE OFFICER</span>
+              <span>DIRECTOR</span>
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                As the Group CEO of The Praxis Company, Greg Martin spearheads
-                Praxis.  He brings strategic, marketing, distribution and
+                Greg Martin brings strategic, marketing, distribution and
                 operations experience from over 20 years of executive and
-                management consulting roles in various countries.
+                management consulting roles in various countries. 
                 <br />
                 <br />
                 Prior to advising and working for The Praxis Company, Greg was
@@ -234,11 +275,11 @@ class ManagementComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                The current chairman David Steel has 15 years of vast experience
-                in financial services strategy, having closed over $20 billion
-                of financial services deals. He is a skilled specialist investor
-                in emerging market financial services, and a leader in the
-                nascent field of impact investing.
+                David Steel has 15 years of vast experience in financial
+                services strategy, having closed over $20 billion of financial
+                services deals. He is a skilled specialist investor in emerging
+                market financial services, and a leader in the nascent field of
+                impact investing.
                 <br />
                 <br />
                 Prior to The Praxis Company, he was the Director of Investments
@@ -275,9 +316,8 @@ class ManagementComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                One of the current directors Dr. Alexander Krefft is an
-                investment professional with over 13 years of investing and
-                transactional experience.
+                Dr. Alexander Krefft is an investment professional with over 13
+                years of investing and transactional experience.
                 <br />
                 <br />
                 Dr. Krefft has been a partner at Osten, Krefft & Block Ltd., an
@@ -317,10 +357,9 @@ class ManagementComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                The Praxis Company Director Mr. Allan Pedersen is a skilled
-                insurance operator, entrepreneur, and investor with over 18
-                years of insurance experience, with 15 years of them being in
-                Asia.
+                Allan Pedersen is a skilled insurance operator, entrepreneur,
+                and investor with over 18 years of insurance experience, with 15
+                years of them being in Asia.
                 <br />
                 <br />
                 Since 2010, Mr. Pedersen has been the Managing Partner at
@@ -361,6 +400,91 @@ class ManagementComponent extends React.Component {
                 Based in Asia and with a background covering financial services,
                 training and recruiting, David Clancy is an entrepreneur with
                 several start-ups and exits in his portfolio.
+              </p>
+            </div>
+          </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStyles
+              : dialogStyles
+          }
+          hideOnOverlayClicked
+          ref={ref => (this.noiKeong = ref)}
+        >
+          <div className={styles.secondSection__row}>
+            <div className={styles.secondSection__columnOne}>
+              <div
+                style={{
+                  backgroundColor: '#F3F3F3',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Dr. Noi Keong Koh</h3>
+              <span>SENIOR ADVISER</span>
+            </div>
+            <div className={styles.secondSection__columnTwo}>
+              <p>
+                Dr. Lillian Koh, the Senior Adviser of The Praxis Company, is
+                also the CEO of Fintech Academy, a Director at the Center for
+                Research and Innovation, and a Mentor at Temasek LaunchPad, all
+                in Singapore. She is strongly driven in making innovations on
+                financial education in Singapore, spearheading financial
+                literacy programs across the country.
+              </p>
+              <br />
+              <br />
+              <p>
+                With her efforts in Temasek LaunchPad, a number of schools in
+                Singapore are currently implementing innovative financial
+                literacy programs in school, including gamifications, coding,
+                and augmented reality.
+              </p>
+            </div>
+          </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStyles
+              : dialogStyles
+          }
+          hideOnOverlayClicked
+          ref={ref => (this.alanWood = ref)}
+        >
+          <div className={styles.secondSection__row}>
+            <div className={styles.secondSection__columnOne}>
+              <div
+                style={{
+                  backgroundColor: '#F3F3F3',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Alan Wood</h3>
+              <span>SENIOR ADVISER</span>
+            </div>
+            <div className={styles.secondSection__columnTwo}>
+              <p>
+                Alan Wood has over 35 years of experience in the Australian and
+                Asian financial industries. He has executive experience in sales
+                and marketing, superannuation, and investment, especially on
+                distribution development and management in the Australian and
+                Asian markets.
+              </p>
+              <br />
+              <br />
+              <p>
+                He developed his strong practical and analytical skills
+                throughout his career, having been the General Manager at China
+                Life CMG Insurance in China, a Founding Partner at EQ Group, the
+                Regional Director of Marketing and Distribution at Commonwealth
+                Bank Group, and the President and Managing Director at Krungthai
+                AXA Life Insurance in Thailand.
               </p>
             </div>
           </div>
