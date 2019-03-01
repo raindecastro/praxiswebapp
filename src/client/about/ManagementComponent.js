@@ -145,6 +145,27 @@ class ManagementComponent extends React.Component {
                 READ MORE
               </span>
             </div>
+            <div className={styles.secondSection__columnThree}>
+              <div
+                style={{
+                  backgroundColor: '#F3F3F3',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>David Clancy</h3>
+              <span>DIRECTOR</span>
+              <p>
+                {this.sliceText(
+                  'Based in Asia and with a background covering financial services, training and recruiting, David Clancy is an entrepreneur with several start-ups and exits in his portfolio.'
+                )}
+              </p>
+              <span
+                onClick={() => this.davidClancy.show()}
+                className={styles.secondSection__link}
+              >
+                READ MORE
+              </span>
+            </div>
           </div>
         </div>
         <SkyLight
@@ -309,6 +330,37 @@ class ManagementComponent extends React.Component {
                 Scandinavia; a legal assistance business in China; au2.io, a
                 mobile phone insurance telematics business for Asia, and
                 Contemi, an IT company for the insurance industry in Vietnam.
+              </p>
+            </div>
+          </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStyles
+              : dialogStyles
+          }
+          hideOnOverlayClicked
+          ref={ref => (this.davidClancy = ref)}
+        >
+          <div className={styles.secondSection__row}>
+            <div className={styles.secondSection__columnOne}>
+              <div
+                style={{
+                  backgroundColor: '#F3F3F3',
+                }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>David Clancy</h3>
+              <span>DIRECTOR</span>
+            </div>
+            <div className={styles.secondSection__columnTwo}>
+              <p>
+                Based in Asia and with a background covering financial services,
+                training and recruiting, David Clancy is an entrepreneur with
+                several start-ups and exits in his portfolio.
               </p>
             </div>
           </div>
