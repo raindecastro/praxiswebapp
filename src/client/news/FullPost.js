@@ -3,6 +3,14 @@ import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 import moment from 'moment';
 import styles from './styles/_fullpost.scss';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 class FullPost extends React.Component {
   constructor(props) {
@@ -14,7 +22,7 @@ class FullPost extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    this.scrollToTop();
     console.log(this.props);
 
     // GET BLOG POSTS
@@ -29,6 +37,10 @@ class FullPost extends React.Component {
       })
       .catch(error => console.log(error));
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   formatDate = date => moment(date).format('MMMM Do YYYY');
 

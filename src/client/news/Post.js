@@ -20,7 +20,7 @@ const Post = ({ post }) => (
           id={styles.fourthContent__header}
           className={styles.praxisSmallHeader}
         >
-          {post.title}
+          {ReactHtmlParser(post.title)}
         </h1>
         <p className={styles.praxisSmallParagraph}>{formatDate(post.date)}</p>
         <p className={styles.praxisSmallParagraph}>

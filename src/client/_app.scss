@@ -18,3 +18,9 @@
 .skylight-overlay {
   z-index: 9999 !important;
 }
+a {
+  color: inherit;
+  &:hover {
+    color: #ed1c23;
+  }
+}

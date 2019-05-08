@@ -9,6 +9,16 @@ import wee from '../../images/assets/employees/wee.jpg';
 import naro from '../../images/assets/employees/palm.jpg';
 import whilma from '../../images/assets/employees/wilma.jpg';
 import miro from '../../images/assets/employees/miro.jpg';
+import pat from '../../images/assets/employees/pat.jpg';
+
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 class BoardComponent extends React.Component {
   constructor(props) {
@@ -18,9 +28,13 @@ class BoardComponent extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    this.scrollToTop();
     console.log(this.props);
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   sliceText = text => `${text.slice(0, 110)}...`;
 
@@ -69,7 +83,7 @@ class BoardComponent extends React.Component {
                   className={styles.secondSection__imageDiv}
                 />
                 <h3>Greg Martin</h3>
-                <span>GROUP CHIEF </span>
+                <span>GROUP CHIEF</span>
                 <span>EXECUTIVE OFFICER</span>
                 <p>
                   {this.sliceText(
@@ -78,6 +92,67 @@ class BoardComponent extends React.Component {
                 </p>
                 <span
                   onClick={() => this.gregMartin.show()}
+                  className={styles.secondSection__link}
+                >
+                  READ MORE
+                </span>
+              </div>
+              <div className={styles.secondSection__columnThree}>
+                <div
+                  style={{ backgroundImage: `url(${pat})` }}
+                  className={styles.secondSection__imageDiv}
+                />
+                <h3>Pat Javier</h3>
+                <span>GROUP CHIEF</span>
+                <span>OPERATING OFFICER</span>
+                <p>
+                  {this.sliceText(
+                    "As the Group COO, Pat is responsible for leading the execution of The Praxis Company's vision, while driving and supporting the company's operational requirements."
+                  )}
+                </p>
+                <span
+                  onClick={() => this.patJavier.show()}
+                  className={styles.secondSection__link}
+                >
+                  READ MORE
+                </span>
+              </div>
+              <div className={styles.secondSection__columnThree}>
+                <div
+                  style={{ backgroundImage: `url(${wee})` }}
+                  className={styles.secondSection__imageDiv}
+                />
+                <h3>Wee Chi Yu</h3>
+                <span>CHIEF INNOVATION OFFICER</span>
+                <p>
+                  {this.sliceText(
+                    'Wee Chi Yu leads all R&D and works collaboratively with clients and schools in developing bespoke Gameplays, metrics, and training, all in order to ensure successful implementation of Praxis solutions. He is one of the co-creators of Praxis.'
+                  )}
+                </p>
+                <span
+                  onClick={() => this.weeChi.show()}
+                  className={styles.secondSection__link}
+                >
+                  READ MORE
+                </span>
+              </div>
+              <div className={styles.secondSection__columnThree}>
+                <div
+                  style={{
+                    backgroundImage: `url(${miro})`,
+                    backgroundPosition: 'center',
+                  }}
+                  className={styles.secondSection__imageDiv}
+                />
+                <h3>Miro Farrugia</h3>
+                <span>CHIEF FINANCIAL OFFICER</span>
+                <p>
+                  {this.sliceText(
+                    'Miro Farrugia is our Chief Financial Officer and has held senior executive positions with global insurance companies. He has been in Asia for 20 years and has hands on experience of all aspects of finance and risk management.'
+                  )}
+                </p>
+                <span
+                  onClick={() => this.miroFarrugia.show()}
                   className={styles.secondSection__link}
                 >
                   READ MORE
@@ -98,25 +173,6 @@ class BoardComponent extends React.Component {
                 </p>
                 <span
                   onClick={() => this.hemantDoshi.show()}
-                  className={styles.secondSection__link}
-                >
-                  READ MORE
-                </span>
-              </div>
-              <div className={styles.secondSection__columnThree}>
-                <div
-                  style={{ backgroundImage: `url(${wee})` }}
-                  className={styles.secondSection__imageDiv}
-                />
-                <h3>Wee Chi Yu</h3>
-                <span>CHIEF INNOVATION OFFICER</span>
-                <p>
-                  {this.sliceText(
-                    'Wee Chi Yu leads all R&D and works collaboratively with clients and schools in developing bespoke Gameplays, metrics, and training, all in order to ensure successful implementation of Praxis solutions. He is one of the co-creators of Praxis.'
-                  )}
-                </p>
-                <span
-                  onClick={() => this.weeChi.show()}
                   className={styles.secondSection__link}
                 >
                   READ MORE
@@ -182,28 +238,6 @@ class BoardComponent extends React.Component {
                   READ MORE
                 </span>
               </div>
-              <div className={styles.secondSection__columnThree}>
-                <div
-                  style={{
-                    backgroundImage: `url(${miro})`,
-                    backgroundPosition: 'center',
-                  }}
-                  className={styles.secondSection__imageDiv}
-                />
-                <h3>Miro Farrugia</h3>
-                <span>CHIEF FINANCIAL OFFICER</span>
-                <p>
-                  {this.sliceText(
-                    'Miro Farrugia is our Chief Financial Officer and has held senior executive positions with global insurance companies. He has been in Asia for 20 years and has hands on experience of all aspects of finance and risk management.'
-                  )}
-                </p>
-                <span
-                  onClick={() => this.miroFarrugia.show()}
-                  className={styles.secondSection__link}
-                >
-                  READ MORE
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -243,6 +277,43 @@ class BoardComponent extends React.Component {
                 Distribution in the Asia Pacific and the Middle East at Zurich
                 Financial Services as well as the Managing Director for ADMS
                 Australia.
+              </p>
+            </div>
+          </div>
+        </SkyLight>
+        <SkyLight
+          dialogStyles={
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/webOS/i)
+              ? mobileDialogStyles
+              : dialogStyles
+          }
+          hideOnOverlayClicked
+          ref={ref => (this.patJavier = ref)}
+        >
+          <div className={styles.secondSection__row}>
+            <div className={styles.secondSection__columnOne}>
+              <div
+                style={{ backgroundImage: `url(${pat})` }}
+                className={styles.secondSection__imageDiv}
+              />
+              <h3>Pat Javier</h3>
+              <span>GROUP CHIEF OPERATING OFFICER</span>
+            </div>
+            <div className={styles.secondSection__columnTwo}>
+              <p>
+                As the Group COO, Pat is responsible for leading the execution
+                of The Praxis Company's vision, while driving and supporting the
+                company's operational requirements. She also heads the set-up of
+                local country operations.
+                <br />
+                <br />
+                Pat's professional background is in Banking and Technology,
+                wherein she pioneered the microfinance business for the largest
+                rural bank in the Philippines. She also worked as a Technology
+                Consultant in Accenture Singapore and HP Philippines prior to
+                completing her Masters in Business Administration.
               </p>
             </div>
           </div>

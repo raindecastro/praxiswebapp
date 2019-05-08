@@ -77,10 +77,18 @@ const testimonial1Name =
   'Darren Thomson, Chief Strategic Bancassurance Alliance Officer, AIA Thailand';
 const testimonial2Name = 'Great Eastern Life Assurance Co Ltd, Singapore';
 const testimonial3Name =
-  'Dr. Koh Noi Keng, Lecturer, National Institute of Education, Singapore';
+  'Dr. Noi Keng Koh, Lecturer, National Institute of Education, Singapore';
 const testimonial4Name =
   'James DeLong, Regional Director, Distribution Asia, Ageas';
 const testimonial5Name = 'Agnes Lamberte, President, Collezione';
+const testimonial6 =
+  "Praxis' easy-to-understand gamification design makes it easy for anyone to experience the reality of their financial situation. The gameplay simplifies money mastery for our clients and financial advisers. By the way end of ever session, each one  them leaves with new financial insights and healthier money habits. If you wish to maste ryour financial destinry, we highly recommend that you experience Praxis!";
+const testimonial6Name =
+  'Alan Lee, Distribution Recruitment & Business Development, Financial Services Success Hub for Financial Advisory Services Talents, Great Eastern Life';
+const testimonial7Name =
+  'Marice Fuentes, Managing Director, Campaigntrack, Philippines';
+const testimonial7 =
+  'Praxis has opened avenues for our employees to look after their financial health. After the game, there were those who invested in insurance, in stocks and even real estate. This goes without saying, our very own investment with them has reaped its ROI because of these tangible results!';
 
 const options = [
   { value: 1, label: 'EDUCATION' },
@@ -225,6 +233,67 @@ class LandingPage extends React.Component {
           <div
             onClick={() => {
               this.testimonialModal.show();
+              this.setState({ openedTestimonial: 7 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial7)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2019</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>Marice Fuentes</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Managing Director
+                <br />
+                Campaigntrack, Philippines
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 6 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial6)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2018</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>Alan Lee</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Distribution Recruitment & Business Development, Financial
+                Services Success Hub for Financial Advisory Services Talents
+                <br />
+                Great Eastern Life
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
               this.setState({ openedTestimonial: 1 });
             }}
             className={styles.sixthSection__content}
@@ -238,6 +307,9 @@ class LandingPage extends React.Component {
               </p>
               <br />
               <p className={styles.praxisParagraph}>
+                <strong>2018</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
                 <strong>Darren Thomson</strong>
               </p>
               <p className={styles.praxisSmallParagraph}>
@@ -245,33 +317,6 @@ class LandingPage extends React.Component {
                 <br />
                 AIA Thailand
               </p>
-            </div>
-          </div>
-        </Slide>
-        <Slide right>
-          <div
-            onClick={() => {
-              this.testimonialModal.show();
-              this.setState({ openedTestimonial: 2 });
-            }}
-            className={styles.sixthSection__content}
-          >
-            {/* <div className={styles.sixthSection__circleImage__left}>
-              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
-            </div> */}
-            <div className={styles.leftContent__content}>
-              <p className={styles.leftContent__paragraph}>
-                {`"${this.sliceText(testimonial2)}..."`}
-              </p>
-              <br />
-              <p className={styles.praxisParagraph}>
-                <strong>
-                  Great Eastern Life Assurance Co Ltd
-                  <br />
-                  Singapore
-                </strong>
-              </p>
-              <p className={styles.praxisSmallParagraph} />
             </div>
           </div>
         </Slide>
@@ -291,6 +336,9 @@ class LandingPage extends React.Component {
                 {`"${this.sliceText(testimonial3)}..."`}
               </p>
               <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2004</strong>
+              </p>
               <p className={styles.praxisParagraph}>
                 <strong>Dr. Koh Noi Keng</strong>
               </p>
@@ -319,6 +367,9 @@ class LandingPage extends React.Component {
               </p>
               <br />
               <p className={styles.praxisParagraph}>
+                <strong>2018</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
                 <strong>James DeLong</strong>
               </p>
               <p className={styles.praxisSmallParagraph}>
@@ -345,6 +396,9 @@ class LandingPage extends React.Component {
                 {`"${this.sliceText(testimonial5)}..."`}
               </p>
               <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2019</strong>
+              </p>
               <p className={styles.praxisParagraph}>
                 <strong>Agnes Lamberte</strong>
               </p>
@@ -788,7 +842,7 @@ class LandingPage extends React.Component {
               <PraxisButton
                 id={styles.firstButton}
                 color="praxisRedButton"
-                text="WHAT IS PRAXIS"
+                text="WHAT IS PRAXIS?"
                 onClick={() => scroll.scrollTo(600)}
               />
             </Fade>
@@ -1682,7 +1736,9 @@ class LandingPage extends React.Component {
               ? testimonial4Name
               : this.state.openedTestimonial === 5
               ? testimonial5Name
-              : ''}
+              : this.state.openedTestimonial === 6
+              ? testimonial6Name
+              : testimonial7Name}
           </h1>
           <br />
           <p className={styles.praxisParagraph}>
@@ -1696,7 +1752,9 @@ class LandingPage extends React.Component {
               ? testimonial4
               : this.state.openedTestimonial === 5
               ? testimonial5
-              : ''}
+              : this.state.openedTestimonial === 6
+              ? testimonial6
+              : testimonial7}
           </p>
           <br />
           <PraxisButton

@@ -3,7 +3,14 @@ import SkyLight from 'react-skylight';
 import styles from './_about.scss';
 import BoardComponent from './BoardComponent';
 import ManagementComponent from './ManagementComponent';
-
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 class About extends React.Component {
   constructor(props) {
     super(props);
@@ -12,9 +19,13 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    this.scrollToTop();
     console.log(this.props);
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   render() {
     return (

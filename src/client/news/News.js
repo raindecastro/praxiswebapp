@@ -5,6 +5,7 @@ import axios from 'axios';
 import Post from './Post';
 import styles from './styles/_news.scss';
 import ReactHtmlParser from 'react-html-parser';
+import { animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 class News extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class News extends React.Component {
   }
 
   componentWillMount() {
-    window.scrollTo(0, 0);
+    this.scrollToTop();
     console.log(this.props);
 
     // GET BLOG POSTS
@@ -41,6 +42,10 @@ class News extends React.Component {
       })
       .catch(error => console.log(error));
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   renderPosts = posts => {
     return posts.map((post, key) => {
@@ -69,7 +74,7 @@ class News extends React.Component {
             className={styles.newsContainer__firstSection}
           >
             <h1 className={styles.praxisHeader}>
-              {!!featuredPost && featuredPost.title}
+              {!!featuredPost && ReactHtmlParser(featuredPost.title)}
             </h1>
             <br />
             <p className={styles.praxisParagraph}>

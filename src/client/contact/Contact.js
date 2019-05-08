@@ -4,6 +4,14 @@ import PraxisButton from '../common/PraxisButton';
 import Select from 'react-select';
 import SkyLight from 'react-skylight';
 import styles from './_contact.scss';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 const options = [
   { value: 'ph', label: 'Philippines' },
@@ -91,8 +99,12 @@ class Contact extends React.Component {
     //   .catch(err => {
     //     console.log('Error getting documents', err);
     //   });
-    window.scrollTo(0, 0);
+    this.scrollToTop();
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   clearForm = () => {
     this.setState({

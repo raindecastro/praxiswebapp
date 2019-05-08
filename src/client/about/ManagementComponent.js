@@ -3,9 +3,21 @@ import SkyLight from 'react-skylight';
 import styles from './_about.scss';
 
 import david from '../../images/assets/employees/david.jpg';
-import greg from '../../images/assets/employees/greg.jpg';
 import alex from '../../images/assets/employees/alex.jpg';
 import allan from '../../images/assets/employees/allan.jpg';
+import wood from '../../images/assets/employees/wood.jpg';
+import keng from '../../images/assets/employees/keng.jpg';
+import clancy from '../../images/assets/employees/clancy.jpg';
+import greg from '../../images/assets/employees/greg.jpg';
+
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 class ManagementComponent extends React.Component {
   constructor(props) {
@@ -15,9 +27,13 @@ class ManagementComponent extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    this.scrollToTop();
     console.log(this.props);
   }
+
+  scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   sliceText = text => `${text.slice(0, 110)}...`;
 
@@ -87,8 +103,7 @@ class ManagementComponent extends React.Component {
                 className={styles.secondSection__imageDiv}
               />
               <h3>Greg Martin</h3>
-              <span>GROUP CHIEF </span>
-              <span>EXECUTIVE OFFICER</span>
+              <span>DIRECTOR</span>
               <p>
                 {this.sliceText(
                   'Greg Martin brings strategic, marketing, distribution and operations experience from over 20 years of executive and management consulting roles in various countries. '
@@ -103,9 +118,7 @@ class ManagementComponent extends React.Component {
             </div>
             <div className={styles.secondSection__columnThree}>
               <div
-                style={{
-                  backgroundColor: '#F3F3F3',
-                }}
+                style={{ backgroundImage: `url(${clancy})` }}
                 className={styles.secondSection__imageDiv}
               />
               <h3>David Clancy</h3>
@@ -169,15 +182,16 @@ class ManagementComponent extends React.Component {
             <div className={styles.secondSection__columnThree}>
               <div
                 style={{
-                  backgroundColor: '#F3F3F3',
+                  backgroundImage: `url(${keng})`,
+                  backgroundPosition: 'center',
                 }}
                 className={styles.secondSection__imageDiv}
               />
-              <h3>Dr. Noi Keong Koh</h3>
+              <h3>Noi Keng Koh, PhD</h3>
               <span>SENIOR ADVISER</span>
               <p>
                 {this.sliceText(
-                  'Dr. Lillian Koh, the Senior Adviser of The Praxis Company, is also the CEO of Fintech Academy, a Director at the Center for Research and Innovation, and a Mentor at Temasek LaunchPad, all in Singapore. She is strongly driven in making innovations on financial education in Singapore, spearheading financial literacy programs across the country. '
+                  'Dr. Noi Keng Koh, the Senior Adviser of The Praxis Company, is also the CEO of Fintech Academy, a Director at the Center for Research and Innovation, and a Mentor at Temasek LaunchPad, all in Singapore. She is strongly driven in making innovations on financial education in Singapore, spearheading financial literacy programs across the country. '
                 )}
               </p>
               <span
@@ -190,7 +204,8 @@ class ManagementComponent extends React.Component {
             <div className={styles.secondSection__columnThree}>
               <div
                 style={{
-                  backgroundColor: '#F3F3F3',
+                  backgroundImage: `url(${wood})`,
+                  backgroundPosition: 'center',
                 }}
                 className={styles.secondSection__imageDiv}
               />
@@ -388,7 +403,8 @@ class ManagementComponent extends React.Component {
             <div className={styles.secondSection__columnOne}>
               <div
                 style={{
-                  backgroundColor: '#F3F3F3',
+                  backgroundImage: `url(${clancy})`,
+                  backgroundPosition: 'center',
                 }}
                 className={styles.secondSection__imageDiv}
               />
@@ -419,16 +435,17 @@ class ManagementComponent extends React.Component {
             <div className={styles.secondSection__columnOne}>
               <div
                 style={{
-                  backgroundColor: '#F3F3F3',
+                  backgroundImage: `url(${keng})`,
+                  backgroundPosition: 'center',
                 }}
                 className={styles.secondSection__imageDiv}
               />
-              <h3>Dr. Noi Keong Koh</h3>
+              <h3>Noi Keng Koh, PhD</h3>
               <span>SENIOR ADVISER</span>
             </div>
             <div className={styles.secondSection__columnTwo}>
               <p>
-                Dr. Lillian Koh, the Senior Adviser of The Praxis Company, is
+                Dr. Noi Keng Koh, the Senior Adviser of The Praxis Company, is
                 also the CEO of Fintech Academy, a Director at the Center for
                 Research and Innovation, and a Mentor at Temasek LaunchPad, all
                 in Singapore. She is strongly driven in making innovations on
@@ -461,7 +478,8 @@ class ManagementComponent extends React.Component {
             <div className={styles.secondSection__columnOne}>
               <div
                 style={{
-                  backgroundColor: '#F3F3F3',
+                  backgroundImage: `url(${wood})`,
+                  backgroundPosition: 'center',
                 }}
                 className={styles.secondSection__imageDiv}
               />
