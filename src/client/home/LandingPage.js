@@ -62,33 +62,22 @@ import {
   tabImageMobile5,
 } from './ImageConstants';
 
-const testimonial1 =
-  'With Praxis, attendees at our foundational courses and events have never been more engaged. They enjoy participating even while networking and learning. By gamifying finance, Praxis makes them enthusiastic about competing with each other. It has been a real value added to our academy.';
-const testimonial2 =
-  'Praxis’ easy-to-understand gamification design makes it easy for anyone to experience the reality of their financial sitaution. The gameplay simplifies money mastery for our clients and financial advisers. By the end of every session, each one of them leaves with new financial insights and healthier money habits. If you wish to master your financial destiny, we highly recommend that you experience Praxis!';
-('"Praxis is a great gameplay where folks of all ages can experience the reality of different financial situations thru its simple to understand gamification design. Over the last 2 years, we have engaged our financial advisors, clients and financial advisor candidates with Praxis. The participants who play the game have found it to be most fun and effective to discover the importance of financial literacy. The gameplay has simplified money mastery and offer practical insights to one’s own financial and money management mindset. At the end of the each session, Praxis offers good money habits as key takeaways for our participants. We would recommend anyone who wishes to master their financial destiny to experience Praxis!');
-const testimonial3 =
-  'We are proud to endorse Praxis. It offers a hands-on approach to grasping abstract  financial concepts, and we welcome the game as a powerful tool for teaching and training.';
-const testimonial4 =
-  "I've attended Praxis gameplay sessions across multiple Asian countries with employees, agents, senior management and customers from all walks of life and the results have been the same: excitement, laughter and high energy with a great outcome; deep engagement and real learning of all aspects of personal finances through the decisions they made while experiencing Praxis.  A fantastic tool for teaching financial independence and creating action.";
-const testimonial5 =
-  'Praxis is more than just a fun, board game. Going through it for an hour or so has naturally allowed each player participant to discover her/his spending pattern, financial saving habits and readiness to take risk in investing for a long-term personal financial growth. And the greater impact is the afterthought - self realisation that "I" should start managing my personal finances NOW. Collezione C2 Head Office and Retail management and staff we\'ll definitely go through this life changing Praxis.';
-const testimonial1Name =
-  'Darren Thomson, Chief Strategic Bancassurance Alliance Officer, AIA Thailand';
-const testimonial2Name = 'Great Eastern Life Assurance Co Ltd, Singapore';
-const testimonial3Name =
-  'Dr. Noi Keng Koh, Lecturer, National Institute of Education, Singapore';
-const testimonial4Name =
-  'James DeLong, Regional Director, Distribution Asia, Ageas';
-const testimonial5Name = 'Agnes Lamberte, President, Collezione';
-const testimonial6 =
-  "Praxis' easy-to-understand gamification design makes it easy for anyone to experience the reality of their financial situation. The gameplay simplifies money mastery for our clients and financial advisers. By the way end of ever session, each one  them leaves with new financial insights and healthier money habits. If you wish to maste ryour financial destinry, we highly recommend that you experience Praxis!";
-const testimonial6Name =
-  'Alan Lee, Distribution Recruitment & Business Development, Financial Services Success Hub for Financial Advisory Services Talents, Great Eastern Life';
-const testimonial7Name =
-  'Marice Fuentes, Managing Director, Campaigntrack, Philippines';
-const testimonial7 =
-  'Praxis has opened avenues for our employees to look after their financial health. After the game, there were those who invested in insurance, in stocks and even real estate. This goes without saying, our very own investment with them has reaped its ROI because of these tangible results!';
+import {
+  testimonial1,
+  testimonial2,
+  testimonial3,
+  testimonial4,
+  testimonial5,
+  testimonial6,
+  testimonial7,
+  testimonial1Name,
+  testimonial2Name,
+  testimonial3Name,
+  testimonial4Name,
+  testimonial5Name,
+  testimonial6Name,
+  testimonial7Name,
+} from './Testimonials';
 
 const options = [
   { value: 1, label: 'EDUCATION' },
@@ -124,9 +113,8 @@ class LandingPage extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-    const object = ReactDOM.findDOMNode(this.refs.scrollableRow);
-
-    object.scrollTo(270, 0);
+    // const object = ReactDOM.findDOMNode(this.refs.scrollableRow);
+    // object.scrollTo(270, 0);
 
     this.setState({ headerColor: 'transparentHeader', showLogo: false });
   }
@@ -848,7 +836,7 @@ class LandingPage extends React.Component {
             </Fade>
           </div>
         </section>
-        <section id="whatIsPraxis" className={styles.secondSection}>
+        <section id="what-is-praxis" className={styles.secondSection}>
           <Fade delay={200}>
             <div
               onClick={() => {
@@ -909,6 +897,7 @@ class LandingPage extends React.Component {
             </div>
           </Fade>
         </section>
+        <section id="tailored-needs" />
         <section id={styles.thirdSection}>
           <div id={styles.thirdSection__first}>
             <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
@@ -1193,145 +1182,8 @@ class LandingPage extends React.Component {
                 />
               </div>
             </div>
-            {/* <div className={styles.tabContainer__menuContainer}>
-              <ul
-                className={
-                  activeSelectTab
-                    ? `${styles.tabContainer__menu} ${
-                        styles.tabContainer__menuActive
-                      }`
-                    : `${styles.tabContainer__menu}`
-                }
-              >
-                <li>
-                  <h1>EDUCATION</h1>
-                </li>
-                <li>
-                  <h1>EDUCATION</h1>
-                </li>
-                <li>
-                  <h1>EDUCATION</h1>
-                </li>
-              </ul>
-            </div> */}
           </MediaQuery>
         </section>
-        {/* <MediaQuery query="(min-device-width: 1224px)">
-          <section id={styles.fourthSection}>
-            <h1 id={styles.fourthParagraph} className={styles.praxisHeader}>
-              Experience Praxis Now
-            </h1>
-            <div className={styles.fourthSection__newRow}>
-              <div className={styles.fourthSection__newParagraph}>
-                <p>
-                  We can customize Praxis gameplays exclusively for you
-                  students, employees, or staff.
-                </p>
-              </div>
-              <div className={styles.fourthSection__newImageContainer}>
-                <img
-                  className={styles.fourthSection__newImage}
-                  src={fourtSectionImage1}
-                  alt="fourth1"
-                />
-              </div>
-            </div>
-            <div className={styles.fourthSection__newSecondRow}>
-              <div className={styles.fourthSection__newSecondParagraph}>
-                <p>
-                  Partner with Praxis to bring financial literacy to your people
-                  and organization.
-                </p>
-              </div>
-              <div className={styles.fourthSection__newImageContainer}>
-                <img
-                  className={styles.fourthSection__newImage}
-                  src={fourtSectionImage2}
-                  alt="fourth1"
-                />
-              </div>
-            </div>
-            <div className={styles.fourthSection__bottom}>
-              <div className={styles.fourthSection__bottomContent}>
-                <p>
-                  {' '}
-                  Get in touch with us to schedule a FREE Praxis demo for your
-                  company / school
-                </p>
-                <div>
-                  <PraxisButton
-                    id={styles.fourthSection__button}
-                    color="praxisRedButton"
-                    text="PLAY THE GAME"
-                  />
-                </div>
-              </div>
-              <img
-                className={styles.fourthSection__chair}
-                src={chair}
-                alt="chair"
-              />
-            </div>
-          </section>
-        </MediaQuery>
-        <MediaQuery query="(max-device-width: 1224px)">
-          <section id={styles.fourthSection}>
-            <h1 id={styles.fourthParagraph} className={styles.praxisHeader}>
-              Experience Praxis Now
-            </h1>
-            <div className={styles.fourthSection__newRow}>
-              <div className={styles.fourthSection__newParagraph}>
-                <p>
-                  We can customize Praxis gameplays exclusively for you
-                  students, employees, or staff.
-                </p>
-              </div>
-              <div className={styles.fourthSection__newImageContainer}>
-                <img
-                  className={styles.fourthSection__newImage}
-                  src={fourtSectionImage1}
-                  alt="fourth1"
-                />
-              </div>
-            </div>
-            <div className={styles.fourthSection__newSecondRow}>
-              <div className={styles.fourthSection__newSecondParagraph}>
-                <p>
-                  Partner with Praxis to bring financial literacy to your people
-                  and organization.
-                </p>
-              </div>
-              <div className={styles.fourthSection__newImageContainer}>
-                <img
-                  className={styles.fourthSection__newImage}
-                  src={fourtSectionImage2}
-                  alt="fourth1"
-                />
-              </div>
-            </div>
-            <div className={styles.fourthSection__bottom}>
-              <div className={styles.fourthSection__bottomContent}>
-                <p>
-                  {' '}
-                  Get in touch with us to schedule a FREE Praxis demo for your
-                  company / school
-                </p>
-                <div>
-                  <PraxisButton
-                    id={styles.fourthSection__button}
-                    color="praxisRedButton"
-                    text="PLAY THE GAME"
-                  />
-                </div>
-              </div>
-              <img
-                className={styles.fourthSection__chair}
-                src={chair}
-                alt="chair"
-              />
-            </div>
-          </section>
-        </MediaQuery> */}
         <section id="pricing" className={styles.fifthSection}>
           <div id={styles.fifthSection__first}>
             <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
@@ -1459,34 +1311,15 @@ class LandingPage extends React.Component {
             </div>
           </div>
         </section>
+        <section id="testimonials" />
         <section id={styles.sixthSection}>
           <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
             They’ve Experienced Praxis. Here’s Why You Should, Too
           </h1>
-          {/* <div className={styles.sixthSection__content}>
-            <div className={styles.sixthSection__circleImage__left}>
-              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
-            </div>
-            <div className={styles.leftContent__content}>
-              <p className={styles.praxisSmallParagraph}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                vestibulum sem felis, vel bibendum lorem placerat id. In egestas
-                urna at ante venenatis dictum. Aliquam sollicitudin eget velit
-                non consequat. Morbi non nulla aliquam turpis viverra commodo.
-                Ut sollicitudin malesuada commodo.
-              </p>
-              <br />
-              <p className={styles.praxisParagraph}>
-                <strong>Roman Dela Cruz</strong>
-              </p>
-              <p className={styles.praxisSmallParagraph}>CEO, Company XYZ</p>
-            </div>
-          </div> */}
           {this.renderCarousel()}
         </section>
         <section id={styles.seventhSection}>
           <div className={styles.seventhSection__mapContainer}>
-            {/* <img src={map} alt={map} id={styles.seventhSection__map} /> */}
             <iframe
               id={styles.seventhSection__map}
               src={
