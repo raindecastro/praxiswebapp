@@ -20,6 +20,7 @@
     "firebase": "^5.7.1",
     "google-maps-react": "^2.0.2",
     "moment": "^2.23.0",
+    "node-gyp": "^4.0.0",
     "react": "^16.3.1",
     "react-css-modules": "^4.7.7",
     "react-dom": "^16.3.1",
