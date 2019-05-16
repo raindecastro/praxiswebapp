@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import firebase from '../../../Firestore';
 import MediaQuery from 'react-responsive';
 import SkyLight from 'react-skylight';
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import CSSModules from 'react-css-modules';
 import { Dropdown } from 'reactjs-dropdown-component';
 import Fade from 'react-reveal/Fade';
@@ -92,6 +93,8 @@ const mapPhilippines =
 const mapSingapore =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7926986873963!2d103.84383031431608!3d1.2991639620991617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1991a4d1e27f%3A0xfe98f91084669b12!2sThe+Praxis+Company+Pte+Ltd!5e0!3m2!1sen!2sph!4v1549853234168';
 const mapThailand = '';
+
+configureAnchors({ offset: -100 });
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -836,216 +839,338 @@ class LandingPage extends React.Component {
             </Fade>
           </div>
         </section>
-        <section id="what-is-praxis" className={styles.secondSection}>
-          <Fade delay={200}>
-            <div
-              onClick={() => {
-                if (
-                  navigator.userAgent.match(/Android/i) ||
-                  navigator.userAgent.match(/iPhone/i) ||
-                  navigator.userAgent.match(/webOS/i)
-                ) {
-                  window.open(
-                    'https://www.youtube.com/watch?v=rLl8S6tV9R0',
-                    '_blank' // <- This is what makes it open in a new window.
-                  );
-                } else {
-                  this.videoModal.show();
-                }
-              }}
-              id={styles.videoContainer}
-            >
-              <div className={styles.playButton}>
-                <MdPlayArrow size="64" />
-              </div>
-              <img
-                src={videoContainerImage}
-                alt={videoContainerImage}
-                id={styles.videoImage}
-              />
-            </div>
-          </Fade>
-          <Fade right delay={400}>
-            <div id={styles.videoInfoContainer}>
-              <h1 id={styles.secondHeader} className={styles.praxisHeader}>
-                What is Praxis?
-              </h1>
-              <p id={styles.secondParagprah} className={styles.praxisParagraph}>
-                Personal money management is an essential life skill, but
-                financial concepts are difficult to teach and understand. That’s
-                why only 1/3 of adults worldwide understand basic financial
-                concepts and only 38% of financial services account owners are
-                financially literate*.
-              </p>
-              <br />
-              <p id={styles.secondParagprah} className={styles.praxisParagraph}>
-                Praxis can change that, being a proven and powerful experiential
-                learning tool that simulates financial life through exciting
-                Gameplays. Praxis offers a fun, flexible, and engaging learning
-                experience that inspires people to take action as well.
-              </p>
-              <br />
-
-              <p
-                style={{ fontStyle: 'italic', fontSize: '12px' }}
-                id={styles.secondParagprah}
-                className={styles.praxisParagraph}
+        <ScrollableAnchor id={'what-is-praxis'}>
+          <section id="what-is-praxis" className={styles.secondSection}>
+            <Fade delay={200}>
+              <div
+                onClick={() => {
+                  if (
+                    navigator.userAgent.match(/Android/i) ||
+                    navigator.userAgent.match(/iPhone/i) ||
+                    navigator.userAgent.match(/webOS/i)
+                  ) {
+                    window.open(
+                      'https://www.youtube.com/watch?v=rLl8S6tV9R0',
+                      '_blank' // <- This is what makes it open in a new window.
+                    );
+                  } else {
+                    this.videoModal.show();
+                  }
+                }}
+                id={styles.videoContainer}
               >
-                *information from Global Financial Literacy Survey by Standard &
-                Poor’s, 2015
-              </p>
-            </div>
-          </Fade>
-        </section>
-        <section id="tailored-needs" />
-        <section id={styles.thirdSection}>
-          <div id={styles.thirdSection__first}>
-            <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
-              Tailored for Your Needs
-            </h1>
-            <p className={styles.praxisParagraph}>
-              Every Praxis Gameplay can be customized to its specific audience,
-              whether for students as part of their class, for companies’
-              employee wellness programs, or for financial institutions’
-              recruitment and training sessions, as well as for their sales and
-              customer engagement.
-            </p>
-          </div>
-          <MediaQuery query="(min-device-width: 900px)">
-            <div id={styles.tabContainer}>
-              <div className={styles.tabContainer__tabs}>
-                <div
-                  onClick={() =>
-                    this.setState({
-                      activeTab: 1,
-                    })
-                  }
-                  className={
-                    activeTab === 1
-                      ? styles.tabContainer__tabActive
-                      : styles.tabContainer__tab
-                  }
-                >
-                  <img
-                    className={styles.tabContainer__tabImage}
-                    src={tab1}
-                    alt={tab1}
-                  />
-                  <p
-                    className={`${styles.tabContainer__tabHeader} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    EDUCATION
-                  </p>
+                <div className={styles.playButton}>
+                  <MdPlayArrow size="64" />
                 </div>
-                <div
-                  onClick={() =>
-                    this.setState({
-                      activeTab: 2,
-                    })
-                  }
-                  className={
-                    activeTab === 2
-                      ? styles.tabContainer__tabActive
-                      : styles.tabContainer__tab
-                  }
-                >
-                  <img
-                    className={styles.tabContainer__tabImage}
-                    src={tab2}
-                    alt={tab2}
-                  />
-                  <p
-                    className={`${styles.tabContainer__tabHeader} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    WELLNESS
-                  </p>
-                </div>
-                <div
-                  onClick={() =>
-                    this.setState({
-                      activeTab: 3,
-                    })
-                  }
-                  className={
-                    activeTab === 3
-                      ? styles.tabContainer__tabActive
-                      : styles.tabContainer__tab
-                  }
-                >
-                  <img
-                    className={styles.tabContainer__tabImage}
-                    src={tab3}
-                    alt={tab3}
-                  />
-                  <p
-                    className={`${styles.tabContainer__tabHeader} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    RECRUITMENT
-                  </p>
-                </div>
-                <div
-                  onClick={() =>
-                    this.setState({
-                      activeTab: 4,
-                    })
-                  }
-                  className={
-                    activeTab === 4
-                      ? styles.tabContainer__tabActive
-                      : styles.tabContainer__tab
-                  }
-                >
-                  <img
-                    className={styles.tabContainer__tabImage}
-                    src={tab4}
-                    alt={tab4}
-                  />
-                  <p
-                    className={`${styles.tabContainer__tabHeader} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    TRAINING
-                  </p>
-                </div>
-                <div
-                  onClick={() =>
-                    this.setState({
-                      activeTab: 5,
-                    })
-                  }
-                  className={
-                    activeTab === 5
-                      ? styles.tabContainer__tabActive
-                      : styles.tabContainer__tab
-                  }
-                >
-                  <img
-                    className={styles.tabContainer__tabImage}
-                    src={tab5}
-                    alt={tab5}
-                  />
-                  <p
-                    className={`${styles.tabContainer__tabHeader} ${
-                      styles.praxisSmallParagraph
-                    }`}
-                  >
-                    PROSPECTING
-                  </p>
-                </div>
+                <img
+                  src={videoContainerImage}
+                  alt={videoContainerImage}
+                  id={styles.videoImage}
+                />
               </div>
-              <div className={styles.tabContainer__tabInformation}>
-                <div className={styles.tabContainer__tabInformation__left}>
-                  <div className={styles.tabContainer__tabInformation__title}>
+            </Fade>
+            <Fade right delay={400}>
+              <div id={styles.videoInfoContainer}>
+                <h1 id={styles.secondHeader} className={styles.praxisHeader}>
+                  What is Praxis?
+                </h1>
+                <p
+                  id={styles.secondParagprah}
+                  className={styles.praxisParagraph}
+                >
+                  Personal money management is an essential life skill, but
+                  financial concepts are difficult to teach and understand.
+                  That’s why only 1/3 of adults worldwide understand basic
+                  financial concepts and only 38% of financial services account
+                  owners are financially literate*.
+                </p>
+                <br />
+                <p
+                  id={styles.secondParagprah}
+                  className={styles.praxisParagraph}
+                >
+                  Praxis can change that, being a proven and powerful
+                  experiential learning tool that simulates financial life
+                  through exciting Gameplays. Praxis offers a fun, flexible, and
+                  engaging learning experience that inspires people to take
+                  action as well.
+                </p>
+                <br />
+
+                <p
+                  style={{ fontStyle: 'italic', fontSize: '12px' }}
+                  id={styles.secondParagprah}
+                  className={styles.praxisParagraph}
+                >
+                  *information from Global Financial Literacy Survey by Standard
+                  & Poor’s, 2015
+                </p>
+              </div>
+            </Fade>
+          </section>
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'tailored-needs'}>
+          <div>
+            <section id={styles.thirdSection}>
+              <section id="tailored-needs" />
+              <div id={styles.thirdSection__first}>
+                <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
+                  Tailored for Your Needs
+                </h1>
+                <p className={styles.praxisParagraph}>
+                  Every Praxis Gameplay can be customized to its specific
+                  audience, whether for students as part of their class, for
+                  companies’ employee wellness programs, or for financial
+                  institutions’ recruitment and training sessions, as well as
+                  for their sales and customer engagement.
+                </p>
+              </div>
+              <MediaQuery query="(min-device-width: 900px)">
+                <div id={styles.tabContainer}>
+                  <div className={styles.tabContainer__tabs}>
+                    <div
+                      onClick={() =>
+                        this.setState({
+                          activeTab: 1,
+                        })
+                      }
+                      className={
+                        activeTab === 1
+                          ? styles.tabContainer__tabActive
+                          : styles.tabContainer__tab
+                      }
+                    >
+                      <img
+                        className={styles.tabContainer__tabImage}
+                        src={tab1}
+                        alt={tab1}
+                      />
+                      <p
+                        className={`${styles.tabContainer__tabHeader} ${
+                          styles.praxisSmallParagraph
+                        }`}
+                      >
+                        EDUCATION
+                      </p>
+                    </div>
+                    <div
+                      onClick={() =>
+                        this.setState({
+                          activeTab: 2,
+                        })
+                      }
+                      className={
+                        activeTab === 2
+                          ? styles.tabContainer__tabActive
+                          : styles.tabContainer__tab
+                      }
+                    >
+                      <img
+                        className={styles.tabContainer__tabImage}
+                        src={tab2}
+                        alt={tab2}
+                      />
+                      <p
+                        className={`${styles.tabContainer__tabHeader} ${
+                          styles.praxisSmallParagraph
+                        }`}
+                      >
+                        WELLNESS
+                      </p>
+                    </div>
+                    <div
+                      onClick={() =>
+                        this.setState({
+                          activeTab: 3,
+                        })
+                      }
+                      className={
+                        activeTab === 3
+                          ? styles.tabContainer__tabActive
+                          : styles.tabContainer__tab
+                      }
+                    >
+                      <img
+                        className={styles.tabContainer__tabImage}
+                        src={tab3}
+                        alt={tab3}
+                      />
+                      <p
+                        className={`${styles.tabContainer__tabHeader} ${
+                          styles.praxisSmallParagraph
+                        }`}
+                      >
+                        RECRUITMENT
+                      </p>
+                    </div>
+                    <div
+                      onClick={() =>
+                        this.setState({
+                          activeTab: 4,
+                        })
+                      }
+                      className={
+                        activeTab === 4
+                          ? styles.tabContainer__tabActive
+                          : styles.tabContainer__tab
+                      }
+                    >
+                      <img
+                        className={styles.tabContainer__tabImage}
+                        src={tab4}
+                        alt={tab4}
+                      />
+                      <p
+                        className={`${styles.tabContainer__tabHeader} ${
+                          styles.praxisSmallParagraph
+                        }`}
+                      >
+                        TRAINING
+                      </p>
+                    </div>
+                    <div
+                      onClick={() =>
+                        this.setState({
+                          activeTab: 5,
+                        })
+                      }
+                      className={
+                        activeTab === 5
+                          ? styles.tabContainer__tabActive
+                          : styles.tabContainer__tab
+                      }
+                    >
+                      <img
+                        className={styles.tabContainer__tabImage}
+                        src={tab5}
+                        alt={tab5}
+                      />
+                      <p
+                        className={`${styles.tabContainer__tabHeader} ${
+                          styles.praxisSmallParagraph
+                        }`}
+                      >
+                        PROSPECTING
+                      </p>
+                    </div>
+                  </div>
+                  <div className={styles.tabContainer__tabInformation}>
+                    <div className={styles.tabContainer__tabInformation__left}>
+                      <div
+                        className={styles.tabContainer__tabInformation__title}
+                      >
+                        <h1 className={styles.praxisHeader}>
+                          {activeTab === 1
+                            ? 'Education'
+                            : activeTab === 2
+                            ? 'Wellness'
+                            : activeTab === 3
+                            ? 'Recruitment'
+                            : activeTab === 4
+                            ? 'Training'
+                            : activeTab === 5
+                            ? 'Prospecting'
+                            : 'Start them young'}
+                        </h1>
+                        <br />
+                        <p className={styles.praxisSmallParagraph}>
+                          {this.renderTabParagraph()}
+                        </p>
+                      </div>
+
+                      <PraxisButton
+                        onClick={() => {
+                          window.location.href = '/contact';
+                        }}
+                        className={styles.tabContainer__button}
+                        text="LEARN MORE ABOUT PRAXIS"
+                        color="praxisRedButton"
+                      />
+                    </div>
+                    <div className={styles.tabContainer__tabInformation__right}>
+                      <img
+                        src={
+                          activeTab === 1
+                            ? tabImage1
+                            : activeTab === 2
+                            ? tabImage2
+                            : activeTab === 3
+                            ? tabImage3
+                            : activeTab === 4
+                            ? tabImage4
+                            : activeTab === 5
+                            ? tabImage5
+                            : null
+                        }
+                        alt={'tabimage'}
+                        className={styles.tabContainer__image}
+                      />
+                    </div>
+                  </div>
+                  {/* <div className={styles.tabContainer__footer}>
+                <p
+                  id={styles.tabContainer__footer__paragraph}
+                  className={styles.praxisParagraph}
+                >
+                  OUR PARTNERS:
+                </p>
+              </div> */}
+                </div>
+              </MediaQuery>
+              <MediaQuery query="(max-device-width: 899px)">
+                <br /> <br />
+                <br />
+                <br />
+                {/* <div
+              onClick={() => {
+                this.setState({
+                  activeSelectTab: !activeSelectTab,
+                });
+              }}
+              className={styles.tabContainer__select}
+            >
+              <h1>EDUCATION</h1>
+              <div className={styles.tabContainer__arrow} />
+            </div> */}
+                <div>
+                  <Select
+                    styles={selectStyles}
+                    className="praxis-select"
+                    classNamePrefix="select"
+                    options={options}
+                    defaultValue={options[0]}
+                    isSearchable={false}
+                    isClearable={false}
+                    onChange={e => {
+                      this.setState({ activeTab: e.value });
+                    }}
+                    components={{ ValueContainer }}
+                  />
+                </div>
+                <div className={styles.tabContainer__mobileContent}>
+                  <div className={styles.tabContainer__tabInformation__right}>
+                    <img
+                      src={
+                        activeTab === 1
+                          ? tabImageMobile1
+                          : activeTab === 2
+                          ? tabImageMobile2
+                          : activeTab === 3
+                          ? tabImageMobile3
+                          : activeTab === 4
+                          ? tabImageMobile4
+                          : activeTab === 5
+                          ? tabImageMobile5
+                          : null
+                      }
+                      alt={'tabimage'}
+                      className={styles.tabContainer__image}
+                    />
+                  </div>
+                  <div className={styles.tabContainer__mobileContentWords}>
                     <h1 className={styles.praxisHeader}>
                       {activeTab === 1
-                        ? 'Education'
+                        ? 'Start them young'
                         : activeTab === 2
                         ? 'Wellness'
                         : activeTab === 3
@@ -1057,267 +1182,166 @@ class LandingPage extends React.Component {
                         : 'Start them young'}
                     </h1>
                     <br />
+                    <br />
                     <p className={styles.praxisSmallParagraph}>
                       {this.renderTabParagraph()}
                     </p>
+                    <br />
+                    <br />
+                    <PraxisButton
+                      onClick={() => {
+                        window.location.href = '/contact';
+                      }}
+                      className={styles.tabContainer__button}
+                      text="PLAY THE GAME"
+                      color="praxisRedButton"
+                    />
                   </div>
-
-                  <PraxisButton
-                    onClick={() => {
-                      window.location.href = '/contact';
-                    }}
-                    className={styles.tabContainer__button}
-                    text="LEARN MORE ABOUT PRAXIS"
-                    color="praxisRedButton"
-                  />
                 </div>
-                <div className={styles.tabContainer__tabInformation__right}>
-                  <img
-                    src={
-                      activeTab === 1
-                        ? tabImage1
-                        : activeTab === 2
-                        ? tabImage2
-                        : activeTab === 3
-                        ? tabImage3
-                        : activeTab === 4
-                        ? tabImage4
-                        : activeTab === 5
-                        ? tabImage5
-                        : null
-                    }
-                    alt={'tabimage'}
-                    className={styles.tabContainer__image}
-                  />
-                </div>
-              </div>
-              {/* <div className={styles.tabContainer__footer}>
-                <p
-                  id={styles.tabContainer__footer__paragraph}
-                  className={styles.praxisParagraph}
-                >
-                  OUR PARTNERS:
-                </p>
-              </div> */}
-            </div>
-          </MediaQuery>
-          <MediaQuery query="(max-device-width: 899px)">
-            <br /> <br />
-            <br />
-            <br />
-            {/* <div
-              onClick={() => {
-                this.setState({
-                  activeSelectTab: !activeSelectTab,
-                });
-              }}
-              className={styles.tabContainer__select}
-            >
-              <h1>EDUCATION</h1>
-              <div className={styles.tabContainer__arrow} />
-            </div> */}
-            <div>
-              <Select
-                styles={selectStyles}
-                className="praxis-select"
-                classNamePrefix="select"
-                options={options}
-                defaultValue={options[0]}
-                isSearchable={false}
-                isClearable={false}
-                onChange={e => {
-                  this.setState({ activeTab: e.value });
-                }}
-                components={{ ValueContainer }}
-              />
-            </div>
-            <div className={styles.tabContainer__mobileContent}>
-              <div className={styles.tabContainer__tabInformation__right}>
-                <img
-                  src={
-                    activeTab === 1
-                      ? tabImageMobile1
-                      : activeTab === 2
-                      ? tabImageMobile2
-                      : activeTab === 3
-                      ? tabImageMobile3
-                      : activeTab === 4
-                      ? tabImageMobile4
-                      : activeTab === 5
-                      ? tabImageMobile5
-                      : null
-                  }
-                  alt={'tabimage'}
-                  className={styles.tabContainer__image}
-                />
-              </div>
-              <div className={styles.tabContainer__mobileContentWords}>
-                <h1 className={styles.praxisHeader}>
-                  {activeTab === 1
-                    ? 'Start them young'
-                    : activeTab === 2
-                    ? 'Wellness'
-                    : activeTab === 3
-                    ? 'Recruitment'
-                    : activeTab === 4
-                    ? 'Training'
-                    : activeTab === 5
-                    ? 'Prospecting'
-                    : 'Start them young'}
-                </h1>
-                <br />
-                <br />
-                <p className={styles.praxisSmallParagraph}>
-                  {this.renderTabParagraph()}
-                </p>
-                <br />
-                <br />
-                <PraxisButton
-                  onClick={() => {
-                    window.location.href = '/contact';
-                  }}
-                  className={styles.tabContainer__button}
-                  text="PLAY THE GAME"
-                  color="praxisRedButton"
-                />
-              </div>
-            </div>
-          </MediaQuery>
-        </section>
-        <section id="pricing" className={styles.fifthSection}>
-          <div id={styles.fifthSection__first}>
-            <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
-              Praxis Partnerships
-            </h1>
-            <p className={styles.praxisParagraph}>
-              There are a number of ways we partner with our client. Get in
-              touch with us today to find out more.
-            </p>
-            <br />
+              </MediaQuery>
+            </section>
           </div>
-          <div id={styles.fifthSection__second} ref="scrollableRow">
-            <div className={styles.praxisCard}>
-              <h1
-                className={`${styles.praxisCard__title} ${
-                  styles.praxisSmallerHeader
-                }`}
-              >
-                Event-Based
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'pricing'}>
+          <section id="pricing" className={styles.fifthSection}>
+            <div id={styles.fifthSection__first}>
+              <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
+                Praxis Partnerships
               </h1>
-              <div className={styles.praxisCard__contentHolder}>
-                <div>
-                  <p className={styles.praxisSmallParagraph}>
-                    Per Event Praxis Engagement
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    25 or More Players Per Praxis Event
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    Customized Gameplay
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    Full Praxis-Event GameMaster and GameFacilitator Support
-                  </p>
+              <p className={styles.praxisParagraph}>
+                There are a number of ways we partner with our client. Get in
+                touch with us today to find out more.
+              </p>
+              <br />
+            </div>
+            <div id={styles.fifthSection__second} ref="scrollableRow">
+              <div className={styles.praxisCard}>
+                <h1
+                  className={`${styles.praxisCard__title} ${
+                    styles.praxisSmallerHeader
+                  }`}
+                >
+                  Event-Based
+                </h1>
+                <div className={styles.praxisCard__contentHolder}>
+                  <div>
+                    <p className={styles.praxisSmallParagraph}>
+                      Per Event Praxis Engagement
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      25 or More Players Per Praxis Event
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      Customized Gameplay
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      Full Praxis-Event GameMaster and GameFacilitator Support
+                    </p>
+                  </div>
+                  <PraxisButton
+                    id={styles.cardButton}
+                    color="praxisRedButton"
+                    text="CONTACT US"
+                    onClick={() => {
+                      this.props.history.push('/contact');
+                    }}
+                  />
                 </div>
-                <PraxisButton
-                  id={styles.cardButton}
-                  color="praxisRedButton"
-                  text="CONTACT US"
-                  onClick={() => {
-                    this.props.history.push('/contact');
-                  }}
-                />
               </div>
-            </div>
-            <div className={styles.praxisCard}>
-              <h1
-                className={`${styles.praxisCard__title} ${
-                  styles.praxisSmallerHeader
-                }`}
-              >
-                License
-              </h1>
-              <div className={styles.praxisCard__contentHolder}>
-                <p className={styles.praxisSmallParagraph}>
-                  12 To 24 Month Praxis Engagement
-                </p>
-                <div className={styles.praxisLine} />
-                <p className={styles.praxisSmallParagraph}>Unlimited Use</p>
-                <div className={styles.praxisLine} />
-                <p className={styles.praxisSmallParagraph}>
-                  GameMaster and GameFacilitator Certification Training
-                </p>
-                <div className={styles.praxisLine} />
-                <p className={styles.praxisSmallParagraph}>
-                  Option To Have Co-Branded Praxis Toolkits
-                </p>
-                <div className={styles.praxisLine} />
-                <p className={styles.praxisSmallParagraph}>
-                  On-Site and Online Support From The Praxis Company
-                </p>
-                <div className={styles.praxisLine} />
-                <p className={styles.praxisSmallParagraph}>
-                  Quality Control, Gameplay Assessment and Monthly Consultation
-                  with The Praxis Company team
-                </p>
-                <PraxisButton
-                  id={styles.cardButton}
-                  color="praxisRedButton"
-                  text="CONTACT US"
-                  onClick={() => {
-                    this.props.history.push('/contact');
-                  }}
-                />
-              </div>
-            </div>
-            <div className={styles.praxisCard}>
-              <h1
-                className={`${styles.praxisCard__title} ${
-                  styles.praxisSmallerHeader
-                }`}
-              >
-                Prospecting
-              </h1>
-              <div className={styles.praxisCard__contentHolder}>
-                <div>
+              <div className={styles.praxisCard}>
+                <h1
+                  className={`${styles.praxisCard__title} ${
+                    styles.praxisSmallerHeader
+                  }`}
+                >
+                  License
+                </h1>
+                <div className={styles.praxisCard__contentHolder}>
                   <p className={styles.praxisSmallParagraph}>
-                    Working on a performance basis with financial services
-                    companies, Praxis adds Gameplay expertise and a turnkey
-                    model to sales distribution’s prospecting, driving them to
-                    become more productive and enhancing top and bottom lines.
+                    12 To 24 Month Praxis Engagement
                   </p>
                   <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    Customized Gameplay
-                  </p>
+                  <p className={styles.praxisSmallParagraph}>Unlimited Use</p>
                   <div className={styles.praxisLine} />
                   <p className={styles.praxisSmallParagraph}>
                     GameMaster and GameFacilitator Certification Training
                   </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    Option To Have Co-Branded Praxis Toolkits
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    On-Site and Online Support From The Praxis Company
+                  </p>
+                  <div className={styles.praxisLine} />
+                  <p className={styles.praxisSmallParagraph}>
+                    Quality Control, Gameplay Assessment and Monthly
+                    Consultation with The Praxis Company team
+                  </p>
+                  <PraxisButton
+                    id={styles.cardButton}
+                    color="praxisRedButton"
+                    text="CONTACT US"
+                    onClick={() => {
+                      this.props.history.push('/contact');
+                    }}
+                  />
                 </div>
+              </div>
+              <div className={styles.praxisCard}>
+                <h1
+                  className={`${styles.praxisCard__title} ${
+                    styles.praxisSmallerHeader
+                  }`}
+                >
+                  Prospecting
+                </h1>
+                <div className={styles.praxisCard__contentHolder}>
+                  <div>
+                    <p className={styles.praxisSmallParagraph}>
+                      Working on a performance basis with financial services
+                      companies, Praxis adds Gameplay expertise and a turnkey
+                      model to sales distribution’s prospecting, driving them to
+                      become more productive and enhancing top and bottom lines.
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      Customized Gameplay
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      GameMaster and GameFacilitator Certification Training
+                    </p>
+                  </div>
 
-                <PraxisButton
-                  id={styles.cardButton}
-                  color="praxisRedButton"
-                  text="CONTACT US"
-                  onClick={() => {
-                    this.props.history.push('/contact');
-                  }}
-                />
+                  <PraxisButton
+                    id={styles.cardButton}
+                    color="praxisRedButton"
+                    text="CONTACT US"
+                    onClick={() => {
+                      this.props.history.push('/contact');
+                    }}
+                  />
+                </div>
               </div>
             </div>
+          </section>
+        </ScrollableAnchor>
+        <ScrollableAnchor id={'testimonials'}>
+          <div>
+            <section id="testimonials" />
+            <section id={styles.sixthSection}>
+              <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
+                They’ve Experienced Praxis. Here’s Why You Should, Too
+              </h1>
+              {this.renderCarousel()}
+            </section>
           </div>
-        </section>
-        <section id="testimonials" />
-        <section id={styles.sixthSection}>
-          <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
-            They’ve Experienced Praxis. Here’s Why You Should, Too
-          </h1>
-          {this.renderCarousel()}
-        </section>
+        </ScrollableAnchor>
         <section id={styles.seventhSection}>
           <div className={styles.seventhSection__mapContainer}>
             <iframe

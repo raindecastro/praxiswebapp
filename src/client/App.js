@@ -15,13 +15,24 @@ import './skylight.css';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isEnglish: true,
+    };
   }
 
+  changeLanguage = e => {
+    if (e.value === 'english') {
+      this.setState({ isEnglish: true });
+    } else {
+      this.setState({ isEnglish: false });
+    }
+  };
+
   render() {
+    const { isEnglish } = this.state;
     return (
       <main id={styles.mainContainer}>
-        <Header />
+        <Header changeLanguage={this.changeLanguage} isEnglish={isEnglish} />
         <div id={styles.contentContainer}>
           <Switch>
             <Route

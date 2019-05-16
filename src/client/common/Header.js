@@ -13,6 +13,7 @@ import {
 import { HashLink } from 'react-router-hash-link';
 import styles from './styles/_header.scss';
 import 'react-flags-select/css/react-flags-select.css';
+import Select from 'react-select';
 
 const praxisLogo = require('../../images/elements/logo-big.svg');
 
@@ -61,6 +62,73 @@ class Header extends React.Component {
   render() {
     const currentPath = window.location.pathname;
     const { headerColor, showLogo, showMenu } = this.state;
+    const { isEnglish } = this.props;
+
+    const options = [
+      { value: 'english', label: 'ENGLISH' },
+      { value: 'thailand', label: 'THAILAND' },
+    ];
+
+    const selectStyles = {
+      control: (base, state) => ({
+        ...base,
+        minHeight: 64,
+        fontFamily: 'Montserrat',
+        fontSize: '14px',
+        boxShadow: 'none',
+        backgroundColor: '#F8F9FD',
+        color: '#263a4f',
+        borderRadius: 0,
+        borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
+        padding: '1em',
+        '&:hover': {
+          borderColor: '#263a4f',
+        },
+      }),
+      dropdownIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        color: '##263a4f',
+        border: 'none',
+      }),
+      clearIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        display: 'none',
+      }),
+      indicatorSeparator: base => ({
+        ...base,
+        display: 'none',
+      }),
+      placeholder: base => ({
+        ...base,
+        color: '#263a4f',
+        fontSize: '14px',
+      }),
+      menu: (base, state) => ({
+        ...base,
+        borderRadius: 'none',
+        marginTop: '-1em',
+      }),
+      menuList: (base, state) => ({
+        ...base,
+        paddingTop: '0',
+      }),
+      option: (base, state) => ({
+        ...base,
+        padding: '1em 2em',
+        fontSize: '14px',
+        fontFamily: 'Montserrat',
+        ':hover': {
+          backgroundColor: '#263a4f',
+          color: '#FAFAFA',
+        },
+        backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
+        color: state.isSelected ? '#fafafa' : '#263a4f',
+      }),
+    };
 
     return (
       <header
@@ -96,7 +164,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              ABOUT US
+              {isEnglish ? 'ABOUT US' : 'เกี่ยวกับเรา'}
             </p>
 
             <p
@@ -109,7 +177,10 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              <HashLink to="/#pricing">PARTNERSHIPS</HashLink>
+              <HashLink to="/#pricing">
+                {' '}
+                {isEnglish ? 'PARTNERSHIPS' : 'พันธมิตรทางธุรกิจ'}
+              </HashLink>
             </p>
 
             <p
@@ -122,7 +193,7 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              NEWS AND EVENTS
+              {isEnglish ? 'NEWS AND EVENTS' : 'ข่าวสารและกิจกรรม'}
             </p>
             <p
               onClick={() => (window.location.href = '/contact')}
@@ -132,8 +203,18 @@ class Header extends React.Component {
                   : `${styles.headerLink} ${styles.links}`
               }
             >
-              CONTACT US
+              {isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
             </p>
+            {/* <Select
+              styles={selectStyles}
+              options={options}
+              defaultValue={options[0]}
+              isSearchable={false}
+              isClearable={false}
+              onChange={e => {
+                this.props.changeLanguage(e);
+              }}
+            /> */}
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
@@ -184,7 +265,7 @@ class Header extends React.Component {
                         : `${styles.headerLink} ${styles.links}`
                     }
                   >
-                    ABOUT US
+                    {isEnglish ? 'ABOUT US' : 'เกี่ยวกับเรา'}
                   </span>
                 </p>
               </li>
@@ -203,8 +284,9 @@ class Header extends React.Component {
                         : `${styles.headerLink} ${styles.links}`
                     }
                   >
-                    {' '}
-                    <HashLink to="/#pricing">PARTNERSHIPS</HashLink>
+                    <HashLink to="/#pricing">
+                      {isEnglish ? 'PARTNERSHIPS' : 'พันธมิตรทางธุรกิจ'}
+                    </HashLink>
                   </span>
                 </p>
               </li>
@@ -221,7 +303,7 @@ class Header extends React.Component {
                         : `${styles.headerLink} ${styles.links}`
                     }
                   >
-                    NEWS AND EVENTS
+                    {isEnglish ? 'NEWS AND EVENTS' : 'ข่าวสารและกิจกรรม'}
                   </span>
                 </p>
               </li>
@@ -238,8 +320,7 @@ class Header extends React.Component {
                         : `${styles.headerLink} ${styles.links}`
                     }
                   >
-                    {' '}
-                    CONTACT US
+                    {isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
                   </span>
                 </p>
               </li>
