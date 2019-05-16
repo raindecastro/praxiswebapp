@@ -850,7 +850,7 @@ class LandingPage extends React.Component {
                     navigator.userAgent.match(/webOS/i)
                   ) {
                     window.open(
-                      'https://www.youtube.com/watch?v=rLl8S6tV9R0',
+                      ' https://youtu.be/-a_jaFEenyo',
                       '_blank' // <- This is what makes it open in a new window.
                     );
                   } else {
@@ -1641,7 +1641,7 @@ class LandingPage extends React.Component {
               width="100%"
               height="100%"
               frameborder="0"
-              src="https://www.youtube.com/embed/rLl8S6tV9R0"
+              src="https://www.youtube.com/embed/-a_jaFEenyo"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             />

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
   "main": "server.js",
+  "engines": {
+    "node": "8.11.3"
+  },
   "scripts": {
     "start": "webpack --config webpack.prod.js",
     "build": "webpack --config webpack.prod.js",
