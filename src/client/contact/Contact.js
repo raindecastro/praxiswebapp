@@ -193,15 +193,27 @@ class Contact extends React.Component {
       marginBottom: '2vh',
     };
 
+    const { isEnglish } = this.props;
+
     return (
       <section className={styles.contactContainer}>
         <div className={styles.contactContainer__headerContainer}>
-          <h1 className={styles.praxisHeader}>Get To Know Praxis Better</h1>
+          <h1 className={styles.praxisHeader}>
+            {isEnglish
+              ? 'Get To Know Praxis Better'
+              : 'มารจู้กัPraxisใหม้ากขน้ึ'}
+          </h1>
           <br />
-          <p className={styles.praxisParagraph}>
-            Schedule a Gameplay with us. Help us easily get back to you by
-            filling the contact information
-          </p>
+          {isEnglish ? (
+            <p className={styles.praxisParagraph}>
+              Schedule a Gameplay with us. Help us easily get back to you by
+              filling the contact information
+            </p>
+          ) : (
+            <p className={styles.praxisParagraph}>
+              นดัทดลองเล่นเกมกบัเรา! กรุณากรอกขอ้ มลู เพอ่ื การตดิ ต่อจากเรา
+            </p>
+          )}
         </div>
         <br />
         <br />

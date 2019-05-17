@@ -72,18 +72,19 @@ class Header extends React.Component {
     const selectStyles = {
       control: (base, state) => ({
         ...base,
-        minHeight: 64,
-        fontFamily: 'Montserrat',
-        fontSize: '14px',
+        fontFamily: 'Lato',
+        fontSize: '12px',
         boxShadow: 'none',
-        backgroundColor: '#F8F9FD',
-        color: '#263a4f',
+        backgroundColor: 'transparent',
+        color: 'black',
         borderRadius: 0,
-        borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
-        padding: '1em',
+        borderColor: '#263a4f',
+        padding: '10px',
         '&:hover': {
           borderColor: '#263a4f',
         },
+        width: '160px',
+        fontWeight: 100,
       }),
       dropdownIndicator: base => ({
         ...base,
@@ -118,15 +119,15 @@ class Header extends React.Component {
       }),
       option: (base, state) => ({
         ...base,
-        padding: '1em 2em',
-        fontSize: '14px',
-        fontFamily: 'Montserrat',
+        padding: '10px 15px',
+        fontSize: '12px',
+        fontFamily: 'Lato',
         ':hover': {
           backgroundColor: '#263a4f',
           color: '#FAFAFA',
         },
-        backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
-        color: state.isSelected ? '#fafafa' : '#263a4f',
+        backgroundColor: state.isSelected ? '#ed1c23' : 'white',
+        color: state.isSelected ? 'white' : 'grey',
       }),
     };
 
@@ -205,7 +206,7 @@ class Header extends React.Component {
             >
               {isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
             </p>
-            {/* <Select
+            <Select
               styles={selectStyles}
               options={options}
               defaultValue={options[0]}
@@ -214,7 +215,7 @@ class Header extends React.Component {
               onChange={e => {
                 this.props.changeLanguage(e);
               }}
-            /> */}
+            />
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">

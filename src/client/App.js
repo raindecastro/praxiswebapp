@@ -38,14 +38,9 @@ export default class App extends Component {
             <Route
               exact
               path="/"
-              render={props => <LandingPage {...props} />}
+              render={props => <LandingPage isEnglish={isEnglish} {...props} />}
             />
             <Route exact path="/news" render={props => <News {...props} />} />
-            <Route
-              exact
-              path="/portfolio"
-              render={props => <LandingPage {...props} />}
-            />
             <Route path="/about" render={props => <About {...props} />} />
             <Route path="/contact" component={Contact} />
             <Route path="/news/:id" render={props => <FullPost {...props} />} />

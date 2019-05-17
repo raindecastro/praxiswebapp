@@ -21,11 +21,13 @@ const Footer = props => (
         }}
         className={styles.praxisSmallParagraph}
       >
-        ABOUT US
+        {props.isEnglish ? 'ABOUT US' : 'เกย่ีวกบัเรา'}
       </p>
       <HashLink to="/#pricing">
         {' '}
-        <p className={styles.praxisSmallParagraph}>PARTNERSHIPS</p>
+        <p className={styles.praxisSmallParagraph}>
+          {props.isEnglish ? 'PARTNERSHIPS' : 'พนั ธมติ รทางธุรกจิ'}
+        </p>
       </HashLink>
 
       <p
@@ -34,7 +36,7 @@ const Footer = props => (
         }}
         className={styles.praxisSmallParagraph}
       >
-        NEWS AND EVENTS
+        {props.isEnglish ? 'NEWS AND EVENTS' : 'ขา่วสารและกจิกรรม'}
       </p>
       <p
         onClick={() => {
@@ -42,7 +44,7 @@ const Footer = props => (
         }}
         className={styles.praxisSmallParagraph}
       >
-        CONTACT US
+        {props.isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
       </p>
     </div>
     <div className={styles.rightLinks}>

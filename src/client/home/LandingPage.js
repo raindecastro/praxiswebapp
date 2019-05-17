@@ -88,6 +88,14 @@ const options = [
   { value: 5, label: 'PROSPECTING' },
 ];
 
+const thaiOptions = [
+  { value: 1, label: 'การศกึษาเรยีนรู้' },
+  { value: 2, label: 'คุณภาพความเป็นอย่ทู ด่ี ' },
+  { value: 3, label: 'การสรา้ งและสรรหาบุคคลกร' },
+  { value: 4, label: 'การฝึกอบรมและการพฒันา' },
+  { value: 5, label: 'การสรา้งลกูคา้กลุ่มเป้าหมาย' },
+];
+
 const mapPhilippines =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8220.659337344037!2d121.02416976440777!3d14.55638558182863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90f0015ff6f%3A0xd2bcc8518b60469f!2sThe+Praxis+Company!5e0!3m2!1sen!2sph!4v1549848498004';
 const mapSingapore =
@@ -461,21 +469,41 @@ class LandingPage extends React.Component {
 
   renderTabParagraph = () => {
     const { activeTab } = this.state;
-
+    const { isEnglish } = this.props;
     if (activeTab === 1) {
       return (
         <div className={styles.tabContentDiv}>
-          <p style={{ marginBottom: '1em' }}>
-            As the youth face overwhelming financial choices, it is best to
-            instill in them the fundamentals of financial literacy to help them
-            make the right decisions. It is an exciting and experiential
-            learning tool ideal for any educational institution.
-          </p>
-          <p>
-            Tens of thousands of students have experienced and benefited from
-            Praxis across Southeast Asia. Help the youth become masters of money
-            today by bringing Praxis to your schools and universities.
-          </p>
+          {isEnglish ? (
+            <p style={{ marginBottom: '1em' }}>
+              As the youth face overwhelming financial choices, it is best to
+              instill in them the fundamentals of financial literacy to help
+              them make the right decisions. It is an exciting and experiential
+              learning tool ideal for any educational institution.
+            </p>
+          ) : (
+            <p style={{ marginBottom: '1em' }}>
+              หนุ่มสาวทุกวนั น้ี มตี วั เลอื กทางการเงนิ มากมาย
+              คงจะดกีว่าไมน่้อยถา้เราปลกูฝังความรขู้นั้พน้ืฐาน
+              ดา้นการเงนิใหพ้วกเขาตงั้แต่วยัเยาว์เมอ่ืเตบิโตขน้ึ
+              พวกเขากจ็ะสามารถตดัสนิ ใจไดอ้ย่างถูกตอ้ง Praxis
+              เป็นเครอ่ืงมอืและสอ่ืในการเรยีนรูท้ท่ีา
+              ใหก้ารเรยีนในหอ้งเรยีนไมน่่าเบอ่ือกีต่อไป
+            </p>
+          )}
+          {isEnglish ? (
+            <p>
+              Tens of thousands of students have experienced and benefited from
+              Praxis across Southeast Asia. Help the youth become masters of
+              money today by bringing Praxis to your schools and universities.
+            </p>
+          ) : (
+            <p>
+              นกัเรยีนกว่าหมน่ืคนในแถบทวปีเอเชยีตะวนัออก
+              เฉยีงใดส้มัผสัประสบการณ์และไดร้บั ประโยชน์ มากมายจาก Praxis
+              คุณสามารถช่วยใหพ้ วก เขากลายเป็นผรู้อบรเู้รอ่ืงการเงนิได้เพยีงนา
+              Praxisเขา้ไปเป็นส่วนหน่งึของโรงเรยีนและ มหาวทิยาลยั
+            </p>
+          )}
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -493,17 +521,42 @@ class LandingPage extends React.Component {
     } else if (activeTab === 2) {
       return (
         <div className={styles.tabContentDiv}>
-          <p style={{ marginBottom: '1em' }}>
-            72% of adults who suffer from money-related stress experience a
-            decrease in morale and productivity*. Caring for your stakeholders’
-            financial wellness means caring for your business. With its simple
-            Gameplay design, teaching them good money habits comes easy with
-            Praxis. Avoid a distracted workforce and increase their work
-            efficiency by bringing Praxis to your company.
-          </p>
-          <p style={{ fontStyle: 'italic', fontSize: '10px' }}>
-            *information from American Psychological Association Report, 2015
-          </p>
+          {isEnglish ? (
+            <div>
+              <p style={{ marginBottom: '1em' }}>
+                72% of adults who suffer from money-related stress experience a
+                decrease in morale and productivity*. Caring for your
+                stakeholders’ financial wellness means caring for your business.
+                With its simple Gameplay design, teaching them good money habits
+                comes easy with Praxis. Avoid a distracted workforce and
+                increase their work efficiency by bringing Praxis to your
+                company.
+              </p>
+              <p style={{ fontStyle: 'italic', fontSize: '10px' }}>
+                *information from American Psychological Association Report,
+                2015
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p style={{ marginBottom: '1em' }}>
+                พนกังาน72%ทม่ีภีาวะ ความเครยีดทางการเงนิสญูเสยีกาลงัใจในการ
+                ทางานซง่ึมผีลกระทบต่อผลงานของพวกเขาดงันนั้
+                การมสี่วนชว่ยดแูลเอาใจใส่ความเป็นอย่ขูองพวก
+                เขากห็มายถงึการทค่ีุณคานึงถงึความอย่รูอดของ บรษิ ทั ดว้ ยเชน่
+                กนั Praxis เกมทถ่ี ูกออกแบบ
+                เพอ่ืการเรยีนรกู้ารเงนิทง่ีา่ยสอนและสรา้งวนิยัใน
+                การบรหิารเงนิของพนกังานหากคุณตอ้งการให้
+                พวกเขาใชเ้วลาการทางานอย่างเตม็ทแ่ีละมี
+                ประสทิธภิาพสงูสุดPraxisจะชว่ยทาใหส้งิ่นนั้
+                เกดิขน้ึในทท่ีางานของคุณ
+              </p>
+              <p style={{ fontStyle: 'italic', fontSize: '10px' }}>
+                *ขอ้มลูจากAmerican Psychological Association Report, 2015
+              </p>
+            </div>
+          )}
+
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -521,14 +574,28 @@ class LandingPage extends React.Component {
     } else if (activeTab === 3) {
       return (
         <div className={styles.tabContentDiv}>
-          <p>
-            The engaging Praxis Gameplay allows agents, advisers, or
-            relationship managers to experience for themselves the importance of
-            financial literacy, and how financial products can help others. This
-            helps sales people realize the real value of their profession and
-            want to take it on. When our clients use Praxis for recruitment,
-            they get an over 20% sign-on rate.
-          </p>
+          {isEnglish ? (
+            <p>
+              The engaging Praxis Gameplay allows agents, advisers, or
+              relationship managers to experience for themselves the importance
+              of financial literacy, and how financial products can help others.
+              This helps sales people realize the real value of their profession
+              and want to take it on. When our clients use Praxis for
+              recruitment, they get an over 20% sign-on rate.
+            </p>
+          ) : (
+            <p>
+              เกมPraxisเปิดโอกาสใหพ้นกังานตวัแทน
+              ผใู้หค้าปรกึษาดา้นการเงนิหรอืผจู้ดัการบรหิาร
+              สมัพนัธ์ไดม้ปีระสบการณ์เรยีนรผู้่านเกม
+              Praxisและเลง็เหน็ความสาคญัของความรดู้า้น การเงนิ และประโยชน์ทผ่ี
+              อู้ ่นื ไดร้ บั พวกเขา
+              เหล่านนั้กจ็ะมคีวามมนั่ใจและสนใจทจ่ีะเป็นส่วน
+              หน่งึของอาชพีนกัขายเมอ่ืใดกต็ามทล่ีกูคา้นา
+              Praxisมาช่วยในการขยายฐานพนกังานขาย
+              อตัราการสมคัรของพนกังานเพมิ่ขน้ึมากกว่า 20%
+            </p>
+          )}
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -551,22 +618,52 @@ class LandingPage extends React.Component {
     } else if (activeTab === 4) {
       return (
         <div className={styles.tabContentDiv}>
-          <p style={{ marginBottom: '1em' }}>
-            Because Praxis Gameplays can be customized to incorporate specific
-            product features, as well as financial literacy, it is an ideal and
-            effective training tool for financial agents and advisers. It
-            complements current training sessions to make learning more
-            entertaining and powerful. It also ensures more confidence when
-            facing current and future clients.
-          </p>
-          <p style={{ marginBottom: '1em' }}>
-            Several financial services companies across Southeast Asia have
-            brought about knowledgeable, empowered, and productive sales teams
-            with the help of Praxis.
-          </p>
-          <p>
-            Start integrating Praxis in your agents’ training modules today.
-          </p>
+          {isEnglish ? (
+            <div>
+              <p style={{ marginBottom: '1em' }}>
+                Because Praxis Gameplays can be customized to incorporate
+                specific product features, as well as financial literacy, it is
+                an ideal and effective training tool for financial agents and
+                advisers. It complements current training sessions to make
+                learning more entertaining and powerful. It also ensures more
+                confidence when facing current and future clients.
+              </p>
+              <p style={{ marginBottom: '1em' }}>
+                Several financial services companies across Southeast Asia have
+                brought about knowledgeable, empowered, and productive sales
+                teams with the help of Praxis.
+              </p>
+              <p>
+                Start integrating Praxis in your agents’ training modules today.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p style={{ marginBottom: '1em' }}>
+                เพราะPraxisสามารถปรบัเปลย่ีนรปูแบบให้
+                เขา้กบัผลติภณัฑท์แ่ีตกต่างกนัได้รวมถงึการให้ ความรเู้ รอ่ื
+                งการเงนิ เกมของเราจงึ เป็นเครอ่ื งมอื ใน
+                การฝึกอบรมทม่ีปีระสทิธภิาพสาหรบัพนกังาน
+                ตวัแทนขายและทมีงานทใ่ีหค้าปรกึษาทางการเงนิ
+                เราเตมิเตม็ทุกการฝึกสอนทใ่ีหท้งั้ความสนุกสนาน
+                และความรอู้ย่างแทจ้รงิผลลพัธข์องการเรยีนรผู้่าน
+                Praxisน้ยีงัช่วยเสรมิสรา้งความมนั่ใจในเวลาท่ี
+                พวกเขาตดิต่อนดัพบลกูคา้ทงั้ปัจจุบนัและในอนาคต อกีดว้ย
+              </p>
+              <p style={{ marginBottom: '1em' }}>
+                บรษิทัทใ่ีหบ้รกิารทางการเงนิมากมายในภมูภิาค
+                เอเชยีตะวนัออกเฉยีงใตไ้ดร้บัประโยชน์มากมาย จากการใช้ Praxis
+                โดยเฉพาะทางดา้ นฝ่ายขาย
+                ทพ่ีฒันาจนกลายเป็นทมีทเ่ีป่ียมไปดว้ยความรู้
+                ไดร้บัความไวว้างใจและมปีระสทิธผิล
+              </p>
+              <p>
+                ให้Praxis เขา้ไปมสี่วนร่วมและเป็นส่วนหน่งึ
+                ของหลกัสตูรการอบรมพนกังานในบรษิทัของคุณได้ ตงั้แต่วนั น้ี
+              </p>
+            </div>
+          )}
+
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -589,14 +686,28 @@ class LandingPage extends React.Component {
     } else if (activeTab === 5) {
       return (
         <div className={styles.tabContentDiv}>
-          <p>
-            Praxis is a leader in demonstrating the value of specific financial
-            products to potential clients. Because of the experiential Gameplay,
-            clients become aware of the importance of a specific financial
-            product and are inspired to take action. Because of this powerful
-            experience, agents and advisers obtain significantly greater than
-            market norms for conversion rates, often above 30%.
-          </p>
+          {isEnglish ? (
+            <p>
+              Praxis is a leader in demonstrating the value of specific
+              financial products to potential clients. Because of the
+              experiential Gameplay, clients become aware of the importance of a
+              specific financial product and are inspired to take action.
+              Because of this powerful experience, agents and advisers obtain
+              significantly greater than market norms for conversion rates,
+              often above 30%.
+            </p>
+          ) : (
+            <p>
+              Praxisเป็นผนู้าในการสาธติใหเ้หน็ถงึคุณค่า
+              ของผลติภณัฑท์างการเงนิแก่ลกูคา้ทม่ีศีกัยภาพใน การซ้อื
+              ดว้ยตวัเกมทเ่ีล่นผ่านประสบการณ์
+              แบบจาลองทาใหผ้เู้ล่นซมึซบัและเลง็เหน็ถงึ
+              ความสาคญัของการเงนิซง่ึจะเป็นแรงผลกัดนัใน
+              การนาไปปรบัใชไ้ดใ้นชวีติจรงิดว้ยประสบการณ์ท่ี
+              เหน็คุณค่าเช่นน้ีส่งผลใหต้วัแทนขายและผใู้ห้ คาปรกึษาดา้นการเงนิ
+              ไดร้บัโอกาสในการปิดการ ขายทง่ี า่ ยมากขน้ึ และสงู ขน้ึ กว่า 30%
+            </p>
+          )}
           <div className={styles.praxisLogosContainer}>
             <img
               className={styles.praxisLogos}
@@ -631,7 +742,7 @@ class LandingPage extends React.Component {
       message,
       mobileTab,
     } = this.state;
-
+    const { isEnglish } = this.props;
     const ValueContainer = ({ children, ...props }) => {
       return (
         components.ValueContainer && (
@@ -820,20 +931,38 @@ class LandingPage extends React.Component {
             </MediaQuery>
             <Fade delay={200}>
               <h1 className={styles.praxisHeader} id={styles.firstHeader}>
-                Now everyone can master money
+                {isEnglish
+                  ? 'Now everyone can master money'
+                  : 'ไมว่ ่าใคร กส็ ามารถรอบรเู้ รอ่ื ง การเงนิ ได้'}
               </h1>
-              <p className={styles.praxisParagraph} id={styles.firstParagraph}>
-                Praxis is the proven experiential solution for individuals,
-                families, students, employees and clients. We can turn financial
-                literacy into understanding and understanding to action.
-                Experience the power of Praxis today!
-              </p>
+              {isEnglish ? (
+                <p
+                  className={styles.praxisParagraph}
+                  id={styles.firstParagraph}
+                >
+                  Praxis is the proven experiential solution for individuals,
+                  families, students, employees and clients. We can turn
+                  financial literacy into understanding and understanding to
+                  action. Experience the power of Praxis today!
+                </p>
+              ) : (
+                <p
+                  className={styles.praxisParagraph}
+                  id={styles.firstParagraph}
+                >
+                  เป็นคาตอบในเรอ่ื ง
+                  การเงนิทใ่ีชไ้ดก้บัทุกคนทงั้ครอบครวันกัเรยีน
+                  พนกังานไปจนถงึลกูคา้ทวั่ไป <br />{' '}
+                  เราทาเรอ่ืงเงนิทซ่ีบัซอ้นใหเ้ป็นเรอ่ืงงา่ยทจ่ีะเขา้ใจ
+                  และใชไ้ดใ้นชวีติจรงิลองสมัผสัประสบการณ์ Praxis ตอนน้ไีดเ้ลย!
+                </p>
+              )}
             </Fade>
             <Fade delay={400}>
               <PraxisButton
                 id={styles.firstButton}
                 color="praxisRedButton"
-                text="WHAT IS PRAXIS?"
+                text={isEnglish ? 'WHAT IS PRAXIS?' : 'Praxis คอื อะไร?'}
                 onClick={() => scroll.scrollTo(600)}
               />
             </Fade>
@@ -874,29 +1003,57 @@ class LandingPage extends React.Component {
                 <h1 id={styles.secondHeader} className={styles.praxisHeader}>
                   What is Praxis?
                 </h1>
-                <p
-                  id={styles.secondParagprah}
-                  className={styles.praxisParagraph}
-                >
-                  Personal money management is an essential life skill, but
-                  financial concepts are difficult to teach and understand.
-                  That’s why only 1/3 of adults worldwide understand basic
-                  financial concepts and only 38% of financial services account
-                  owners are financially literate*.
-                </p>
+                {isEnglish ? (
+                  <p
+                    id={styles.secondParagprah}
+                    className={styles.praxisParagraph}
+                  >
+                    Personal money management is an essential life skill, but
+                    financial concepts are difficult to teach and understand.
+                    That’s why only 1/3 of adults worldwide understand basic
+                    financial concepts and only 38% of financial services
+                    account owners are financially literate*.
+                  </p>
+                ) : (
+                  <p
+                    id={styles.secondParagprah}
+                    className={styles.praxisParagraph}
+                  >
+                    การจดัการเรอ่ืงการเงนิส่วนบุคคลเป็นทกัษะอย่าง
+                    หน่งึทส่ีาคญัในชวีติแต่การเรยีนรแู้ละการสอนให้
+                    เขา้ใจง่ายเป็นเรอ่ืงทย่ีากมคีนเพยีงแค่1ใน3
+                    เท่านนั้ทเ่ีขา้ใจพน้ืฐานเรอ่ืงการเงนิและมผีทู้ใ่ีช้
+                    ผลติภณัฑก์ารเงนิเพยีง38%เท่านนั้ทม่ีคีวามรู้ เรอ่ื งการเงนิ
+                    ขนั้ พน้ื ฐาน
+                  </p>
+                )}
                 <br />
-                <p
-                  id={styles.secondParagprah}
-                  className={styles.praxisParagraph}
-                >
-                  Praxis can change that, being a proven and powerful
-                  experiential learning tool that simulates financial life
-                  through exciting Gameplays. Praxis offers a fun, flexible, and
-                  engaging learning experience that inspires people to take
-                  action as well.
-                </p>
+                {isEnglish ? (
+                  <p
+                    id={styles.secondParagprah}
+                    className={styles.praxisParagraph}
+                  >
+                    Praxis can change that, being a proven and powerful
+                    experiential learning tool that simulates financial life
+                    through exciting Gameplays. Praxis offers a fun, flexible,
+                    and engaging learning experience that inspires people to
+                    take action as well.
+                  </p>
+                ) : (
+                  <p
+                    id={styles.secondParagprah}
+                    className={styles.praxisParagraph}
+                  >
+                    Praxis เป็นเครอ่ืงมอืและสอ่ืการเรยีนการสอน
+                    โดยใชเ้กมในการกระตุน้เพอ่ืการเรยีนรชู้วีติดา้น การเงนิ
+                    อย่างสนุกสนานและน่าต่นื เตน้ <br /> Praxis
+                    ใหป้ระสบการณ์การเรยีนรู้ทท่ีงั้
+                    สนุกสนานและสามารถปรบัเปลย่ีนได้อกีทงั้การ
+                    สรา้งปฏสิมัพนัธแ์ละส่วนรว่มทท่ีาใหผ้เู้ล่นเกดิ แรงผลกัดนั
+                    ทจ่ีะดาเนินการเปลย่ีนแปลงในชวีติจรงิ ของตนเอง
+                  </p>
+                )}
                 <br />
-
                 <p
                   style={{ fontStyle: 'italic', fontSize: '12px' }}
                   id={styles.secondParagprah}
@@ -905,6 +1062,25 @@ class LandingPage extends React.Component {
                   *information from Global Financial Literacy Survey by Standard
                   & Poor’s, 2015
                 </p>
+                {isEnglish ? (
+                  <p
+                    style={{ fontStyle: 'italic', fontSize: '12px' }}
+                    id={styles.secondParagprah}
+                    className={styles.praxisParagraph}
+                  >
+                    *information from Global Financial Literacy Survey by
+                    Standard & Poor’s, 2015
+                  </p>
+                ) : (
+                  <p
+                    style={{ fontStyle: 'italic', fontSize: '12px' }}
+                    id={styles.secondParagprah}
+                    className={styles.praxisParagraph}
+                  >
+                    *ขอ้ มลู จาก Global Financial Literacy Survey โดย Standard &
+                    Poor’s, 2015
+                  </p>
+                )}
               </div>
             </Fade>
           </section>
@@ -914,16 +1090,33 @@ class LandingPage extends React.Component {
             <section id={styles.thirdSection}>
               <section id="tailored-needs" />
               <div id={styles.thirdSection__first}>
-                <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
-                  Tailored for Your Needs
-                </h1>
-                <p className={styles.praxisParagraph}>
-                  Every Praxis Gameplay can be customized to its specific
-                  audience, whether for students as part of their class, for
-                  companies’ employee wellness programs, or for financial
-                  institutions’ recruitment and training sessions, as well as
-                  for their sales and customer engagement.
-                </p>
+                {isEnglish ? (
+                  <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
+                    Tailored for Your Needs
+                  </h1>
+                ) : (
+                  <h1 id={styles.thirdHeader} className={styles.praxisHeader}>
+                    ปรบัเปลย่ีนเขา้กบัทุกความตอ้งการ
+                  </h1>
+                )}
+                {isEnglish ? (
+                  <p className={styles.praxisParagraph}>
+                    Every Praxis Gameplay can be customized to its specific
+                    audience, whether for students as part of their class, for
+                    companies’ employee wellness programs, or for financial
+                    institutions’ recruitment and training sessions, as well as
+                    for their sales and customer engagement.
+                  </p>
+                ) : (
+                  <p className={styles.praxisParagraph}>
+                    ทุกๆเกมของPraxisสามารถปรบัเปลย่ีนใหเ้ขา้
+                    กบัทุกกลุ่มผเู้ล่นได้ไมว่่าจะเป็นดา้นการศกึษา
+                    โครงการสวสัดกิารพนกังานบรษิทัการรบัสมคัร และสรา้ งทมี
+                    บุคลากรทางการเงนิ รวมถงึ การ
+                    ฝึกอบรมสรา้งความรตู้่างๆอกีทงั้ยงัสามารถใชใ้น
+                    การช่วยเพมิ่ยอดขายและกระชบัความสมัพนัธก์บั ลกูคา้อกีดว้ย
+                  </p>
+                )}
               </div>
               <MediaQuery query="(min-device-width: 900px)">
                 <div id={styles.tabContainer}>
@@ -950,7 +1143,7 @@ class LandingPage extends React.Component {
                           styles.praxisSmallParagraph
                         }`}
                       >
-                        EDUCATION
+                        {isEnglish ? 'EDUCATION' : 'การศกึษาเรยีนรู้'}
                       </p>
                     </div>
                     <div
@@ -975,7 +1168,7 @@ class LandingPage extends React.Component {
                           styles.praxisSmallParagraph
                         }`}
                       >
-                        WELLNESS
+                        {isEnglish ? 'WELLNESS' : 'คุณภาพความเป็นอย่ทู ด่ี ี '}
                       </p>
                     </div>
                     <div
@@ -1000,7 +1193,7 @@ class LandingPage extends React.Component {
                           styles.praxisSmallParagraph
                         }`}
                       >
-                        RECRUITMENT
+                        {isEnglish ? 'RECRUITMENT' : 'การสรา้ งและสรรหาบุคคลกร'}
                       </p>
                     </div>
                     <div
@@ -1025,7 +1218,7 @@ class LandingPage extends React.Component {
                           styles.praxisSmallParagraph
                         }`}
                       >
-                        TRAINING
+                        {isEnglish ? 'TRAINING' : 'การฝึกอบรมและการพฒันา'}
                       </p>
                     </div>
                     <div
@@ -1050,7 +1243,9 @@ class LandingPage extends React.Component {
                           styles.praxisSmallParagraph
                         }`}
                       >
-                        PROSPECTING
+                        {isEnglish
+                          ? 'PROSPECTING'
+                          : 'การสรา้งลกูคา้กลุ่มเป้าหมาย'}
                       </p>
                     </div>
                   </div>
@@ -1059,19 +1254,35 @@ class LandingPage extends React.Component {
                       <div
                         className={styles.tabContainer__tabInformation__title}
                       >
-                        <h1 className={styles.praxisHeader}>
-                          {activeTab === 1
-                            ? 'Education'
-                            : activeTab === 2
-                            ? 'Wellness'
-                            : activeTab === 3
-                            ? 'Recruitment'
-                            : activeTab === 4
-                            ? 'Training'
-                            : activeTab === 5
-                            ? 'Prospecting'
-                            : 'Start them young'}
-                        </h1>
+                        {isEnglish ? (
+                          <h1 className={styles.praxisHeader}>
+                            {activeTab === 1
+                              ? 'Education'
+                              : activeTab === 2
+                              ? 'Wellness'
+                              : activeTab === 3
+                              ? 'Recruitment'
+                              : activeTab === 4
+                              ? 'Training'
+                              : activeTab === 5
+                              ? 'Prospecting'
+                              : 'Start them young'}
+                          </h1>
+                        ) : (
+                          <h1 className={styles.praxisHeader}>
+                            {activeTab === 1
+                              ? 'การศกึษาเรยีนรู้'
+                              : activeTab === 2
+                              ? 'คุณภาพความเป็นอย่ทู ด่ี ี'
+                              : activeTab === 3
+                              ? 'การสรา้ งและสรรหาบุคคลกร'
+                              : activeTab === 4
+                              ? 'การฝึกอบรมและการพฒันา'
+                              : activeTab === 5
+                              ? 'การสรา้งลกูคา้กลุ่มเป้าหมาย'
+                              : 'Start them young'}
+                          </h1>
+                        )}
                         <br />
                         <p className={styles.praxisSmallParagraph}>
                           {this.renderTabParagraph()}
@@ -1137,8 +1348,8 @@ class LandingPage extends React.Component {
                     styles={selectStyles}
                     className="praxis-select"
                     classNamePrefix="select"
-                    options={options}
-                    defaultValue={options[0]}
+                    options={isEnglish ? options : thaiOptions}
+                    defaultValue={isEnglish ? options[0] : thaiOptions[0]}
                     isSearchable={false}
                     isClearable={false}
                     onChange={e => {
@@ -1206,12 +1417,21 @@ class LandingPage extends React.Component {
           <section id="pricing" className={styles.fifthSection}>
             <div id={styles.fifthSection__first}>
               <h1 id={styles.fifthHeader} className={styles.praxisHeader}>
-                Praxis Partnerships
+                {isEnglish
+                  ? 'Praxis Partnerships'
+                  : 'ร่วมเป็นพนั ธมติ รทางธุรกจิ กบั ทาง Praxis'}
               </h1>
-              <p className={styles.praxisParagraph}>
-                There are a number of ways we partner with our client. Get in
-                touch with us today to find out more.
-              </p>
+              {isEnglish ? (
+                <p className={styles.praxisParagraph}>
+                  There are a number of ways we partner with our client. Get in
+                  touch with us today to find out more.
+                </p>
+              ) : (
+                <p className={styles.praxisParagraph}>
+                  คุณสามารถเป็นพนั ธมติ รทางธุรกจิ กบั เราได้ หลากหลายวธิ ี
+                  ตดิต่อเราวนัน้เีพอ่ืโอกาสทางธุรกจิของคุณ
+                </p>
+              )}
               <br />
             </div>
             <div id={styles.fifthSection__second} ref="scrollableRow">
@@ -1221,30 +1441,52 @@ class LandingPage extends React.Component {
                     styles.praxisSmallerHeader
                   }`}
                 >
-                  Event-Based
+                  {isEnglish ? 'Event-Based' : 'รปูแบบงานกจิกรรม'}
                 </h1>
                 <div className={styles.praxisCard__contentHolder}>
-                  <div>
-                    <p className={styles.praxisSmallParagraph}>
-                      Per Event Praxis Engagement
-                    </p>
-                    <div className={styles.praxisLine} />
-                    <p className={styles.praxisSmallParagraph}>
-                      25 or More Players Per Praxis Event
-                    </p>
-                    <div className={styles.praxisLine} />
-                    <p className={styles.praxisSmallParagraph}>
-                      Customized Gameplay
-                    </p>
-                    <div className={styles.praxisLine} />
-                    <p className={styles.praxisSmallParagraph}>
-                      Full Praxis-Event GameMaster and GameFacilitator Support
-                    </p>
-                  </div>
+                  {isEnglish ? (
+                    <div>
+                      <p className={styles.praxisSmallParagraph}>
+                        Per Event Praxis Engagement
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        25 or More Players Per Praxis Event
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        Customized Gameplay
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        Full Praxis-Event GameMaster and GameFacilitator Support
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      <p className={styles.praxisSmallParagraph}>
+                        รปูแบบการบรกิารPraxisเป็นรายกจิกรรม
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        ผเู้ ขา้ ร่วมเกมอย่างน้อย 25 คนหรอื มากกว่านนั้
+                        ต่อการจดักจิกรรม
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        สามารปรบัรปูแบบเกมได้
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        ไดร้บัการดแูลจากGameMasterและ GameFacilitator จาก Praxis
+                        ตลอด การจดักจิกรรม
+                      </p>
+                    </div>
+                  )}
                   <PraxisButton
                     id={styles.cardButton}
                     color="praxisRedButton"
-                    text="CONTACT US"
+                    text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
                     onClick={() => {
                       this.props.history.push('/contact');
                     }}
@@ -1257,71 +1499,130 @@ class LandingPage extends React.Component {
                     styles.praxisSmallerHeader
                   }`}
                 >
-                  License
+                  {isEnglish ? 'License' : 'รปูแบบลขิสทิธิ์'}
                 </h1>
-                <div className={styles.praxisCard__contentHolder}>
-                  <p className={styles.praxisSmallParagraph}>
-                    12 To 24 Month Praxis Engagement
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>Unlimited Use</p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    GameMaster and GameFacilitator Certification Training
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    Option To Have Co-Branded Praxis Toolkits
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    On-Site and Online Support From The Praxis Company
-                  </p>
-                  <div className={styles.praxisLine} />
-                  <p className={styles.praxisSmallParagraph}>
-                    Quality Control, Gameplay Assessment and Monthly
-                    Consultation with The Praxis Company team
-                  </p>
-                  <PraxisButton
-                    id={styles.cardButton}
-                    color="praxisRedButton"
-                    text="CONTACT US"
-                    onClick={() => {
-                      this.props.history.push('/contact');
-                    }}
-                  />
-                </div>
-              </div>
-              <div className={styles.praxisCard}>
-                <h1
-                  className={`${styles.praxisCard__title} ${
-                    styles.praxisSmallerHeader
-                  }`}
-                >
-                  Prospecting
-                </h1>
-                <div className={styles.praxisCard__contentHolder}>
-                  <div>
+                {isEnglish ? (
+                  <div className={styles.praxisCard__contentHolder}>
                     <p className={styles.praxisSmallParagraph}>
-                      Working on a performance basis with financial services
-                      companies, Praxis adds Gameplay expertise and a turnkey
-                      model to sales distribution’s prospecting, driving them to
-                      become more productive and enhancing top and bottom lines.
+                      12 To 24 Month Praxis Engagement
                     </p>
                     <div className={styles.praxisLine} />
-                    <p className={styles.praxisSmallParagraph}>
-                      Customized Gameplay
-                    </p>
+                    <p className={styles.praxisSmallParagraph}>Unlimited Use</p>
                     <div className={styles.praxisLine} />
                     <p className={styles.praxisSmallParagraph}>
                       GameMaster and GameFacilitator Certification Training
                     </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      Option To Have Co-Branded Praxis Toolkits
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      On-Site and Online Support From The Praxis Company
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      Quality Control, Gameplay Assessment and Monthly
+                      Consultation with The Praxis Company team
+                    </p>
+                    <PraxisButton
+                      id={styles.cardButton}
+                      color="praxisRedButton"
+                      text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+                      onClick={() => {
+                        this.props.history.push('/contact');
+                      }}
+                    />
                   </div>
+                ) : (
+                  <div className={styles.praxisCard__contentHolder}>
+                    <p className={styles.praxisSmallParagraph}>
+                      เซน็สญัญาผกูพนัระยะเวลาตงั้แต่ 1 2 - 2 4 เ ด อื น
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      สามารถใชบ้รกิารไดไ้มจ่ากดัจานวนครงั้
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      ไดร้บัการอบรมและรบัรองเป็น GameMaster และ GameFacilitator
+                      จาก Praxis
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      ไดร้บัสทิธมิ์แีบรนดร์่วมกบัPraxisบน ผลติภณัฑเ์กม
+                    </p>
+                    <div className={styles.praxisLine} />
+                    <p className={styles.praxisSmallParagraph}>
+                      ไดร้บัการดแูลถงึทแ่ีละผ่านช่องทางออนไลน์โดย Praxis (สทิ
+                      ธกิ์ ารตรวจสอบคุณภาพ สทิ ธกิ์ าร
+                      เขา้ถงึตวัเกมและไดร้บัคาแนะนาอยา่งใกลช้ดิทุกๆ เดอื นจากทมี
+                      งาน)
+                    </p>
+                    <PraxisButton
+                      id={styles.cardButton}
+                      color="praxisRedButton"
+                      text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+                      onClick={() => {
+                        this.props.history.push('/contact');
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+              <div className={styles.praxisCard}>
+                <h1
+                  className={`${styles.praxisCard__title} ${
+                    styles.praxisSmallerHeader
+                  }`}
+                >
+                  {isEnglish ? 'Prospecting' : 'รปูแบบกระบวนการขาย'}
+                </h1>
+                <div className={styles.praxisCard__contentHolder}>
+                  {isEnglish ? (
+                    <div>
+                      <p className={styles.praxisSmallParagraph}>
+                        Working on a performance basis with financial services
+                        companies, Praxis adds Gameplay expertise and a turnkey
+                        model to sales distribution’s prospecting, driving them
+                        to become more productive and enhancing top and bottom
+                        lines.
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        Customized Gameplay
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        GameMaster and GameFacilitator Certification Training
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      <p className={styles.praxisSmallParagraph}>
+                        โดยการร่วมมอืกบับรษิทัผใู้หบ้รกิารทางการเงนิ
+                        Praxisใชผ้เู้ชย่ีวชาญเกมโดยเฉพาะเพอ่ืการ
+                        สรา้งกระบวนการขายทเ่ีปลย่ีนจากผมู้งุ่หวงัเป็นผู้
+                        ซ้อืและถ่ายทอดความรแู้ละทกัษะใหก้บับรษิทัท่ี
+                        เป็นพนัธมติร เพอ่ืวตัถุประสงคใ์นการเพมิ่
+                        ยอดขายและกาไรอย่างสงูสุด
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        ปรบัเปลย่ีนรปูแบบเกมตามวตัถุประสงค์
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        ไดร้บัการอบรมและการรบัรองเป็น GameMaster และ
+                        GameFacilitator จาก Praxis
+                      </p>
+                    </div>
+                  )}
 
                   <PraxisButton
                     id={styles.cardButton}
                     color="praxisRedButton"
-                    text="CONTACT US"
+                    text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
                     onClick={() => {
                       this.props.history.push('/contact');
                     }}
@@ -1335,9 +1636,15 @@ class LandingPage extends React.Component {
           <div>
             <section id="testimonials" />
             <section id={styles.sixthSection}>
-              <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
-                They’ve Experienced Praxis. Here’s Why You Should, Too
-              </h1>
+              {isEnglish ? (
+                <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
+                  They’ve Experienced Praxis. Here’s Why You Should, Too
+                </h1>
+              ) : (
+                <h1 id={styles.sixthHeader} className={styles.praxisHeader}>
+                  มผีคู้นมากมายทม่ีปีระสบการณ์ผ่านเกมPraxis มาแลว้ และคุณหละ!
+                </h1>
+              )}
               {this.renderCarousel()}
             </section>
           </div>
@@ -1359,9 +1666,15 @@ class LandingPage extends React.Component {
         <section id={styles.eighthSection}>
           <div id={styles.eighthSection__card}>
             <div id={styles.eighthSection__cardLeft}>
-              <h1 className={`${styles.whiteFont} ${styles.praxisHeader}`}>
-                Explore the World of Praxis With Us
-              </h1>
+              {isEnglish ? (
+                <h1 className={`${styles.whiteFont} ${styles.praxisHeader}`}>
+                  Explore the World of Praxis With Us
+                </h1>
+              ) : (
+                <h1 className={`${styles.whiteFont} ${styles.praxisHeader}`}>
+                  เปิดประสบการณ์ในโลก Praxis กบั เรา
+                </h1>
+              )}
               <br />
               <br />
               <div className={styles.eighthSection__row}>
@@ -1377,7 +1690,7 @@ class LandingPage extends React.Component {
                     } ${this.state.mapState === 'singapore' &&
                       styles.whiteFont__isActive}`}
                   >
-                    Singapore
+                    {isEnglish ? 'Singapore' : 'ประเทศสงิคโปร:์'}
                   </h1>
                   <p
                     className={`${styles.whiteFont} ${
@@ -1410,7 +1723,7 @@ class LandingPage extends React.Component {
                     } ${this.state.mapState === 'philippines' &&
                       styles.whiteFont__isActive}`}
                   >
-                    Philippines
+                    {isEnglish ? 'Philippines' : 'ประเทศฟิลปิปินส:์'}
                   </h1>
                   <p
                     className={`${styles.whiteFont} ${
@@ -1447,7 +1760,7 @@ class LandingPage extends React.Component {
                     } ${this.state.mapState === 'thailand' &&
                       styles.whiteFont__isActive}`}
                   >
-                    Thailand
+                    {isEnglish ? 'Thailand' : 'ประเทศไทย:'}
                   </h1>
                   <br />
                   <p
@@ -1455,16 +1768,20 @@ class LandingPage extends React.Component {
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    10 th Floor, AIA Sathorn Tower
+                    {isEnglish
+                      ? '10 th Floor, AIA Sathorn Tower'
+                      : 'ชนั้ 10 อาคาร AIA Sathom Tower'}
                   </p>
                   <p
                     className={`${styles.grayFont} ${
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    No. 11/1 South Sathorn Road
+                    {isEnglish
+                      ? 'No. 11/1 South Sathorn Road'
+                      : 'เลขท่ี 11/1 ถนนสาทรใต้'}
                     <br />
-                    Yannawa, Bangkok
+                    {isEnglish ? 'Yannawa, Bangkok' : 'เขตยานนาวา กรุงเทพ'}
                     <br />
                     10120 Thailand
                   </p>
