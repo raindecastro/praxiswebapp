@@ -72,8 +72,8 @@ class About extends React.Component {
             </p>
           )}
         </div>
-        <ManagementComponent />
-        <BoardComponent />
+        <ManagementComponent isEnglish={isEnglish} />
+        <BoardComponent isEnglish={isEnglish} />
       </div>
     );
   }
