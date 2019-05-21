@@ -78,6 +78,16 @@ import {
   testimonial5Name,
   testimonial6Name,
   testimonial7Name,
+  testimonial1Thai,
+  testimonial2Thai,
+  testimonial3Thai,
+  testimonial4Thai,
+  testimonial5Thai,
+  testimonial1NameThai,
+  testimonial2NameThai,
+  testimonial3NameThai,
+  testimonial4NameThai,
+  testimonial5NameThai,
 } from './Testimonials';
 
 const options = [
@@ -130,6 +140,288 @@ class LandingPage extends React.Component {
     this.setState({ headerColor: 'transparentHeader', showLogo: false });
   }
 
+  renderThaiCarousel = () => {
+    const CarouselUI = ({ position, total, children, handleClick }) => (
+      <div id={styles.carouselContainer}>
+        <div id={styles.carouselChildren}>
+          {children}
+          <div
+            className={styles.carouselArrow}
+            onClick={handleClick}
+            data-position={position - 1}
+          >
+            {'<'}
+          </div>
+          <div
+            className={styles.carouselArrowRight}
+            onClick={handleClick}
+            data-position={position + 1}
+          >
+            {'>'}
+          </div>
+        </div>
+        <div id={styles.dots}>
+          {Array(...Array(total)).map((val, index) => (
+            <div
+              id={styles.dot}
+              key={index}
+              onClick={handleClick}
+              data-position={index}
+            >
+              {index === position ? '● ' : '○ '}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+    const Carousel = makeCarousel(CarouselUI);
+    const selectStyles = {
+      control: (base, state) => ({
+        ...base,
+        minHeight: 64,
+        fontFamily: 'Montserrat',
+        fontSize: '14px',
+        boxShadow: 'none',
+        backgroundColor: '#F8F9FD',
+        color: '#263a4f',
+        borderRadius: 0,
+        borderColor: state.menuIsOpen ? '#F8F9FD' : '#F8F9FD',
+        padding: '1em',
+        '&:hover': {
+          borderColor: '#263a4f',
+        },
+      }),
+      dropdownIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        color: '##263a4f',
+        border: 'none',
+      }),
+      clearIndicator: base => ({
+        ...base,
+        paddingTop: 0,
+        paddingBottom: 0,
+        display: 'none',
+      }),
+      indicatorSeparator: base => ({
+        ...base,
+        display: 'none',
+      }),
+      placeholder: base => ({
+        ...base,
+        color: '#263a4f',
+        fontSize: '14px',
+      }),
+      menu: (base, state) => ({
+        ...base,
+        borderRadius: 'none',
+        marginTop: '-1em',
+      }),
+      menuList: (base, state) => ({
+        ...base,
+        paddingTop: '0',
+      }),
+      option: (base, state) => ({
+        ...base,
+        padding: '1em 2em',
+        fontSize: '14px',
+        fontFamily: 'Montserrat',
+        ':hover': {
+          backgroundColor: '#263a4f',
+          color: '#FAFAFA',
+        },
+        backgroundColor: state.isSelected ? '#5a81aa' : '#F8F9FD',
+        color: state.isSelected ? '#fafafa' : '#263a4f',
+      }),
+    };
+
+    return (
+      <Carousel defaultWait={7000} /*wait for 1000 milliseconds*/>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 7 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial7)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2019</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>Marice Fuentes</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Managing Director
+                <br />
+                Campaigntrack, Philippines
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 6 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial6)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2018</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>อลัน ลี</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                Distribution Recruitment & Business Development, Financial
+                Services Success Hub for Financial Advisory Services Talents
+                <br />
+                Great Eastern Life
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 1 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial1Thai)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2018</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>แดเร็น ทอมสัน</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                ประธานกรรมการบริหารฝ่ายกลยุทธ์การขายประกันผ่านธนาคาร
+                <br />
+                เอไอเอ ประเทศไทย
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 3 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial3Thai)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2004</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>ดร. Noi Keng Koh</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                อาจารย์
+                <br />
+                National Institue of Education, Singapore
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 4 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial4Thai)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2018</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>เจมส์ เดอล็อง</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                ผู้อำนวยการประจำภูมิภาคเอเชีย
+                <br />
+                Distribution Asia, Ageas
+              </p>
+            </div>
+          </div>
+        </Slide>
+        <Slide right>
+          <div
+            onClick={() => {
+              this.testimonialModal.show();
+              this.setState({ openedTestimonial: 5 });
+            }}
+            className={styles.sixthSection__content}
+          >
+            {/* <div className={styles.sixthSection__circleImage__left}>
+              <img className={styles.sixthSection__image} src={ceo} alt={ceo} />
+            </div> */}
+            <div className={styles.leftContent__content}>
+              <p className={styles.leftContent__paragraph}>
+                {`"${this.sliceText(testimonial5Thai)}..."`}
+              </p>
+              <br />
+              <p className={styles.praxisParagraph}>
+                <strong>2019</strong>
+              </p>
+              <p className={styles.praxisParagraph}>
+                <strong>แอ็กเนส แลมเบิร์ต</strong>
+              </p>
+              <p className={styles.praxisSmallParagraph}>
+                ประธานบริหาร
+                <br />
+                Collezione
+              </p>
+            </div>
+          </div>
+        </Slide>
+      </Carousel>
+    );
+  };
   renderCarousel = () => {
     const CarouselUI = ({ position, total, children, handleClick }) => (
       <div id={styles.carouselContainer}>
@@ -1645,7 +1937,7 @@ class LandingPage extends React.Component {
                   มผีคู้นมากมายทม่ีปีระสบการณ์ผ่านเกมPraxis มาแลว้ และคุณหละ!
                 </h1>
               )}
-              {this.renderCarousel()}
+              {isEnglish ? this.renderCarousel() : this.renderThaiCarousel()}
             </section>
           </div>
         </ScrollableAnchor>
@@ -1899,37 +2191,73 @@ class LandingPage extends React.Component {
           }
           titleStyle={titleStyles}
         >
-          <h1 className={styles.praxisSmallHeader}>
-            {this.state.openedTestimonial === 1
-              ? testimonial1Name
-              : this.state.openedTestimonial === 2
-              ? testimonial2Name
-              : this.state.openedTestimonial === 3
-              ? testimonial3Name
-              : this.state.openedTestimonial === 4
-              ? testimonial4Name
-              : this.state.openedTestimonial === 5
-              ? testimonial5Name
-              : this.state.openedTestimonial === 6
-              ? testimonial6Name
-              : testimonial7Name}
-          </h1>
+          {isEnglish ? (
+            <h1 className={styles.praxisSmallHeader}>
+              {this.state.openedTestimonial === 1
+                ? testimonial1Name
+                : this.state.openedTestimonial === 2
+                ? testimonial2Name
+                : this.state.openedTestimonial === 3
+                ? testimonial3Name
+                : this.state.openedTestimonial === 4
+                ? testimonial4Name
+                : this.state.openedTestimonial === 5
+                ? testimonial5Name
+                : this.state.openedTestimonial === 6
+                ? testimonial6Name
+                : testimonial7Name}
+            </h1>
+          ) : (
+            <h1 className={styles.praxisSmallHeader}>
+              {this.state.openedTestimonial === 1
+                ? testimonial1NameThai
+                : this.state.openedTestimonial === 2
+                ? testimonial2NameThai
+                : this.state.openedTestimonial === 3
+                ? testimonial3NameThai
+                : this.state.openedTestimonial === 4
+                ? testimonial4Name
+                : this.state.openedTThaiestimonial === 5
+                ? testimonial5NameThai
+                : this.state.openedTestimonial === 6
+                ? testimonial6Name
+                : testimonial7Name}
+            </h1>
+          )}
           <br />
-          <p className={styles.praxisParagraph}>
-            {this.state.openedTestimonial === 1
-              ? testimonial1
-              : this.state.openedTestimonial === 2
-              ? testimonial2
-              : this.state.openedTestimonial === 3
-              ? testimonial3
-              : this.state.openedTestimonial === 4
-              ? testimonial4
-              : this.state.openedTestimonial === 5
-              ? testimonial5
-              : this.state.openedTestimonial === 6
-              ? testimonial6
-              : testimonial7}
-          </p>
+          {isEnglish ? (
+            <p className={styles.praxisParagraph}>
+              {this.state.openedTestimonial === 1
+                ? testimonial1
+                : this.state.openedTestimonial === 2
+                ? testimonial2
+                : this.state.openedTestimonial === 3
+                ? testimonial3
+                : this.state.openedTestimonial === 4
+                ? testimonial4
+                : this.state.openedTestimonial === 5
+                ? testimonial5
+                : this.state.openedTestimonial === 6
+                ? testimonial6
+                : testimonial7}
+            </p>
+          ) : (
+            <p className={styles.praxisParagraph}>
+              {this.state.openedTestimonial === 1
+                ? testimonial1Thai
+                : this.state.openedTestimonial === 2
+                ? testimonial2Thai
+                : this.state.openedTestimonial === 3
+                ? testimonial3Thai
+                : this.state.openedTestimonial === 4
+                ? testimonial4Thai
+                : this.state.openedTestimonial === 5
+                ? testimonial5Thai
+                : this.state.openedTestimonial === 6
+                ? testimonial6
+                : testimonial7}
+            </p>
+          )}
           <br />
           <PraxisButton
             id={styles.skylightButton}
