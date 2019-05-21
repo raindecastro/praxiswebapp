@@ -194,7 +194,7 @@ class Contact extends React.Component {
     };
 
     const { isEnglish } = this.props;
-
+    console.log('IS ENGLISH -->', isEnglish);
     return (
       <section className={styles.contactContainer}>
         <div className={styles.contactContainer__headerContainer}>
