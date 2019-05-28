@@ -33,13 +33,14 @@ class News extends React.Component {
 
         axios
           .get(
-            'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
+            'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=featured'
           )
           .then(res => {
-            this.setState({ posts: res.data.posts });
-            console.log(this.state.posts);
+            this.setState({ featuredPost: res.data.posts[0] });
+            console.log(this.state.featuredPost);
           })
           .catch(error => console.log(error));
+        this.setState({ isEnglish: true });
       } else {
         axios
           .get(
@@ -60,7 +61,28 @@ class News extends React.Component {
             console.log(this.state.featuredPost);
           })
           .catch(error => console.log(error));
+        this.setState({ isEnglish: false });
       }
+    } else {
+      axios
+        .get(
+          'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
+        )
+        .then(res => {
+          this.setState({ posts: res.data.posts });
+          console.log(this.state.posts);
+        })
+        .catch(error => console.log(error));
+
+      axios
+        .get(
+          'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
+        )
+        .then(res => {
+          this.setState({ posts: res.data.posts });
+          console.log(this.state.posts);
+        })
+        .catch(error => console.log(error));
     }
   }
 
