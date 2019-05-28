@@ -14,33 +14,102 @@ class News extends React.Component {
     this.state = {
       posts: [],
       featuredPost: [],
+      isEnglish: null,
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.state.isEnglish !== nextProps.isEnglish) {
+      if (nextProps.isEnglish) {
+        axios
+          .get(
+            'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
+          )
+          .then(res => {
+            this.setState({ posts: res.data.posts });
+            console.log(this.state.posts);
+          })
+          .catch(error => console.log(error));
+
+        axios
+          .get(
+            'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
+          )
+          .then(res => {
+            this.setState({ posts: res.data.posts });
+            console.log(this.state.posts);
+          })
+          .catch(error => console.log(error));
+      } else {
+        axios
+          .get(
+            'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=thai'
+          )
+          .then(res => {
+            this.setState({ posts: res.data.posts });
+            console.log(this.state.posts);
+          })
+          .catch(error => console.log(error));
+
+        axios
+          .get(
+            'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=featuredThai'
+          )
+          .then(res => {
+            this.setState({ featuredPost: res.data.posts[0] });
+            console.log(this.state.featuredPost);
+          })
+          .catch(error => console.log(error));
+      }
+    }
   }
 
   componentWillMount() {
     this.scrollToTop();
     console.log(this.props);
-
     // GET BLOG POSTS
-    axios
-      .get(
-        'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts'
-      )
-      .then(res => {
-        this.setState({ posts: res.data.posts });
-        console.log(this.state.posts);
-      })
-      .catch(error => console.log(error));
+    this.setState({ isEnglish: this.props.isEnglish });
+    if (this.props.isEnglish) {
+      axios
+        .get(
+          'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
+        )
+        .then(res => {
+          this.setState({ posts: res.data.posts });
+          console.log(this.state.posts);
+        })
+        .catch(error => console.log(error));
 
-    axios
-      .get(
-        'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=featured'
-      )
-      .then(res => {
-        this.setState({ featuredPost: res.data.posts[0] });
-        console.log(this.state.featuredPost);
-      })
-      .catch(error => console.log(error));
+      axios
+        .get(
+          'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=featured'
+        )
+        .then(res => {
+          this.setState({ featuredPost: res.data.posts[0] });
+          console.log(this.state.featuredPost);
+        })
+        .catch(error => console.log(error));
+    } else {
+      axios
+        .get(
+          'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=thai'
+        )
+        .then(res => {
+          this.setState({ posts: res.data.posts });
+          console.log(this.state.posts);
+        })
+        .catch(error => console.log(error));
+
+      axios
+        .get(
+          'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=featuredThai'
+        )
+        .then(res => {
+          this.setState({ featuredPost: res.data.posts[0] });
+          console.log(this.state.featuredPost);
+        })
+        .catch(error => console.log(error));
+    }
   }
 
   scrollToTop = () => {
