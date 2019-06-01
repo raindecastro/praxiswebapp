@@ -16,14 +16,42 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEnglish: true,
+      isEnglish: null,
     };
+  }
+
+  componentWillMount() {
+    let currentLanguage = localStorage.getItem('isEnglish');
+    currentLanguage = currentLanguage === 'true' ? true : false;
+    if (currentLanguage) {
+      localStorage.setItem('isEnglish', true);
+      this.setState({ isEnglish: true });
+    } else if (currentLanguage === false) {
+      localStorage.setItem('isEnglish', false);
+      this.setState({ isEnglish: false });
+    } else {
+      localStorage.setItem('isEnglish', true);
+      this.setState({ isEnglish: true });
+    }
+  }
+
+  componentWillUpdate(prevProps, prevState) {
+    let storageIsEnglish = localStorage.getItem('isEnglish');
+    storageIsEnglish = storageIsEnglish === 'true' ? true : false;
+
+    if (prevState.isEnglish !== storageIsEnglish) {
+      this.setState({
+        isEnglish: storageIsEnglish,
+      });
+    }
   }
 
   changeLanguage = e => {
     if (e.value === 'english') {
+      localStorage.setItem('isEnglish', true);
       this.setState({ isEnglish: true });
     } else {
+      localStorage.setItem('isEnglish', false);
       this.setState({ isEnglish: false });
     }
   };
@@ -59,7 +87,7 @@ export default class App extends Component {
             />
           </Switch>
         </div>
-        <Footer />
+        <Footer isEnglish={isEnglish} />
       </main>
     );
   }

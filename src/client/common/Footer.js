@@ -39,9 +39,10 @@ const Footer = props => (
         {props.isEnglish ? 'NEWS AND EVENTS' : 'ขา่วสารและกจิกรรม'}
       </p>
       <p
-        onClick={() => {
-          window.location.href = '/contact';
-        }}
+        // onClick={() => {
+        //   window.location.href = '/contact';
+        // }}
+        onClick={() => window.open(`/contact`, '_blank')}
         className={styles.praxisSmallParagraph}
       >
         {props.isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}

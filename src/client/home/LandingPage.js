@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import firebase from '../../../Firestore';
 import MediaQuery from 'react-responsive';
 import SkyLight from 'react-skylight';
@@ -720,7 +721,7 @@ class LandingPage extends React.Component {
   sendData = () => {
     // const data = this.state;
     // console.log(data);
-
+    this.sendEmail();
     const db = firebase.firestore();
     db.settings({
       timestampsInSnapshots: true,
@@ -742,6 +743,39 @@ class LandingPage extends React.Component {
       .catch(error => {
         console.log(error);
       });
+  };
+
+  sendEmail = () => {
+    const template_params = {
+      email: this.state.email,
+      first_name: this.state.firstName,
+      last_name: this.state.lastName,
+      company: this.state.company,
+      message: this.state.message,
+      contact_number: this.state.mobileNumber,
+    };
+
+    const data = {
+      service_id: 'gmail',
+      template_id: 'template_7IiOp7H2',
+      user_id: 'user_gev2K7MmXVcxNmfeZu0k2',
+      template_params,
+    };
+
+    axios
+      .post(
+        'https://api.emailjs.com/api/v1.0/email/send',
+        JSON.stringify(data),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then(res => {
+        console.log('Email sent');
+      })
+      .catch(error => console.log(error));
   };
 
   onChangeInput = e => {
@@ -1779,9 +1813,10 @@ class LandingPage extends React.Component {
                     id={styles.cardButton}
                     color="praxisRedButton"
                     text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
-                    onClick={() => {
-                      this.props.history.push('/contact');
-                    }}
+                    // onClick={() => {
+                    //   this.props.history.push('/contact');
+                    // }}
+                    onClick={() => window.open(`/contact`, '_blank')}
                   />
                 </div>
               </div>
@@ -1821,9 +1856,10 @@ class LandingPage extends React.Component {
                       id={styles.cardButton}
                       color="praxisRedButton"
                       text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
-                      onClick={() => {
-                        this.props.history.push('/contact');
-                      }}
+                      // onClick={() => {
+                      //   this.props.history.push('/contact');
+                      // }}
+                      onClick={() => window.open(`/contact`, '_blank')}
                     />
                   </div>
                 ) : (
@@ -1855,9 +1891,10 @@ class LandingPage extends React.Component {
                       id={styles.cardButton}
                       color="praxisRedButton"
                       text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
-                      onClick={() => {
-                        this.props.history.push('/contact');
-                      }}
+                      // onClick={() => {
+                      //   this.props.history.push('/contact');
+                      // }}
+                      onClick={() => window.open(`/contact`, '_blank')}
                     />
                   </div>
                 )}
@@ -1915,9 +1952,10 @@ class LandingPage extends React.Component {
                     id={styles.cardButton}
                     color="praxisRedButton"
                     text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
-                    onClick={() => {
-                      this.props.history.push('/contact');
-                    }}
+                    // onClick={() => {
+                    //   this.props.history.push('/contact');
+                    // }}
+                    onClick={() => window.open(`/contact`, '_blank')}
                   />
                 </div>
               </div>

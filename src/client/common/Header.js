@@ -184,7 +184,8 @@ class Header extends React.Component {
               </HashLink>
             </p>
 
-            <p
+            <a
+              href={`/news`}
               onClick={() => {
                 window.location.href = '/news';
               }}
@@ -195,9 +196,10 @@ class Header extends React.Component {
               }
             >
               {isEnglish ? 'NEWS AND EVENTS' : 'ข่าวสารและกิจกรรม'}
-            </p>
+            </a>
             <p
-              onClick={() => (window.location.href = '/contact')}
+              // onClick={() => (window.location.href = '/contact')}
+              onClick={() => window.open(`/contact`, '_blank')}
               className={
                 currentPath === '/contact'
                   ? `${styles.headerLink} ${styles.currentLink}`
@@ -209,7 +211,7 @@ class Header extends React.Component {
             <Select
               styles={selectStyles}
               options={options}
-              defaultValue={options[0]}
+              value={this.props.isEnglish ? options[0] : options[1]}
               isSearchable={false}
               isClearable={false}
               onChange={e => {
@@ -310,7 +312,8 @@ class Header extends React.Component {
               </li>
               <li>
                 <p
-                  onClick={() => (window.location.href = '/contact')}
+                  // onClick={() => (window.location.href = '/contact')}
+                  onClick={() => window.open(`/contact`, '_blank')}
                   className={styles.praxisParagraph}
                 >
                   <span

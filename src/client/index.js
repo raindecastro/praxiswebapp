@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'scroll-behavior-polyfill';
 
 import App from './App';
-
+if (!localStorage.getItem('isEnglish')) localStorage.setItem('isEnglish', true);
 ReactDOM.render(
   <BrowserRouter>
     <App />

@@ -12,6 +12,7 @@ import {
   scrollSpy,
   scroller,
 } from 'react-scroll';
+import axios from 'axios';
 
 const options = [
   { value: 'ph', label: 'Philippines' },
@@ -122,7 +123,7 @@ class Contact extends React.Component {
     // const data = this.state;
     // console.log(data);
     // e.preventDefault();
-
+    this.sendEmail();
     const db = firebase.firestore();
     db.settings({
       timestampsInSnapshots: true,
@@ -144,6 +145,39 @@ class Contact extends React.Component {
       .catch(error => {
         console.log(error);
       });
+  };
+
+  sendEmail = () => {
+    const template_params = {
+      email: this.state.email,
+      first_name: this.state.firstName,
+      last_name: this.state.lastName,
+      company: this.state.company,
+      message: this.state.message,
+      contact_number: this.state.mobileNumber,
+    };
+
+    const data = {
+      service_id: 'gmail',
+      template_id: 'template_7IiOp7H2',
+      user_id: 'user_gev2K7MmXVcxNmfeZu0k2',
+      template_params,
+    };
+
+    axios
+      .post(
+        'https://api.emailjs.com/api/v1.0/email/send',
+        JSON.stringify(data),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then(res => {
+        console.log('Email sent');
+      })
+      .catch(error => console.log(error));
   };
 
   render() {
