@@ -1,0 +1,30 @@
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat' !important;
+  font-weight: 400;
+  color: #242635;
+  letter-spacing: -1.16px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-family: 'Lato' !important;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: #242635;
+  line-height: 24px;
+}
+
+a {
+  font-family: 'Lato' !important;
+  font-weight: 100;
+}
+
+span {
+  font-family: 'Lato' !important;
+  font-weight: 400;
+}

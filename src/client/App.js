@@ -9,7 +9,6 @@ import News from './news/News';
 import Contact from './contact/Contact';
 import FullPost from './news/FullPost';
 import About from './about/About';
-
 import './skylight.css';
 
 export default class App extends Component {
@@ -26,12 +25,15 @@ export default class App extends Component {
     if (currentLanguage) {
       localStorage.setItem('isEnglish', true);
       this.setState({ isEnglish: true });
+      import('./appEng.css');
     } else if (currentLanguage === false) {
       localStorage.setItem('isEnglish', false);
       this.setState({ isEnglish: false });
+      import('./appThai.css');
     } else {
       localStorage.setItem('isEnglish', true);
       this.setState({ isEnglish: true });
+      import('./appEng.css');
     }
   }
 
@@ -50,9 +52,12 @@ export default class App extends Component {
     if (e.value === 'english') {
       localStorage.setItem('isEnglish', true);
       this.setState({ isEnglish: true });
+      location.reload();
     } else {
       localStorage.setItem('isEnglish', false);
       this.setState({ isEnglish: false });
+            location.reload();
+
     }
   };
 

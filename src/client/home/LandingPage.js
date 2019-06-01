@@ -113,7 +113,7 @@ const mapSingapore =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7926986873963!2d103.84383031431608!3d1.2991639620991617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1991a4d1e27f%3A0xfe98f91084669b12!2sThe+Praxis+Company+Pte+Ltd!5e0!3m2!1sen!2sph!4v1549853234168';
 const mapThailand = '';
 
-configureAnchors({ offset: -100 });
+configureAnchors({ offset: -200 });
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -1273,7 +1273,7 @@ class LandingPage extends React.Component {
                 </p>
               ) : (
                 <p
-                  className={styles.praxisParagraph}
+                className={`${styles.praxisParagraph} ${styles.thaiFontStyle}`}
                   id={styles.firstParagraph}
                 >
                   เป็นคาตอบในเรอ่ื ง
