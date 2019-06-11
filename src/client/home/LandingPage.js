@@ -1601,7 +1601,11 @@ class LandingPage extends React.Component {
                           window.location.href = '/contact';
                         }}
                         className={styles.tabContainer__button}
-                        text={isEnglish ? 'LEARN MORE ABOUT PRAXIS' : 'here'}
+                        text={
+                          isEnglish
+                            ? 'LEARN MORE ABOUT PRAXIS'
+                            : 'รู้จัก PRAXIS มากขึ้น'
+                        }
                         color="praxisRedButton"
                       />
                     </div>
@@ -2097,7 +2101,12 @@ class LandingPage extends React.Component {
               </div>
             </div>
             <div id={styles.eighthSection__cardRight}>
-              <h1 className={`${styles.praxisHeader}`}>Send us a message</h1>
+              {isEnglish ? (
+                <h1 className={`${styles.praxisHeader}`}>Send us a message</h1>
+              ) : (
+                <h1 className={`${styles.praxisHeader}`}>ส่งข้อความถึงเรา</h1>
+              )}
+
               <div className={styles.eighthSection__formContainer}>
                 <div className={styles.eighthSection__formContainer__twoRow}>
                   <input
@@ -2105,7 +2114,7 @@ class LandingPage extends React.Component {
                     name="firstName"
                     value={firstName}
                     className={styles.praxisInput}
-                    placeholder="First Name"
+                    placeholder={isEnglish ? 'First Name' : 'ชื่อ'}
                     onChange={this.onChangeInput}
                   />
                   <input
@@ -2113,7 +2122,7 @@ class LandingPage extends React.Component {
                     name="lastName"
                     value={lastName}
                     className={styles.praxisInput}
-                    placeholder="Last Name"
+                    placeholder={isEnglish ? 'Last Name' : 'นามสกุล'}
                     onChange={this.onChangeInput}
                   />
                 </div>
@@ -2123,7 +2132,7 @@ class LandingPage extends React.Component {
                     name="company"
                     value={company}
                     className={styles.praxisInput}
-                    placeholder="Company"
+                    placeholder={isEnglish ? 'Company' : 'ข้อความ'}
                     onChange={this.onChangeInput}
                   />
                 </div>
@@ -2133,7 +2142,7 @@ class LandingPage extends React.Component {
                     name="mobileNumber"
                     value={mobileNumber}
                     className={styles.praxisInput}
-                    placeholder="Mobile Number"
+                    placeholder={isEnglish ? 'Mobile Number' : 'เบอร์โทรติดต่อ'}
                     onChange={this.onChangeInput}
                   />
                 </div>
@@ -2143,7 +2152,7 @@ class LandingPage extends React.Component {
                     name="email"
                     value={email}
                     className={styles.praxisInput}
-                    placeholder="Email Address"
+                    placeholder={isEnglish ? 'Email Address' : 'อีเมล์'}
                     onChange={this.onChangeInput}
                   />
                 </div>
@@ -2154,7 +2163,7 @@ class LandingPage extends React.Component {
                     name="message"
                     value={message}
                     className={styles.praxisTextArea}
-                    placeholder="Message"
+                    placeholder={isEnglish ? 'Message' : 'บริษัท'}
                     onChange={this.onChangeInput}
                   />
                 </div>
@@ -2162,7 +2171,7 @@ class LandingPage extends React.Component {
                   <PraxisButton
                     onClick={this.sendData}
                     color="praxisRedButton"
-                    text="SUBMIT"
+                    text={isEnglish ? 'SUBMIT' : 'ส่ง'}
                   />
                 </div>
               </div>

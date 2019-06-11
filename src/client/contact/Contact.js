@@ -258,7 +258,7 @@ class Contact extends React.Component {
               name="firstName"
               value={firstName}
               className={styles.praxisInput}
-              placeholder="First Name"
+              placeholder={isEnglish ? 'First Name' : 'ชื่อ'}
               onChange={e => {
                 this.setState({ firstName: e.target.value });
               }}
@@ -268,7 +268,7 @@ class Contact extends React.Component {
               name="lastName"
               value={lastName}
               className={styles.praxisInput}
-              placeholder="Last Name"
+              placeholder={isEnglish ? 'Last Name' : 'นามสกุล'}
               onChange={e => {
                 this.setState({ lastName: e.target.value });
               }}
@@ -280,7 +280,7 @@ class Contact extends React.Component {
               name="company"
               value={company}
               className={styles.praxisInput}
-              placeholder="Company"
+              placeholder={isEnglish ? 'Company' : 'ข้อความ'}
               onChange={e => {
                 this.setState({ company: e.target.value });
               }}
@@ -292,7 +292,7 @@ class Contact extends React.Component {
               name="number"
               value={mobileNumber}
               className={styles.praxisInput}
-              placeholder="Mobile Number"
+              placeholder={isEnglish ? 'Mobile Number' : 'เบอร์โทรติดต่อ'}
               onChange={e => {
                 this.setState({ mobileNumber: e.target.value });
               }}
@@ -304,7 +304,7 @@ class Contact extends React.Component {
               name="email"
               value={email}
               className={styles.praxisInput}
-              placeholder="Email Address"
+              placeholder={isEnglish ? 'Email Address' : 'อีเมล์'}
               onChange={e => {
                 this.setState({ email: e.target.value });
               }}
@@ -317,7 +317,7 @@ class Contact extends React.Component {
               name="message"
               value={message}
               className={styles.praxisTextArea}
-              placeholder="Message"
+              placeholder={isEnglish ? 'Message' : 'บริษัท'}
               onChange={e => {
                 this.setState({ message: e.target.value });
               }}
@@ -339,7 +339,7 @@ class Contact extends React.Component {
                 this.sendData();
               }}
               color="praxisRedButton"
-              text="SUBMIT"
+              text={isEnglish ? 'SUBMIT' : 'ส่ง'}
               type="submit"
             />
           </div>

@@ -9,6 +9,7 @@ import News from './news/News';
 import Contact from './contact/Contact';
 import FullPost from './news/FullPost';
 import About from './about/About';
+import { collectVisitorToGA } from './ReactGA';
 import './skylight.css';
 
 export default class App extends Component {
@@ -35,6 +36,7 @@ export default class App extends Component {
       this.setState({ isEnglish: true });
       import('./appEng.css');
     }
+    collectVisitorToGA('UA-141883781-1', location.pathname);
   }
 
   componentWillUpdate(prevProps, prevState) {
@@ -56,8 +58,7 @@ export default class App extends Component {
     } else {
       localStorage.setItem('isEnglish', false);
       this.setState({ isEnglish: false });
-            location.reload();
-
+      location.reload();
     }
   };
 
