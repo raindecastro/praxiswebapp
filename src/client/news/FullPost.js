@@ -57,7 +57,7 @@ class FullPost extends React.Component {
             {this.formatDate(post.date)}
           </p>
           <h1 id={styles.postTitle} className={styles.praxisHeader}>
-            {post.title}
+            {ReactHtmlParser(post.title)}
           </h1>
         </section>
         <section className={styles.newsContainer__secondSection}>

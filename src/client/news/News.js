@@ -20,8 +20,8 @@ class News extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.state.isEnglish !== nextProps.isEnglish) {
-      // if (nextProps.isEnglish) {
-      if (true) {
+      if (nextProps.isEnglish) {
+        // if (true) {
         axios
           .get(
             'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'
@@ -92,8 +92,8 @@ class News extends React.Component {
     console.log(this.props);
     // GET BLOG POSTS
     this.setState({ isEnglish: this.props.isEnglish });
-    // if (this.props.isEnglish) {
-    if (true) {
+    if (this.props.isEnglish) {
+      // if (true) {
       axios
         .get(
           'https://public-api.wordpress.com/rest/v1/sites/thepraxiswebapp.wordpress.com/posts/?tag=english'

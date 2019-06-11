@@ -235,7 +235,7 @@ class Contact extends React.Component {
           <h1 className={styles.praxisHeader}>
             {isEnglish
               ? 'Get To Know Praxis Better'
-              : 'มารจู้กัPraxisใหม้ากขน้ึ'}
+              : 'มารู้จัก Praxis ให้มากขึ้น'}
           </h1>
           <br />
           {isEnglish ? (
@@ -245,7 +245,7 @@ class Contact extends React.Component {
             </p>
           ) : (
             <p className={styles.praxisParagraph}>
-              นดัทดลองเล่นเกมกบัเรา! กรุณากรอกขอ้ มลู เพอ่ื การตดิ ต่อจากเรา
+              นัดทดลองเล่นเกมกับเรา! กรุณากรอกข้อมูลเพื่อการติดต่อจากเรา
             </p>
           )}
         </div>

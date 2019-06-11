@@ -40,12 +40,16 @@ const testimonial5Thai =
 const testimonial1NameThai =
   'แดเร็น ทอมสัน, ประธานกรรมการบริหารฝ่ายกลยุทธ์การขายประกันผ่านธนาคาร, เอไอเอ ประเทศไทย';
 const testimonial2NameThai =
-  'อลัน ลี, Distribution Recruitment & Business Development, Financial Services Success Hub for Financial Advisory Services Talents, Great Eastern Life ';
+  'อลัน ลี, Distribution Recruitment & Business Development, Financial Services Success Hub for Financial Advisory Services Talents, Great Eastern Life';
 const testimonial3NameThai =
-  'ดร. Noi Keng Koh, อาจารย์, National Institue of Education, Singapore';
+  'Dr. Noi Keng Koh, Lecturer, National Institue of Education, Singapore';
 const testimonial4NameThai =
   'เจมส์ เดอล็อง, ผู้อำนวยการประจำภูมิภาคเอเชีย, Distribution Asia, Ageas';
 const testimonial5NameThai = 'แอ็กเนส แลมเบิร์ต, ประธานบริหาร, Collezione';
+const testimonial7Thai =
+  'Praxis ได้เปิดประสบการณ์ให้พนักงานของเราได้เรียนรู้ที่จะดูแลสุขภาพทางการเงินของพวกเขา หลังจากจบเกม มีคนที่เริ่มลงทุนจริงในธุรกิจประกันภัย หุ้นและอสังหาริมทรัพย์ จึงไม่ต้องสงสัยเลยว่าการลงทุนของเรากับพวกเขาได้ผลลัพท์ที่มีประสิทธิภาพและคุ้มค่าเพียงใด';
+const testimonial7NameThai =
+  'มารีซ ฟูเอนเทส, กรรมการผู้จัดการ, บริษัท Campaigntrack ประเทศฟิลิปปินส์';
 
 export {
   testimonial1,
@@ -72,4 +76,6 @@ export {
   testimonial3NameThai,
   testimonial4NameThai,
   testimonial5NameThai,
+  testimonial7Thai,
+  testimonial7NameThai,
 };

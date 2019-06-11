@@ -156,9 +156,10 @@ class Header extends React.Component {
           )}
           <div id={styles.headerLinks}>
             <p
-              onClick={() => {
-                window.location.href = '/about';
-              }}
+              // onClick={() => {
+              //   window.location.href = '/about';
+              // }}
+              onClick={() => window.open(`/about`, '_blank')}
               className={
                 currentPath === '/about'
                   ? `${styles.headerLink} ${styles.currentLink}`
@@ -257,7 +258,8 @@ class Header extends React.Component {
             <ul className={styles.headerMenu}>
               <li>
                 <p
-                  onClick={() => (window.location.href = '/about')}
+                  // onClick={() => (window.location.href = '/about')}
+                  onClick={() => window.open(`/about`, '_blank')}
                   className={styles.praxisParagraph}
                 >
                   <span
