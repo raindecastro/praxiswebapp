@@ -21,12 +21,12 @@ const Footer = props => (
         }}
         className={styles.praxisSmallParagraph}
       >
-        {props.isEnglish ? 'ABOUT US' : 'เกย่ีวกบัเรา'}
+        {props.isEnglish ? 'ABOUT US' : 'เกี่ยวกับเรา'}
       </p>
       <HashLink to="/#pricing">
         {' '}
         <p className={styles.praxisSmallParagraph}>
-          {props.isEnglish ? 'PARTNERSHIPS' : 'พนั ธมติ รทางธุรกจิ'}
+          {props.isEnglish ? 'PARTNERSHIPS' : 'พันธมิตรทางธุรกิจ'}
         </p>
       </HashLink>
 
@@ -36,7 +36,7 @@ const Footer = props => (
         }}
         className={styles.praxisSmallParagraph}
       >
-        {props.isEnglish ? 'NEWS AND EVENTS' : 'ขา่วสารและกจิกรรม'}
+        {props.isEnglish ? 'NEWS AND EVENTS' : 'ข่าวสารและกิจกรรม'}
       </p>
       <p
         // onClick={() => {
@@ -45,7 +45,7 @@ const Footer = props => (
         onClick={() => window.open(`/contact`, '_blank')}
         className={styles.praxisSmallParagraph}
       >
-        {props.isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+        {props.isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
       </p>
     </div>
     <div className={styles.rightLinks}>
@@ -54,7 +54,11 @@ const Footer = props => (
         <FaFacebookF
           style={{ cursor: 'pointer' }}
           onClick={() => {
-            window.open('https://www.facebook.com/ThePraxisCompany/');
+            if (props.isEnglish) {
+              window.open('https://www.facebook.com/ThePraxisCompany/');
+            } else {
+              window.open('https://www.facebook.com/PraxisThailand/');
+            }
           }}
           size="24"
         />{' '}

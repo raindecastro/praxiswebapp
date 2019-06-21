@@ -74,7 +74,9 @@ class ManagementComponent extends React.Component {
       <div>
         <div className={styles.secondSection}>
           <div className={styles.secondSection__header}>
-            <h1 className={styles.praxisHeader}>Board and Advisers</h1>
+            <h1 className={styles.praxisHeader}>
+              {isEnglish ? 'Board and Advisers' : 'คณะกรรมการและที่ปรึกษา'}
+            </h1>
           </div>
           <div className={styles.secondSection__rowTwo}>
             <div className={styles.secondSection__columnThree}>
@@ -110,7 +112,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.davidSteel.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
             <div className={styles.secondSection__columnThree}>
@@ -143,7 +145,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.gregMartin.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
             <div className={styles.secondSection__columnThree}>
@@ -176,7 +178,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.davidClancy.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
             <div className={styles.secondSection__columnThree}>
@@ -212,7 +214,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.alexKrefft.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
             <div className={styles.secondSection__columnThree}>
@@ -248,7 +250,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.allanPedersen.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
             <div className={styles.secondSection__columnThree}>
@@ -284,7 +286,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.noiKeong.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
             <div className={styles.secondSection__columnThree}>
@@ -320,7 +322,7 @@ class ManagementComponent extends React.Component {
                 onClick={() => this.alanWood.show()}
                 className={styles.secondSection__link}
               >
-                READ MORE
+                {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
               </span>
             </div>
           </div>

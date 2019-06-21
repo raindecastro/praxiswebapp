@@ -33,7 +33,7 @@ class About extends React.Component {
       <div className={styles.aboutContainer}>
         <div className={styles.firstSection}>
           <h1 className={styles.praxisHeader}>
-            {isEnglish ? 'About Us' : 'เกย่ีวกบัเรา'}
+            {isEnglish ? 'About Us' : 'เกี่ยวกับเรา'}
           </h1>
           {isEnglish ? (
             <p className={styles.praxisParagraph}>
@@ -44,8 +44,9 @@ class About extends React.Component {
           ) : (
             <p className={styles.praxisParagraph}>
               การเรียนรู้การเงินไม่ควรเป็นเรื่องน่าเบื่ออีกต่อไป
-              นี่เป็นเหตุผลหลักที่ว่าทำไมผู้ให้บริการทางการเงินระดับมืออาชีพและผู้เชี่ยวชาญด้านการออกแบบเกมจึงรวมมือกัน
-              คิดค้นเกม ก่อตั้งบริษัท Praxis ขึ้นมา
+              นี่เป็นเหตุผลหลักที่ว่าทำไมผู้ให้บริการทางการเงินระดับมืออาชีพและผู้เชี่ยวชาญด้าน
+              <br />
+              เกมจึงร่วมมือกันคิดค้นเกม ก่อตั้งบริษัท Praxis ขึ้นมา
             </p>
           )}
           <br />

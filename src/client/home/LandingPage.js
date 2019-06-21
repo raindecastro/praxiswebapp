@@ -109,11 +109,14 @@ const thaiOptions = [
   { value: 5, label: 'การสร้างลูกค้ากลุ่มเป้าหมาย' },
 ];
 
+import $ from 'jquery';
+
 const mapPhilippines =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8220.659337344037!2d121.02416976440777!3d14.55638558182863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c90f0015ff6f%3A0xd2bcc8518b60469f!2sThe+Praxis+Company!5e0!3m2!1sen!2sph!4v1549848498004';
 const mapSingapore =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7926986873963!2d103.84383031431608!3d1.2991639620991617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1991a4d1e27f%3A0xfe98f91084669b12!2sThe+Praxis+Company+Pte+Ltd!5e0!3m2!1sen!2sph!4v1549853234168';
-const mapThailand = '';
+const mapThailand =
+  'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7751.928230956815!2d100.5211691!3d13.7206224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x818b5233f2c8f65f!2sAIA+Sathorn+Tower!5e0!3m2!1sen!2sca!4v1561095716279!5m2!1sen!2sca';
 
 configureAnchors({ offset: -200 });
 
@@ -355,7 +358,7 @@ class LandingPage extends React.Component {
                 <strong>Dr. Noi Keng Koh</strong>
               </p>
               <p className={styles.praxisSmallParagraph}>
-                อาจารย์
+                Lecturer
                 <br />
                 National Institue of Education, Singapore
               </p>
@@ -786,6 +789,21 @@ class LandingPage extends React.Component {
   };
 
   sliceText = text => text.slice(0, 300);
+
+  _executeAfterModalClose() {
+    $('#youtubeVideo')
+      .get(0)
+      .contentWindow.postMessage(
+        '{"event":"command","func":"stopVideo","args":""}',
+        '*'
+      );
+    // $('#youtubeVideo').each(function() {
+    //   this.contentWindow.postMessage(
+    //     '{"event":"command","func":"stopVideo","args":""}',
+    //     '*'
+    //   );
+    // });
+  }
 
   resetThenSet = (id, key) => {
     let temp = JSON.parse(JSON.stringify(this.state[key]));
@@ -1776,7 +1794,9 @@ class LandingPage extends React.Component {
                   ) : (
                     <div>
                       <p className={styles.praxisSmallParagraph}>
-                        รูปแบบการบริการ Praxis เป็นรายกิจกรรม
+                        รูปแบบการบริการ Praxis
+                        <br />
+                        เป็นรายกิจกรรม
                       </p>
                       <div className={styles.praxisLine} />
                       <p className={styles.praxisSmallParagraph}>
@@ -1790,14 +1810,16 @@ class LandingPage extends React.Component {
                       <div className={styles.praxisLine} />
                       <p className={styles.praxisSmallParagraph}>
                         ได้รับการดูแลจาก GameMaster และ GameFacilitator จาก
-                        Praxis ตลอดการจัดกิจกรรม
+                        Praxis
+                        <br />
+                        ตลอดการจัดกิจกรรม
                       </p>
                     </div>
                   )}
                   <PraxisButton
                     id={styles.cardButton}
                     color="praxisRedButton"
-                    text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+                    text={isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
                     // onClick={() => {
                     //   this.props.history.push('/contact');
                     // }}
@@ -1840,7 +1862,7 @@ class LandingPage extends React.Component {
                     <PraxisButton
                       id={styles.cardButton}
                       color="praxisRedButton"
-                      text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+                      text={isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
                       // onClick={() => {
                       //   this.props.history.push('/contact');
                       // }}
@@ -1850,7 +1872,9 @@ class LandingPage extends React.Component {
                 ) : (
                   <div className={styles.praxisCard__contentHolder}>
                     <p className={styles.praxisSmallParagraph}>
-                      เซ็นสัญญาผูกพัน ระยะเวลาตั้งแต่ 12 - 24 เดือน
+                      เซ็นสัญญาผูกพัน ระยะเวลาตั้งแต่
+                      <br />
+                      12 - 24 เดือน
                     </p>
                     <div className={styles.praxisLine} />
                     <p className={styles.praxisSmallParagraph}>
@@ -1868,13 +1892,13 @@ class LandingPage extends React.Component {
                     <div className={styles.praxisLine} />
                     <p className={styles.praxisSmallParagraph}>
                       ได้รับการดูแลถึงที่และผ่านช่องทางออนไลน์โดย Praxis
-                      (สิทธิ์การตรวจสอบคุณภาพ สิทธิ์การเข้าถึงตัวเกม
-                      และได้รับคำแนะนำอย่างใกล้ชิดทุกๆเดือนจากทีมงาน)
+                      สิทธิ์การตรวจสอบคุณภาพ สิทธิ์การเข้าถึงตัวเกม
+                      และได้รับคำแนะนำอย่างใกล้ชิดทุกๆเดือนจากทีมงาน
                     </p>
                     <PraxisButton
                       id={styles.cardButton}
                       color="praxisRedButton"
-                      text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+                      text={isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
                       // onClick={() => {
                       //   this.props.history.push('/contact');
                       // }}
@@ -1916,16 +1940,21 @@ class LandingPage extends React.Component {
                         โดยการร่วมมือกับบริษัทผู้ให้บริการทางการเงิน Praxis
                         ใช้ผู้เชี่ยวชาญเกมโดยเฉพาะ
                         เพื่อการสร้างกระบวนการขายที่เปลี่ยนจาก
-                      </p>
-                      <div className={styles.praxisLine} />
-                      <p className={styles.praxisSmallParagraph}>
                         ผู้มุ่งหวังเป็นผู้ซื้อ
                         และถ่ายทอดความรู้และทักษะให้กับบริษัทที่เป็นพันธมิตรเพื่อวัตถุประสงค์ในการเพิ่มยอดขายและกำไรอย่างสูงสุด
                       </p>
+                      {/* <p className={styles.praxisSmallParagraph}>
+                        ผู้มุ่งหวังเป็นผู้ซื้อ
+                        และถ่ายทอดความรู้และทักษะให้กับบริษัทที่เป็นพันธมิตรเพื่อวัตถุประสงค์ในการเพิ่มยอดขายและกำไรอย่างสูงสุด
+                      </p> */}
                       <div className={styles.praxisLine} />
                       <p className={styles.praxisSmallParagraph}>
-                        ปรับเปลี่ยนรูปแบบเกมตามวัตถุประสงค์ได้รับการอบรมและการรับรองเป็น
-                        GameMaster และ GameFacilitator จาก Praxis
+                        ปรับเปลี่ยนรูปแบบเกมตามวัตถุประสงค์
+                      </p>
+                      <div className={styles.praxisLine} />
+                      <p className={styles.praxisSmallParagraph}>
+                        ได้รับการอบรมและการรับรองเป็น GameMaster และ
+                        GameFacilitator จาก Praxis
                       </p>
                     </div>
                   )}
@@ -1933,7 +1962,7 @@ class LandingPage extends React.Component {
                   <PraxisButton
                     id={styles.cardButton}
                     color="praxisRedButton"
-                    text={isEnglish ? 'CONTACT US' : 'ตดิต่อเรา'}
+                    text={isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
                     // onClick={() => {
                     //   this.props.history.push('/contact');
                     // }}
@@ -1970,7 +1999,7 @@ class LandingPage extends React.Component {
                   ? mapPhilippines
                   : this.state.mapState === 'singapore'
                   ? mapSingapore
-                  : 'philippines'
+                  : mapThailand
               }
             />
           </div>
@@ -2074,16 +2103,32 @@ class LandingPage extends React.Component {
                   >
                     {isEnglish ? 'Thailand' : 'ประเทศไทย'}
                   </h1>
-                  <br />
                   <p
                     className={`${styles.whiteFont} ${
                       styles.praxisSmallParagraph
                     }`}
                   >
-                    {isEnglish
-                      ? '10 th Floor, AIA Sathorn Tower'
-                      : 'ชั้น 10  อาคาร AIA Sathom Tower'}
+                    The Praxis Company Thailand
                   </p>
+                  {isEnglish ? (
+                    <p
+                      className={`${styles.whiteFont} ${
+                        styles.praxisSmallParagraph
+                      }`}
+                    >
+                      10 th Floor, AIA Sathorn Tower
+                    </p>
+                  ) : (
+                    <p
+                      className={`${styles.whiteFont} ${
+                        styles.praxisSmallParagraph
+                      }`}
+                    >
+                      ชั้น 10 อาคาร
+                      <br />
+                      AIA Sathorn Tower
+                    </p>
+                  )}
                   <p
                     className={`${styles.grayFont} ${
                       styles.praxisSmallParagraph
@@ -2280,7 +2325,7 @@ class LandingPage extends React.Component {
                 ? testimonial5Thai
                 : this.state.openedTestimonial === 6
                 ? testimonial6
-                : testimonial7}
+                : testimonial7Thai}
             </p>
           )}
           <br />
@@ -2296,6 +2341,7 @@ class LandingPage extends React.Component {
         <SkyLight
           hideOnOverlayClicked
           ref={ref => (this.videoModal = ref)}
+          afterClose={this._executeAfterModalClose}
           dialogStyles={
             navigator.userAgent.match(/Android/i) ||
             navigator.userAgent.match(/iPhone/i) ||
@@ -2307,11 +2353,16 @@ class LandingPage extends React.Component {
         >
           <div className={styles.containerVideo}>
             <iframe
+              id="youtubeVideo"
               className={styles.containerIframe}
               width="100%"
               height="100%"
               frameborder="0"
-              src="https://www.youtube.com/embed/-a_jaFEenyo"
+              src={
+                isEnglish
+                  ? 'https://www.youtube.com/embed/-a_jaFEenyo?enablejsapi=1'
+                  : 'https://www.youtube.com/embed/oHCiydRyz2w?enablejsapi=1'
+              }
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             />

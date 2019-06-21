@@ -74,7 +74,9 @@ class BoardComponent extends React.Component {
       <div>
         <div className={styles.secondSection}>
           <div className={styles.secondSection__header}>
-            <h1 className={styles.praxisHeader}>Management Team</h1>
+            <h1 className={styles.praxisHeader}>
+              {isEnglish ? 'Management Team' : 'คณะกรรมการบริหาร'}
+            </h1>
           </div>
           <div className={styles.secondSection__scrollRow}>
             <div className={styles.secondSection__rowTwo}>
@@ -96,7 +98,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.gregMartin.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -118,7 +120,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.gregMartin.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -140,7 +142,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.patJavier.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -162,7 +164,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.patJavier.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -184,7 +186,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.weeChi.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -195,7 +197,9 @@ class BoardComponent extends React.Component {
                   />
                   <h3>วี ชิ ยู</h3>
                   <span className={styles.textCenter}>
-                    ประธานกรรมการบริหารฝ่ายนวัตกรรม
+                    ประธานกรรมการบริหาร
+                    <br />
+                    ฝ่ายนวัตกรรม
                   </span>
                   <p>
                     {this.sliceText(
@@ -206,7 +210,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.weeChi.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -230,7 +234,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.miroFarrugia.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -244,7 +248,9 @@ class BoardComponent extends React.Component {
                   />
                   <h3>มิโร่ ฟารูเกีย</h3>
                   <span className={styles.textCenter}>
-                    ประธานกรรมการบริหารฝ่ายการเงิน
+                    ประธานกรรมการบริหาร
+                    <br />
+                    ฝ่ายการเงิน
                   </span>
                   <p>
                     {this.sliceText(
@@ -255,7 +261,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.miroFarrugia.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -277,7 +283,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.hemantDoshi.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -288,7 +294,9 @@ class BoardComponent extends React.Component {
                   />
                   <h3>เฮแมน โดชิ</h3>
                   <span className={styles.textCenter}>
-                    ประธานกรรมการบริหาร ประจำประเทศสิงคโปรและมาเลเซีย
+                    ประธานกรรมการบริหาร
+                    <br />
+                    ประจำประเทศสิงคโปรและมาเลเซีย
                   </span>
                   <p>
                     {this.sliceText(
@@ -299,7 +307,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.hemantDoshi.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -321,7 +329,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.mariAlbert.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -332,7 +340,9 @@ class BoardComponent extends React.Component {
                   />
                   <h3>มาริแอน อัลเบิร์ต</h3>
                   <span className={styles.textCenter}>
-                    ประธานกรรมการบริหาร ประจำประเทศฟิลิปปินส์
+                    ประธานกรรมการบริหาร
+                    <br />
+                    ประจำประเทศฟิลิปปินส์
                   </span>
                   <p>
                     {this.sliceText(
@@ -343,7 +353,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.mariAlbert.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -365,7 +375,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.naroKomsat.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -374,9 +384,15 @@ class BoardComponent extends React.Component {
                     style={{ backgroundImage: `url(${naro})` }}
                     className={styles.secondSection__imageDiv}
                   />
-                  <h3>ณรงค์ฤทธิ์(ปาล์ม) คมสัตย์</h3>
+                  <h3 style={{ textAlign: 'center' }}>
+                    ณรงค์ฤทธิ์ คมสัตย์
+                    <br />
+                    (ปาล์ม)
+                  </h3>
                   <span className={styles.textCenter}>
-                    ประธานกรรมการบริหาร ประจำประเทศไทย
+                    ประธานกรรมการบริหาร
+                    <br />
+                    ประจำประเทศไทย
                   </span>
                   <p>
                     {this.sliceText(
@@ -387,7 +403,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.naroKomsat.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -409,7 +425,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.wilmaSanchez.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               ) : (
@@ -431,7 +447,7 @@ class BoardComponent extends React.Component {
                     onClick={() => this.wilmaSanchez.show()}
                     className={styles.secondSection__link}
                   >
-                    READ MORE
+                    {isEnglish ? 'READ MORE' : 'อ่านต่อ'}
                   </span>
                 </div>
               )}
@@ -623,7 +639,11 @@ class BoardComponent extends React.Component {
                   className={styles.secondSection__imageDiv}
                 />
                 <h3>เฮแมน โดชิ</h3>
-                <span>ประธานกรรมการบริหาร ประจำประเทศสิงคโปรและมาเลเซีย</span>
+                <span>
+                  ประธานกรรมการบริหาร
+                  <br />
+                  ประจำประเทศสิงคโปรและมาเลเซีย
+                </span>
               </div>
               <div className={styles.secondSection__columnTwo}>
                 <p>
@@ -762,7 +782,11 @@ class BoardComponent extends React.Component {
                   className={styles.secondSection__imageDiv}
                 />
                 <h3>มาริแอน อัลเบิร์ต</h3>
-                <span>ประธานกรรมการบริหาร ประจำประเทศฟิลิปปินส์</span>
+                <span>
+                  ประธานกรรมการบริหาร
+                  <br />
+                  ประจำประเทศฟิลิปปินส์
+                </span>
               </div>
               <div className={styles.secondSection__columnTwo}>
                 <p>
@@ -834,8 +858,12 @@ class BoardComponent extends React.Component {
                   style={{ backgroundImage: `url(${naro})` }}
                   className={styles.secondSection__imageDiv}
                 />
-                <h3>ณรงค์ฤทธิ์(ปาล์ม) คมสัตย์</h3>
-                <span>ประธานกรรมการบริหาร ประจำประเทศไทย</span>
+                <h3>ณรงค์ฤทธิ์ คมสัตย์ <br/>(ปาล์ม)</h3>
+                <span>
+                  ประธานกรรมการบริหาร
+                  <br />
+                  ประจำประเทศไทย
+                </span>
               </div>
               <div className={styles.secondSection__columnTwo}>
                 <p>
@@ -966,7 +994,11 @@ class BoardComponent extends React.Component {
                   className={styles.secondSection__imageDiv}
                 />
                 <h3>มิโร่ ฟารูเกีย</h3>
-                <span>ประธานกรรมการบริหารฝ่ายการเงิน</span>
+                <span>
+                  ประธานกรรมการบริหาร
+                  <br />
+                  ฝ่ายการเงิน
+                </span>
               </div>
               <div className={styles.secondSection__columnTwo}>
                 <p>
