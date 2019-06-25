@@ -155,11 +155,12 @@ class Header extends React.Component {
             </Fade>
           )}
           <div id={styles.headerLinks}>
-            <p
-              // onClick={() => {
-              //   window.location.href = '/about';
-              // }}
-              onClick={() => window.open(`/about`, '_blank')}
+            <a
+              href={`/about`}
+              onClick={() => {
+                window.location.href = '/about';
+              }}
+              // onClick={() => window.open(`/about`, '_blank')}
               className={
                 currentPath === '/about'
                   ? `${styles.headerLink} ${styles.currentLink}`
@@ -167,7 +168,7 @@ class Header extends React.Component {
               }
             >
               {isEnglish ? 'ABOUT US' : 'เกี่ยวกับเรา'}
-            </p>
+            </a>
 
             <p
               onClick={() => {
@@ -198,9 +199,10 @@ class Header extends React.Component {
             >
               {isEnglish ? 'NEWS AND EVENTS' : 'ข่าวสารและกิจกรรม'}
             </a>
-            <p
-              // onClick={() => (window.location.href = '/contact')}
-              onClick={() => window.open(`/contact`, '_blank')}
+            <a
+              href={`/contact`}
+              onClick={() => (window.location.href = '/contact')}
+              // onClick={() => window.open(`/contact`, '_blank')}
               className={
                 currentPath === '/contact'
                   ? `${styles.headerLink} ${styles.currentLink}`
@@ -208,7 +210,7 @@ class Header extends React.Component {
               }
             >
               {isEnglish ? 'CONTACT US' : 'ติดต่อเรา'}
-            </p>
+            </a>
             <Select
               styles={selectStyles}
               options={options}
@@ -258,8 +260,8 @@ class Header extends React.Component {
             <ul className={styles.headerMenu}>
               <li>
                 <p
-                  // onClick={() => (window.location.href = '/about')}
-                  onClick={() => window.open(`/about`, '_blank')}
+                  onClick={() => (window.location.href = '/about')}
+                  // onClick={() => window.open(`/about`, '_blank')}
                   className={styles.praxisParagraph}
                 >
                   <span
@@ -314,8 +316,8 @@ class Header extends React.Component {
               </li>
               <li>
                 <p
-                  // onClick={() => (window.location.href = '/contact')}
-                  onClick={() => window.open(`/contact`, '_blank')}
+                  onClick={() => (window.location.href = '/contact')}
+                  // onClick={() => window.open(`/contact`, '_blank')}
                   className={styles.praxisParagraph}
                 >
                   <span

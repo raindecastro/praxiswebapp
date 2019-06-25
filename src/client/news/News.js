@@ -155,7 +155,7 @@ class News extends React.Component {
 
   render() {
     const { posts, featuredPost } = this.state;
-
+    const { isEnglish } = this.props;
     return (
       <div className={styles.newsContainer}>
         <Link to={`/news/${featuredPost.ID}`}>
