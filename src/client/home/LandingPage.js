@@ -2177,7 +2177,7 @@ class LandingPage extends React.Component {
                     name="company"
                     value={company}
                     className={styles.praxisInput}
-                    placeholder={isEnglish ? 'Company' : 'ข้อความ'}
+                    placeholder={isEnglish ? 'Company' : 'บริษัท'}
                     onChange={this.onChangeInput}
                   />
                 </div>
@@ -2208,7 +2208,7 @@ class LandingPage extends React.Component {
                     name="message"
                     value={message}
                     className={styles.praxisTextArea}
-                    placeholder={isEnglish ? 'Message' : 'บริษัท'}
+                    placeholder={isEnglish ? 'Message' : 'ข้อความ'}
                     onChange={this.onChangeInput}
                   />
                 </div>

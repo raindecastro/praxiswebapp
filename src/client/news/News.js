@@ -185,11 +185,16 @@ class News extends React.Component {
           )}
         </section>
         <section className={styles.newsContainer__thirdSection}>
-          <h1 className={styles.praxisHeader}>Now everyone can master money</h1>
+          <h1 className={styles.praxisHeader}>
+            {isEnglish
+              ? 'Now everyone can master money'
+              : 'ไม่ว่าใครก็สามารถรอบรู้เรื่องการเงินได้'}
+          </h1>
           <br />
           <p className={styles.praxisParagraph}>
-            Become money-wise while having fun! Discover your money potential by
-            playing Praxis.
+            {isEnglish
+              ? 'Become money-wise while having fun! Discover your money potential by playing Praxis.'
+              : 'เปลี่ยนคุณเป็นคนใหม่ที่ชาญฉลาดยิ่งขึ้นและ ค้นพบศักยภาพในการบริหารเงินของคุณไปกับ Praxis'}
           </p>
           <br />
           <br />
@@ -198,7 +203,7 @@ class News extends React.Component {
               this.props.history.push('/contact');
             }}
             color="none"
-            text="PLAY THE GAME"
+            text={isEnglish ? 'PLAY THE GAME' : 'ทดลองเล่นเกม'}
           />
         </section>
       </div>
