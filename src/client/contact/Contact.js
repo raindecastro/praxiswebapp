@@ -327,7 +327,7 @@ class Contact extends React.Component {
             <Select
               styles={selectStyles}
               options={options}
-              defaultValue={options[0]}
+              defaultValue={isEnglish ? options[0] : options[2]}
               isSearchable={false}
               isClearable={false}
               onChange={e => {
