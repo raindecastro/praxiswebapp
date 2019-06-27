@@ -258,6 +258,25 @@ class Header extends React.Component {
               <span className={styles.navicon} />
             </label>
             <ul className={styles.headerMenu}>
+              <li
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginTop: '2vw',
+                  marginBottom: '2vw',
+                }}
+              >
+                <Select
+                  styles={selectStyles}
+                  options={options}
+                  value={this.props.isEnglish ? options[0] : options[1]}
+                  isSearchable={false}
+                  isClearable={false}
+                  onChange={e => {
+                    this.props.changeLanguage(e);
+                  }}
+                />
+              </li>
               <li>
                 <p
                   onClick={() => (window.location.href = '/about')}

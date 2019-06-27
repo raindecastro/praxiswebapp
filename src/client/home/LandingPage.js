@@ -144,6 +144,9 @@ class LandingPage extends React.Component {
     // object.scrollTo(270, 0);
 
     this.setState({ headerColor: 'transparentHeader', showLogo: false });
+    if (!this.props.isEnglish) {
+      this.setState({ mapState: 'thailand' });
+    }
   }
 
   renderThaiCarousel = () => {
@@ -995,14 +998,13 @@ class LandingPage extends React.Component {
               </p>
               <p style={{ marginBottom: '1em' }}>
                 บริษัทที่ให้บริการทางการเงินมากมายในภูมิภาคเอเชียตะวันออกเฉียงใต้ได้รับประโยชน์มากมายจากการใช้
-                Praxis โดยเฉพาะทางด้านฝ่ายขา
+                Praxis โดยเฉพาะทางด้านฝ่ายขาย
                 <br />
-                ยที่พัฒนาจนกลายเป็นทีมที่เปี่ยมไปด้วยความรู้ ได้รับความไว้วางใจ
+                ที่พัฒนาจนกลายเป็นทีมที่เปี่ยมไปด้วยความรู้ ได้รับความไว้วางใจ และมีประสิทธิผล
                 และมีประสิทธิผล
               </p>
               <p>
-                ให้ Praxis
-                เข้าไปมีส่วนร่วมและเป็นส่วนหนึ่งของหลักสูตรการอบรมพนักงานในบริษัทของคุณได้ตั้งแต่วันนี้
+              ให้ Praxis เข้าไปมีส่วนร่วมและเป็นส่วนหนึ่งของหลักสูตรการอบรมพนักงานในบริษัทของคุณได้ตั้งแต่วันนี้
               </p>
             </div>
           )}
@@ -1353,7 +1355,7 @@ class LandingPage extends React.Component {
             <Fade right delay={400}>
               <div id={styles.videoInfoContainer}>
                 <h1 id={styles.secondHeader} className={styles.praxisHeader}>
-                  What is Praxis?
+                  {isEnglish ? 'What is Praxis?' : 'Praxis คืออะไร?'}
                 </h1>
                 {isEnglish ? (
                   <p
@@ -1374,9 +1376,9 @@ class LandingPage extends React.Component {
                     การจัดการเรื่องการเงินส่วนบุคคลเป็นทักษะอย่างหนึ่งที่สำคัญในชีวิต
                     <br />
                     แต่การเรียนรู้และการสอนให้เข้าใจง่ายเป็นเรื่องที่ยาก
-                    มีคนเพียงแค่ 1 ใน 3 เท่านั้นที
+                    มีคนเพียงแค่ 1 ใน 3 เท่านั้น
                     <br />
-                    ่เข้าใจพื้นฐานเรื่องการเงิน
+                    ที่เข้าใจพื้นฐานเรื่องการเงิน
                     และมีผู้ที่ใช้ผลิตภัณฑ์การเงินเพียง 38% เท่านั้น
                     <br />
                     ที่มีความรู้เรื่องการเงินขั้นพื้นฐาน

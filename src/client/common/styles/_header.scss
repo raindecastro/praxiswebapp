@@ -64,6 +64,7 @@
     cursor: pointer;
     margin-top: auto;
     margin-bottom: auto;
+    font-weight: 300;
   }
 
   .headerLogo {
@@ -137,10 +138,11 @@
   background-color: white;
   text-align: center;
   position: initial;
-
-  -webkit-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 21px 55px -22px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 2px -2px gray;
+  // border-bottom: 1px solid lightgray;
+  // -webkit-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  // -moz-box-shadow: 0px 0px 35px -9px rgba(0, 0, 0, 0.75);
+  // box-shadow: 0px 21px 55px -22px rgba(0, 0, 0, 0.75);
   p,
   a {
     display: block;
